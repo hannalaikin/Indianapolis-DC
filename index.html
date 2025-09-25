@@ -1,222 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dataland Project - Powering Indiana’s Digital Future</title>
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Sticky navigation shadow */
-    .sticky-nav {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Dataland data center campus in Indiana, powered by Sabey Data Centers' 20+ year track record. Creating thousands of jobs with proven community partnership.">
+    <meta name="keywords" content="Indiana data center, Sabey Data Centers, jobs, economic development, community partnership, sustainable technology">
+<title>Dataland Project – Powering Indiana’s Digital Future</title>
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  .sticky-nav { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  /* Partnership Section */
+  .partnership-section {
+    background: #f8f9fa;
+    padding: 4rem 0;
+  }
+  .partner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+  .partner-stats li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+  }
+  .partner-testimonials blockquote {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid #007bff;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+  /* Benefits Section */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .benefit-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+  .benefit-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .benefit-card ul {
+    list-style: disc inside;
+    margin-left: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .benefit-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  /* FAQ Section */
+  .community-faq {
+    background: white;
+    padding: 4rem 0;
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  .faq-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+  }
+  .faq-item h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  .faq-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .partner-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
-  </style>
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50">
-  <!-- Navigation -->
-  <header class="sticky top-0 bg-white sticky-nav z-50">
-    <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
-      <a href="#" class="text-xl font-bold text-blue-700">Dataland</a>
-      <ul class="flex space-x-4">
-        <li><a href="#about" class="hover:text-blue-600">About</a></li>
-        <li><a href="#community" class="hover:text-blue-600">Community</a></li>
-        <li><a href="#updates" class="hover:text-blue-600">Updates</a></li>
-        <li><a href="#resources" class="hover:text-blue-600">Resources</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="antialiased text-gray-800 bg-gray-50">
+<!-- Navigation -->
+<header class="sticky top-0 bg-white sticky-nav z-50">
+  <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
+    <a href="#" class="text-xl font-bold text-blue-700">Dataland</a>
+    <ul class="flex space-x-4">
+      <li><a href="#about" class="hover:text-blue-600">About</a></li>
+      <li><a href="#community" class="hover:text-blue-600">Community</a></li>
+      <li><a href="#updates" class="hover:text-blue-600">Updates</a></li>
+      <li><a href="#resources" class="hover:text-blue-600">Resources</a></li>
+      <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-green-500 text-white py-20">
-    <div class="container mx-auto text-center px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Powering Indiana’s Digital Future</h1>
-      <p class="text-lg md:text-xl mb-6">A multi-billion-dollar data center campus delivering reliable capacity, billions in investment, and long-term community benefits.</p>
-      <a href="#about" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">Learn More About the Project</a>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-blue-600 to-green-500 text-white py-20 overflow-hidden">
+  <img src="https://source.unsplash.com/1920x1080/?data-center,technology" alt="Data center" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+  <div class="container mx-auto text-center px-4 relative z-10">
+    <h1 class="text-5xl font-bold mb-4">Powering Indiana’s Digital Future</h1>
+    <p class="text-lg mb-6">A multi-billion-dollar data center campus delivering reliable capacity, billions in investment, and long-term community benefits.</p>
+    <a href="#about" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">Learn More About the Project</a>
+  </div>
+</section>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <h2 class="text-3xl font-bold mb-8 text-blue-700">About the Project</h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Project Background</h3>
-          <p>The Dataland project is an ambitious initiative to build a state-of-the-art data center campus in Indiana, driving economic growth and technological innovation.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Timeline</h3>
-          <p>Construction is planned over multiple phases, with groundbreaking in 2025 and full operations expected by 2028.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">How It Works</h3>
-          <p>Data centers are secure, energy-efficient facilities housing servers and networking equipment that store and process digital information. They enable cloud computing, AI, and essential services.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Economic Benefits</h3>
-          <p>The campus will generate thousands of jobs, inject billions in local investment, and diversify Indiana’s economy.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Sustainability Commitments</h3>
-          <p>We’re committed to renewable energy, efficient cooling, and minimal environmental impact, aligning with Indiana’s sustainability goals.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Partnerships</h3>
-          <p>Dataland collaborates with local utilities, technology providers, and community organizations to ensure success.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Workforce Opportunities</h3>
-          <p>We’ll offer training, apprenticeships, and career pathways in technology and construction for local talent.</p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold text-green-600 mb-2">Supplier & Contractor Opportunities</h3>
-          <p>Local businesses can register to supply goods and services during construction and operation.</p>
-        </div>
+<!-- Partnership Section -->
+<section class="partnership-section">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold mb-4 text-blue-700">Partnership with Proven Excellence</h2>
+    <p class="lead text-lg mb-6">Dataland is powered by industry-leading expertise with a 20-year track record of community partnership and operational excellence.</p>
+    <div class="partner-grid">
+      <div class="partner-info">
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Sabey Data Centers: Your Trusted Partner</h3>
+        <ul class="partner-stats list-disc pl-5 space-y-1">
+          <li><strong>20+ years</strong> of data center innovation</li>
+          <li><strong>3.5 million sq ft</strong> successfully operated</li>
+          <li><strong>Zero downtime</strong> track record with major clients</li>
+          <li><strong>Award-winning</strong> operations teams</li>
+        </ul>
+      </div>
+      <div class="partner-testimonials space-y-4">
+        <blockquote class="italic bg-white p-4 rounded-lg border-l-4 border-blue-600">
+          &ldquo;We have had no downtime with Sabey. They absolutely understand infrastructure needs and put patient safety first.&rdquo;
+          <cite class="block mt-2 text-sm text-gray-600">– Providence Health Services</cite>
+        </blockquote>
+        <blockquote class="italic bg-white p-4 rounded-lg border-l-4 border-blue-600">
+          &ldquo;Meeting our design objectives on time and under budget through their partnership approach.&rdquo;
+          <cite class="block mt-2 text-sm text-gray-600">– BlackRock</cite>
+        </blockquote>
       </div>
     </div>
-  </section>
+    <div class="cta-link mt-6">
+      <a href="https://sabeydatacenters.com/about" target="_blank" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800">Learn More About Our Partner →</a>
+    </div>
+  </div>
+</section>
 
-  <!-- Community Section -->
-  <section id="community" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <h2 class="text-3xl font-bold mb-8 text-blue-700">Community</h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2 text-green-600">Residents</h3>
-          <p>Stay up to date on construction progress, traffic notices, and community meetings.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2 text-green-600">Local Businesses</h3>
-          <p>Discover partnership programs, supplier registration, and service opportunities.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2 text-green-600">Education</h3>
-          <p>Explore apprenticeships, skilled-trade training, and STEM outreach for students.</p>
+<!-- About Section -->
+<section id="about" class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <img src="https://source.unsplash.com/1200x700/?server-room,technology" alt="Servers" class="w-full h-64 object-cover rounded-lg mb-8" />
+    <h2 class="text-3xl font-bold mb-8 text-blue-700">About the Project</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Project Background</h3>
+        <p>The Dataland project is an ambitious initiative to build a state-of-the-art data center campus in Indiana.</p>
+      </div>
+      <!-- Community FAQ Section -->
+      <div class="community-faq">
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Community Questions Answered</h3>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Will this be noisy?</h3>
+            <p>No. All cooling equipment is enclosed within buildings with acoustic barriers. We meet or exceed local noise ordinances and conduct equipment testing only during daytime hours with advance community notice.</p>
+            <a href="https://sabeydatacenters.com/expertise/security" target="_blank">Learn about our facility design →</a>
+          </div>
+          <div class="faq-item">
+            <h3>How much water will you use?</h3>
+            <p>Our facilities use closed-loop or air-based cooling systems, consuming water comparable to office buildings. Many locations use "free cooling" most of the year, drastically reducing water needs.</p>
+            <a href="https://sabeydatacenters.com/locations/seattle-data-center" target="_blank">See Seattle's efficiency →</a>
+          </div>
+          <div class="faq-item">
+            <h3>What about traffic impact?</h3>
+            <p>Once operational, fewer than 50 employees work daily shifts. Construction traffic is managed with planned routing and timing to minimize disruption to local roads.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Are these jobs really good jobs?</h3>
+            <p>Yes. Data center positions average $75k-$100k annually, plus benefits. These include roles in engineering, security, maintenance, and IT operations - all requiring local talent and training.</p>
+            <a href="https://sabeydatacenters.com/about" target="_blank">View career opportunities →</a>
+          </div>
+          <div class="faq-item">
+            <h3>Will you actually stay committed long-term?</h3>
+            <p>Absolutely. Our partner has 20+ years in the industry with zero facility closures. Data centers are 20+ year investments requiring ongoing community partnership.</p>
+            <a href="https://sabeydatacenters.com/" target="_blank">See our track record →</a>
+          </div>
+          <div class="faq-item">
+            <h3>How will this affect property values?</h3>
+            <p>Data centers typically enhance property values through job creation, tax revenue, and infrastructure improvements, while maintaining community character through thoughtful design.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Updates Section -->
-  <section id="updates" class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <h2 class="text-3xl font-bold mb-8 text-blue-700">Latest Updates</h2>
-      <div class="md:grid md:grid-cols-2 md:gap-8">
-        <div class="mb-6 md:mb-0">
-          <h3 class="text-2xl font-semibold mb-4 text-green-600">News</h3>
-          <ul class="space-y-4">
-            <li class="bg-gray-50 p-4 rounded shadow">
-              <h4 class="font-semibold">Groundbreaking Set for July 2025</h4>
-              <p class="text-sm text-gray-600">May 15, 2025</p>
-              <p class="mt-2">Dataland announces the groundbreaking ceremony to kick off construction of the new data center campus.</p>
-            </li>
-            <li class="bg-gray-50 p-4 rounded shadow">
-              <h4 class="font-semibold">Partnership with Local Utility</h4>
-              <p class="text-sm text-gray-600">August 10, 2025</p>
-              <p class="mt-2">We’ve partnered with Indiana Energy Co. to power our data center sustainably.</p>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 text-green-600">Events</h3>
-          <ul class="space-y-4">
-            <li class="bg-gray-50 p-4 rounded shadow">
-              <h4 class="font-semibold">Community Open House</h4>
-              <p class="text-sm text-gray-600">June 5, 2025</p>
-              <p class="mt-2">Join us at the Town Hall to learn more about Dataland and meet our team.</p>
-            </li>
-            <li class="bg-gray-50 p-4 rounded shadow">
-              <h4 class="font-semibold">Supplier Information Session</h4>
-              <p class="text-sm text-gray-600">September 12, 2025</p>
-              <p class="mt-2">Local suppliers are invited to attend and learn about upcoming opportunities.</p>
-            </li>
-          </ul>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Timeline</h3>
+        <p>Construction is planned over multiple phases, with groundbreaking in 2025 and full operations expected by 2028.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">How It Works</h3>
+        <p>Data centers are secure, energy-efficient facilities housing servers and networking equipment that store and process digital information.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Benefits for Indiana</h3>
+        <!-- Update the benefits cards with specific community concerns -->
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Real Economic Impact</h3>
+            <ul>
+              <li><strong>50+ permanent jobs</strong> averaging $75k-$100k annually</li>
+              <li><strong>1,000 construction jobs</strong> during build phase</li>
+              <li><strong>4.9-7.1 additional jobs</strong> created per direct job</li>
+              <li><strong>Millions in property tax revenue</strong> for schools and services</li>
+            </ul>
+            <a href="https://sabeydatacenters.com/locations/austin-data-center" target="_blank">See Austin Success Story →</a>
+          </div>
+          <div class="benefit-card">
+            <h3>Noise Mitigation Promise</h3>
+            <ul>
+              <li><strong>Enclosed equipment</strong> with acoustic barriers</li>
+              <li><strong>Meets/exceeds</strong> local noise ordinances</li>
+              <li><strong>Daytime testing only</strong> with advance notice</li>
+              <li><strong>Patented systems</strong> for precise airflow control</li>
+            </ul>
+            <a href="https://sabeydatacenters.com/expertise/compliance" target="_blank">View Compliance Standards →</a>
+          </div>
+          <div class="benefit-card">
+            <h3>Environmental Leadership</h3>
+            <ul>
+              <li><strong>Net-zero by 2029</strong> carbon commitment</li>
+              <li><strong>Closed-loop cooling</strong> minimizing water use</li>
+              <li><strong>100% renewable energy</strong> options available</li>
+              <li><strong>Sustainable design</strong> with natural landscaping</li>
+            </ul>
+            <a href="https://sabeydatacenters.com/locations/seattle-data-center" target="_blank">See Seattle's Green Success →</a>
+          </div>
+          <div class="benefit-card">
+            <h3>Infrastructure Enhancement</h3>
+            <ul>
+              <li><strong>Grid investment</strong> improving local resilience</li>
+              <li><strong>Traffic management</strong> with planned routing</li>
+              <li><strong>Stormwater systems</strong> with retention ponds</li>
+              <li><strong>Fiber connectivity</strong> boosting regional access</li>
+            </ul>
+            <a href="https://sabeydatacenters.com/locations" target="_blank">View All Campus Locations →</a>
+          </div>
         </div>
       </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Sustainability Commitments</h3>
+        <p>We’re committed to renewable energy, efficient cooling, and minimal environmental impact.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Partnerships</h3>
+        <p>Dataland collaborates with local utilities, technology providers, and community organizations.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Workforce Opportunities</h3>
+        <p>We’ll offer training, apprenticeships, and career pathways in technology and construction for local talent.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-600 mb-2">Supplier &amp; Contractor Opportunities</h3>
+        <p>Local businesses can register to supply goods and services during construction and operation.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Resources Section -->
-  <section id="resources" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <h2 class="text-3xl font-bold mb-8 text-blue-700">Resources</h2>
-      <div class="mb-10">
-        <h3 class="text-2xl font-semibold mb-4 text-green-600">Resource Library</h3>
-        <ul class="space-y-3">
-          <li><a href="#" class="text-blue-600 hover:underline">Project Overview PDF</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Sustainability Fact Sheet</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Supplier & Contractor Guide</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Noise & Air Quality FAQ</a></li>
+<!-- Community Section -->
+<section id="community" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold mb-8 text-blue-700">Community</h2>
+    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="bg-white rounded-lg shadow p-6">
+        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Residents</h3>
+        <p>Stay up to date on construction progress, traffic notices, and community meetings.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6">
+        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1"/><path d="M5 7h14l1 11H4L5 7z"/><path d="M9 14a3 3 0 0 0 6 0"/></svg>
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Local Businesses</h3>
+        <p>Discover partnership programs, supplier registration, and service opportunities.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6">
+        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5a2.5 2.5 0 0 1 1.85-2.44l6.15-1.54 6.15 1.54A2.5 2.5 0 0 1 20 21H5a2 2 0 0 1-1-1.5z"/><path d="M8 3h8a2 2 0 0 1 2 2v14"/></svg>
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Education</h3>
+        <p>Explore apprenticeships, skilled-trades training, and STEM outreach for students.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6">
+        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18v-2a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v2"/><path d="M7 10V6a5 5 0 0 1 10 0v4"/></svg>
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Contractors</h3>
+        <p>Access bid calendars, safety guidelines, and site logistics information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Updates Section -->
+<section id="updates" class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold mb-8 text-blue-700">Latest Updates</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2 text-green-600">News</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><a href="#" class="text-blue-600 hover:underline">Groundbreaking ceremony set for Spring 2025</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Partnership announced with local university for STEM training</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Data center design update released</a></li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Events</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Community open house – Nov 15, 2025</li>
+          <li>Supplier registration workshop – Dec 2, 2025</li>
+          <li>STEM career fair – Jan 20, 2026</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resources Section -->
+<section id="resources" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold mb-8 text-blue-700">Resources</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-green-600">Resource Library</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><a href="#" class="text-blue-600 hover:underline">Project Overview (PDF)</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Sustainability Fact Sheet (PDF)</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Supplier &amp; Contractor Guide (PDF)</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Noise &amp; Air Quality FAQ (PDF)</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="text-2xl font-semibold mb-4 text-green-600">FAQs</h3>
+        <h3 class="text-xl font-semibold mb-2 text-green-600">FAQs</h3>
         <div class="space-y-4">
-          <details class="bg-white p-4 rounded shadow">
+          <details class="bg-white p-4 rounded-lg shadow">
             <summary class="font-semibold cursor-pointer">When will the data center be operational?</summary>
-            <p class="mt-2">We anticipate the facility becoming fully operational by 2028 following phased construction.</p>
+            <p class="mt-2">The first phase is expected to be online by 2026, with full operations by 2028.</p>
           </details>
-          <details class="bg-white p-4 rounded shadow">
+          <details class="bg-white p-4 rounded-lg shadow">
             <summary class="font-semibold cursor-pointer">How many jobs will be created?</summary>
-            <p class="mt-2">Thousands of jobs will be created across construction, operations, and supply chains.</p>
+            <p class="mt-2">Thousands of direct and indirect jobs will be created during construction and operations.</p>
           </details>
-          <details class="bg-white p-4 rounded shadow">
+          <details class="bg-white p-4 rounded-lg shadow">
             <summary class="font-semibold cursor-pointer">What sustainability measures are being used?</summary>
-            <p class="mt-2">We’ll employ renewable energy, efficient cooling, noise abatement, and minimal water use to minimize our environmental footprint.</p>
+            <p class="mt-2">The project incorporates renewable energy, efficient cooling, and water-saving technologies.</p>
           </details>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-3xl text-center">
-      <h2 class="text-3xl font-bold mb-8 text-blue-700">Contact Us</h2>
-      <form class="space-y-4">
-        <div class="flex flex-col md:flex-row md:space-x-4">
-          <input type="text" placeholder="First Name" class="flex-1 p-3 border rounded" required>
-          <input type="text" placeholder="Last Name" class="flex-1 p-3 border rounded" required>
-        </div>
-        <input type="email" placeholder="Email" class="w-full p-3 border rounded" required>
-        <textarea rows="4" placeholder="Message" class="w-full p-3 border rounded" required></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send Message</button>
-      </form>
-      <div class="mt-6 text-sm text-gray-600">
-        <p>Email: <a href="mailto:info@dataland.com" class="text-blue-600 hover:underline">info@dataland.com</a></p>
-        <p class="mt-2">Quick links: <a href="#" class="text-blue-600 hover:underline">Supplier Registry</a> | <a href="#" class="text-blue-600 hover:underline">Press Inquiries</a></p>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-3xl font-bold mb-8 text-blue-700">Contact Us</h2>
+    <form class="grid gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <input type="text" placeholder="First Name" class="p-4 border rounded-lg" required />
+        <input type="text" placeholder="Last Name" class="p-4 border rounded-lg" required />
       </div>
-    </div>
-  </section>
+      <input type="email" placeholder="Email Address" class="p-4 border rounded-lg" required />
+      <textarea placeholder="Your Message" class="p-4 border rounded-lg h-32" required></textarea>
+      <button type="submit" class="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-800">Send Message</button>
+    </form>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-200 py-8">
-    <div class="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
-        <p>&copy; 2025 Dataland Project. All rights reserved.</p>
-      </div>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+      <ul class="flex space-x-4 mb-4 md:mb-0">
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#community" class="hover:underline">Community</a></li>
+        <li><a href="#updates" class="hover:underline">Updates</a></li>
+        <li><a href="#resources" class="hover:underline">Resources</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
       <div class="flex space-x-4">
-        <a href="#about" class="hover:text-white">About</a>
-        <a href="#community" class="hover:text-white">Community</a>
-        <a href="#updates" class="hover:text-white">Updates</a>
-        <a href="#resources" class="hover:text-white">Resources</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-      </div>
-      <div class="flex space-x-4 mt-4 md:mt-0">
-        <!-- Social icons using simple SVGs -->
-        <a href="https://www.linkedin.com" aria-label="LinkedIn" class="hover:text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.3807-1.12 2.5-2.49 2.5S0 4.8807 0 3.5 1.12 1 2.49 1 4.98 2.1193 4.98 3.5zM.15 8H4.73V24H.15V8zM7.35 8H11.75V10.64H11.81C12.41 9.55 13.89 8 16.43 8 21.35 8 22 11.08 22 15.67V24H17.4V16.66C17.4 14.65 17.36 11.93 14.87 11.93 12.36 11.93 11.98 13.79 11.98 16.5V24H7.35V8z"></path></svg>
-        </a>
-        <a href="https://twitter.com" aria-label="X (formerly Twitter)" class="hover:text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.633 7.997c.013.184.013.368.013.552 0 5.62-4.281 12.094-12.094 12.094-2.406 0-4.646-.705-6.535-1.922.368.043.736.056 1.12.056 1.987 0 3.81-.672 5.272-1.81a4.27 4.27 0 01-3.987-2.956c.263.043.526.07.802.07.385 0 .77-.05 1.127-.148a4.264 4.264 0 01-3.413-4.182v-.056a4.31 4.31 0 001.936.543 4.266 4.266 0 01-1.318-5.69 12.1 12.1 0 008.779 4.456A4.804 4.804 0 0113.45 6c0-2.352 1.92-4.272 4.272-4.272 1.232 0 2.35.526 3.132 1.362a8.422 8.422 0 002.695-1.03 4.25 4.25 0 01-1.88 2.352 8.64 8.64 0 002.45-.67 9.18 9.18 0 01-2.138 2.226z"></path></svg>
-        </a>
-        <a href="https://www.youtube.com" aria-label="YouTube" class="hover:text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.998 2.998 0 00-2.112-2.113C19.31 3.5 12 3.5 12 3.5s-7.31 0-9.386.573A3.002 3.002 0 00.502 6.186C0 8.262 0 12 0 12s0 3.738.502 5.814a2.998 2.998 0 002.112 2.113C4.69 21.5 12 21.5 12 21.5s7.31 0 9.386-.573a2.998 2.998 0 002.112-2.113C24 15.738 24 12 24 12s0-3.738-.502-5.814zM9.545 15.568V8.432l6.273 3.568-6.273 3.568z"/></svg>
-        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-blue-400">LinkedIn</a>
+        <a href="#" aria-label="X/Twitter" class="hover:text-blue-400">X</a>
+        <a href="#" aria-label="YouTube" class="hover:text-blue-400">YouTube</a>
       </div>
     </div>
-  </footer>
+      <!-- Technology Partner Links -->
+      <div class="footer-partner mb-6">
+        <h4 class="text-lg font-semibold mb-2">Our Technology Partner</h4>
+        <ul class="space-y-1">
+          <li><a href="https://sabeydatacenters.com/" target="_blank" class="hover:underline">Sabey Data Centers</a></li>
+          <li><a href="https://sabeydatacenters.com/locations" target="_blank" class="hover:underline">National Portfolio</a></li>
+          <li><a href="https://sabeydatacenters.com/expertise/compliance" target="_blank" class="hover:underline">Compliance &amp; Certifications</a></li>
+          <li><a href="https://sabeydatacenters.com/about" target="_blank" class="hover:underline">20+ Year Track Record</a></li>
+        </ul>
+      </div>
+    <p class="text-center text-sm">&copy; 2025 Dataland Project. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
