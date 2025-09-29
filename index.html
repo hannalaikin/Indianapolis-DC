@@ -32,12 +32,11 @@
         <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
             <a href="#" class="text-xl font-bold text-blue-700">Sabey Data Centers</a>
             <ul class="flex space-x-4">
-                <li><a href="#about" class="hover:text-blue-600">About</a></li>
-                <li><a href="#community" class="hover:text-blue-600">Community</a></li>
-                <li><a href="#locations" class="hover:text-blue-600">Locations</a></li>
-                <li><a href="#resources" class="hover:text-blue-600">Resources</a></li>
-                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-            </ul>
+    <li><a href="#project" class="hover:text-blue-600">Project</a></li>
+    <li><a href="#faq" class="hover:text-blue-600">FAQ</a></li>
+    <li><a href="#history" class="hover:text-blue-600">History</a></li>
+    <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+</ul>
         </nav>
     </header>
     <!-- Hero Section -->
@@ -46,7 +45,7 @@
         <div class="container mx-auto text-center px-4 relative z-10">
             <h1 class="text-5xl font-bold mb-4">Powering Communities Through Data</h1>
             <p class="text-lg mb-6">Our multi-billion-dollar data center campus delivers reliable capacity, billions in investment, and long-term community benefits. Located at the corner of Kentucky Avenue & Camby Road on a 130-acre site previously zoned for light industrial use, our campus will generate significantly less commercial and employee traffic than the previously planned industrial warehouse park.</p>
-            <a href="#about" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">Learn More About Sabey</a>
+            <a href="#project" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">Learn More About Sabey</a>
         </div>
     </section>
     <!-- Partnership Section -->
@@ -78,11 +77,23 @@
         </div>
     </section>
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <section id="project" class="py-16 bg-white">
         <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-bold mb-8 text-blue-700">About Sabey Data Centers</h2>
+            <h2 class="text-3xl font-bold mb-8 text-blue-700">Project Overview</h2>
             <p class="mb-6">Sabey Data Centers builds and operates mission‑critical facilities across the United States with a commitment to sustainability, resilience, and community partnership. Our Indiana campus continues this legacy with state‑of‑the‑art design, robust power infrastructure, and <strong>low water usage</strong> thanks to closed‑loop, air‑cooled chiller systems that recirculate water and drastically reduce consumption【407554511351221†L16-L27】. We strive to ensure that our developments enrich the communities we join by investing in local workforce training, infrastructure, and environmental stewardship.</p>
-        </div>
+<div class="mt-10">
+    <h3 class="text-2xl font-semibold text-green-600 mb-3">Site Plan</h3>
+    <img src="site-plan-placeholder.png" alt="Site plan placeholder" class="w-full h-auto rounded-lg shadow" />
+</div>
+<div class="mt-10">
+    <h3 class="text-2xl font-semibold text-green-600 mb-3">Image Gallery</h3>
+    <div id="gallery" class="relative overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
+        <img src="https://source.unsplash.com/1200x600/?data-center" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
+        <img src="https://source.unsplash.com/1200x600/?community,people" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+        <img src="https://source.unsplash.com/1200x600/?technology,servers" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+    </div>
+</div>
+</div>
     </section>
     <!-- Benefits Section -->
     <section id="benefits" class="py-16 bg-gray-50">
@@ -200,51 +211,80 @@
         </div>
     </section>
     <!-- Resources Section -->
-    <section id="resources" class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-bold mb-8 text-blue-700">Resource Library</h2>
-            <ul class="list-disc pl-5 space-y-2">
-                <li><a href="air-cooled-chiller.pdf" class="text-blue-700 hover:underline">Air-Cooled Chiller (PDF)</a></li>
-                <li><a href="zoning-faq.pdf" class="text-blue-700 hover:underline">Zoning & Land Use FAQ (PDF)</a></li>
-            </ul>
-            <div class="mt-8">
-                <h3 class="text-2xl font-semibold text-green-600 mb-4">Frequently Asked Questions</h3>
-                <div class="space-y-4">
-                    <details class="bg-gray-50 p-4 rounded-lg shadow">
-                        <summary class="font-semibold">Where is the project site located?</summary>
-                        <p>The campus is located at the corner of Kentucky Avenue & Camby Road on a 130-acre site that was already zoned for light industrial use. Our data center will generate significantly less commercial and employee traffic than the previously planned industrial warehouse park.</p>
-                    </details>
-                    <details class="bg-gray-50 p-4 rounded-lg shadow">
-                        <summary class="font-semibold">Will this be noisy?</summary>
-                        <p>No. All cooling equipment is enclosed within buildings with acoustic barriers. We meet or exceed local noise ordinances and conduct equipment testing only during daytime hours with advance community notice.</p>
-                    </details>
-                    <details class="bg-gray-50 p-4 rounded-lg shadow">
-                        <summary class="font-semibold">How much water will you use?</summary>
-                        <p>Our facilities use closed-loop or air-based cooling systems, consuming water comparable to office buildings. Many locations use “free cooling” most of the year, drastically reducing water needs【407554511351221†L16-L27】.</p>
-                    </details>
-                    <details class="bg-gray-50 p-4 rounded-lg shadow">
-                        <summary class="font-semibold">What about traffic impact?</summary>
-                        <p>Once operational, fewer than 50 employees work daily shifts. Construction traffic is managed with planned routing and timing to minimize disruption to local roads.</p>
-                    </details>
-                    <details class="bg-gray-50 p-4 rounded-lg shadow">
-                        <summary class="font-semibold">Will electric bills go up?</summary>
-                        <p>No. Sabey’s energy-efficient design and use of renewable energy ensure stable energy usage that does not increase local electric rates【345476460734987†L85-L96】.</p>
-                    </details>
-                    <details class="bg-gray-50 p-4 rounded-lg shadow">
-                        <summary class="font-semibold">Does Sabey pay its fair share?</summary>
-                        <p>Yes. Data centers make significant contributions to local budgets through property taxes. For example, data centers in Quincy, WA account for about 75% of the city’s property tax revenue, funding schools and public services【462808654766062†L93-L97】.</p>
-                    </details>
-                </div>
+    <section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <h2 class="text-3xl font-bold mb-8 text-blue-700">Frequently Asked Questions</h2>
+        <div class="space-y-4 mt-6">
+            <details class="bg-gray-50 p-4 rounded-lg shadow">
+                <summary class="font-semibold">What economic benefits will this project provide?</summary>
+                <p>This project will create more than 50 permanent jobs averaging $75k–$100k annually, along with about 1,000 construction jobs during the build phase and 4.9–7.1 additional indirect jobs per direct job. It will generate millions in property tax revenue for schools and services【6728303114981†L149-L156】, ensuring Sabey pays its fair share of local taxes【6728303114981†L185-L187】.</p>
+            </details>
+            <details class="bg-gray-50 p-4 rounded-lg shadow">
+                <summary class="font-semibold">How will power and electric bills be affected?</summary>
+                <p>Sabey’s energy‑efficient design uses renewable energy and modern infrastructure to ensure stable usage that does not increase local electric rates【6728303114981†L183-L185】 and provides reliable capacity for the community【6728303114981†L183-L184】.</p>
+            </details>
+            <details class="bg-gray-50 p-4 rounded-lg shadow">
+                <summary class="font-semibold">How much water will you use?</summary>
+                <p>Our facilities rely on closed‑loop or air‑based cooling systems that recirculate water, using amounts comparable to a typical office building. Many locations leverage “free cooling” most of the year, delivering <strong>low water usage</strong> and significant conservation【6728303114981†L165-L167】.</p>
+            </details>
+            <details class="bg-gray-50 p-4 rounded-lg shadow">
+                <summary class="font-semibold">Where is the project site located?</summary>
+                <p>The campus is located at the corner of Kentucky Avenue & Camby Road on a 130‑acre site that was already zoned for light industrial use. Our data center campus will generate significantly less commercial and employee traffic than the previously planned industrial warehouse park.</p>
+            </details>
+            <details class="bg-gray-50 p-4 rounded-lg shadow">
+                <summary class="font-semibold">Will there be noise or traffic?</summary>
+                <p>No. All cooling equipment is enclosed within buildings with acoustic barriers, and we meet or exceed local noise ordinances. Once operational, fewer than 50 employees work daily shifts, and construction traffic is managed to minimize disruption to local roads.</p>
+            </details>
+            <details class="bg-gray-50 p-4 rounded-lg shadow">
+                <summary class="font-semibold">Does Sabey pay its fair share?</summary>
+                <p>Yes. Sabey’s data centers make substantial contributions to local budgets through property taxes. For example, data centers in Quincy, WA account for about 75% of the city’s property tax revenue【6728303114981†L185-L187】, funding schools, hospitals, and community services.</p>
+            </details>
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <!-- History Section -->
+<section id="history" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-5xl">
+        <h2 class="text-3xl font-bold mb-8 text-blue-700">History & Testimonials</h2>
+        <p class="mb-6">Learn about our journey and hear from partners, customers, and community members.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <iframe class="w-full" height="315" src="https://www.youtube.com/embed/O4K-1hDQm-4" title="Video testimonial 1" allowfullscreen></iframe>
+            </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <iframe class="w-full" height="315" src="https://www.youtube.com/embed/ycSMcHUXJxM" title="Video testimonial 2" allowfullscreen></iframe>
+            </div>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <iframe class="w-full" height="315" src="https://www.youtube.com/embed/qulZq1RMWRo" title="Video testimonial 3" allowfullscreen></iframe>
             </div>
         </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-5xl text-center">
-            <h2 class="text-3xl font-bold mb-4 text-blue-700">Get in Touch</h2>
-            <p class="mb-6">Have questions about our Indiana campus or want to learn more about Sabey Data Centers? We’d love to hear from you.</p>
-            <a href="mailto:info@sabey.com" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800">Contact Us</a>
-        </div>
-    </section>
+    </div>
+</section>
+<section id="contact" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-5xl text-center">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Contact & Updates</h2>
+        <p class="mb-4">Have questions about our Indiana campus or want to stay informed about project updates? Reach out to us and connect with our team.</p>
+        <p class="mb-2"><strong>Phone:</strong> 1‑844‑732‑7621 (Sabey Operations Center)</p>
+        <p class="mb-2"><strong>Email:</strong> <a href="mailto:info@sabey.com" class="text-blue-700 hover:underline">info@sabey.com</a></p>
+        <p class="mb-2"><strong>Address:</strong> Sabey Corp., 12201 Tukwila Int’l Blvd, Fourth Floor, Seattle, WA 98168【518900587212618†L46-L82】</p>
+        <p class="mb-6">For local project inquiries and community liaison, please email <a href="mailto:community@sabey.com" class="text-blue-700 hover:underline">community@sabey.com</a>. To receive updates, follow our social channels or request to join our newsletter.</p>
+        <a href="mailto:info@sabey.com" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800">Email Us</a>
+    </div>
+</section>
+<script>
+// Simple image gallery rotation
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('#gallery img');
+    let current = 0;
+    setInterval(() => {
+        images[current].classList.remove('opacity-100');
+        images[current].classList.add('opacity-0');
+        current = (current + 1) % images.length;
+        images[current].classList.remove('opacity-0');
+        images[current].classList.add('opacity-100');
+    }, 4000);
+});
+</script>
 </body>
 </html>
