@@ -1,449 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Dataland data center campus in Indiana, powered by Sabey Data Centers' 20+ year track record. Creating thousands of jobs with proven community partnership.">
-    <meta name="keywords" content="Indiana data center, Sabey Data Centers, jobs, economic development, community partnership, sustainable technology">
-<title>Dataland Project – Powering Indiana’s Digital Future</title>
-<!-- Tailwind CSS via CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  html { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-  .sticky-nav { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-  /* Partnership Section */
-  .partnership-section {
-    background: #f8f9fa;
-    padding: 4rem 0;
-  }
-  .partner-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin: 2rem 0;
-  }
-  .partner-stats li {
-    margin: 0.5rem 0;
-    padding-left: 1rem;
-  }
-  .partner-testimonials blockquote {
-    background: white;
-    padding: 1.5rem;
-    border-left: 4px solid #007bff;
-    margin: 1rem 0;
-    font-style: italic;
-  }
-  /* Benefits Section */
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-  .benefit-card {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #007bff;
-  }
-  .benefit-card h3 {
-    color: #2c3e50;
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  .benefit-card ul {
-    list-style: disc inside;
-    margin-left: 1rem;
-    margin-bottom: 0.75rem;
-  }
-  .benefit-card a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  /* FAQ Section */
-  .community-faq {
-    background: white;
-    padding: 4rem 0;
-  }
-  .faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-  .faq-item {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #28a745;
-  }
-  .faq-item h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-  }
-  .faq-item a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .partner-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .faq-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+    <meta name="description" content="Sabey Data Centers data center campus at the corner of Kentucky Avenue & Camby Road in Indiana. This 130‑acre site, previously zoned for light industrial use, will generate significantly less commercial and employee traffic than the previously planned industrial warehouse park. Powered by Sabey Data Centers’ 20+ year track record, this sustainable project delivers reliable capacity, community benefits, and economic development.">
+    <meta name="keywords" content="Sabey Data Centers, Indiana data center, Kentucky Avenue, Camby Road, 130-acre site, low water usage, community involvement, energy efficiency, property taxes, data center campus">
+    <title>Sabey Data Centers – Indiana Data Center Campus</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        .sticky-nav { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body class="antialiased text-gray-800 bg-gray-50">
-<!-- Navigation -->
-<header class="sticky top-0 bg-white sticky-nav z-50">
-  <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
-    <a href="#" class="text-xl font-bold text-blue-700">Dataland</a>
-    <ul class="flex space-x-4">
-      <li><a href="#about" class="hover:text-blue-600">About</a></li>
-      <li><a href="#community" class="hover:text-blue-600">Community</a></li>
-      <li><a href="#updates" class="hover:text-blue-600">Updates</a></li>
-      <li><a href="#resources" class="hover:text-blue-600">Resources</a></li>
-      <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-blue-600 to-green-500 text-white py-20 overflow-hidden">
-  <img src="https://source.unsplash.com/1920x1080/?data-center,technology" alt="Data center" class="absolute inset-0 w-full h-full object-cover opacity-40" />
-  <div class="container mx-auto text-center px-4 relative z-10">
-    <h1 class="text-5xl font-bold mb-4">Powering Indiana’s Digital Future</h1>
-    <p class="text-lg mb-6">A multi-billion-dollar data center campus delivering reliable capacity, billions in investment, and long-term community benefits.</p>
-    <a href="#about" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">Learn More About the Project</a>
-  </div>
-</section>
-
-<!-- Partnership Section -->
-<section class="partnership-section">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <h2 class="text-3xl font-bold mb-4 text-blue-700">Partnership with Proven Excellence</h2>
-    <p class="lead text-lg mb-6">Dataland is powered by industry-leading expertise with a 20-year track record of community partnership and operational excellence.</p>
-    <div class="partner-grid">
-      <div class="partner-info">
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Sabey Data Centers: Your Trusted Partner</h3>
-        <ul class="partner-stats list-disc pl-5 space-y-1">
-          <li><strong>20+ years</strong> of data center innovation</li>
-          <li><strong>3.5 million sq ft</strong> successfully operated</li>
-          <li><strong>Zero downtime</strong> track record with major clients</li>
-          <li><strong>Award-winning</strong> operations teams</li>
-        </ul>
-      </div>
-      <div class="partner-testimonials space-y-4">
-        <blockquote class="italic bg-white p-4 rounded-lg border-l-4 border-blue-600">
-          &ldquo;We have had no downtime with Sabey. They absolutely understand infrastructure needs and put patient safety first.&rdquo;
-          <cite class="block mt-2 text-sm text-gray-600">– Providence Health Services</cite>
-        </blockquote>
-        <blockquote class="italic bg-white p-4 rounded-lg border-l-4 border-blue-600">
-          &ldquo;Meeting our design objectives on time and under budget through their partnership approach.&rdquo;
-          <cite class="block mt-2 text-sm text-gray-600">– BlackRock</cite>
-        </blockquote>
-      </div>
-    </div>
-    <div class="cta-link mt-6">
-      <a href="https://sabeydatacenters.com/about" target="_blank" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800">Learn More About Our Partner →</a>
-    </div>
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-16 bg-white">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <img src="https://source.unsplash.com/1200x700/?server-room,technology" alt="Servers" class="w-full h-64 object-cover rounded-lg mb-8" />
-    <h2 class="text-3xl font-bold mb-8 text-blue-700">About the Project</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Project Background</h3>
-        <p>The Dataland project is an ambitious initiative to build a state-of-the-art data center campus in Indiana.</p>
-      </div>
-      <!-- Community FAQ Section -->
-      <div class="community-faq">
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Community Questions Answered</h3>
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3>Will this be noisy?</h3>
-            <p>No. All cooling equipment is enclosed within buildings with acoustic barriers. We meet or exceed local noise ordinances and conduct equipment testing only during daytime hours with advance community notice.</p>
-            <a href="https://sabeydatacenters.com/expertise/security" target="_blank">Learn about our facility design →</a>
-          </div>
-          <div class="faq-item">
-            <h3>How much water will you use?</h3>
-            <p>Our facilities use closed-loop or air-based cooling systems, consuming water comparable to office buildings. Many locations use "free cooling" most of the year, drastically reducing water needs.</p>
-            <a href="https://sabeydatacenters.com/locations/seattle-data-center" target="_blank">See Seattle's efficiency →</a>
-          </div>
-          <div class="faq-item">
-            <h3>What about traffic impact?</h3>
-            <p>Once operational, fewer than 50 employees work daily shifts. Construction traffic is managed with planned routing and timing to minimize disruption to local roads.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Are these jobs really good jobs?</h3>
-            <p>Yes. Data center positions average $75k-$100k annually, plus benefits. These include roles in engineering, security, maintenance, and IT operations - all requiring local talent and training.</p>
-            <a href="https://sabeydatacenters.com/about" target="_blank">View career opportunities →</a>
-          </div>
-          <div class="faq-item">
-            <h3>Will you actually stay committed long-term?</h3>
-            <p>Absolutely. Our partner has 20+ years in the industry with zero facility closures. Data centers are 20+ year investments requiring ongoing community partnership.</p>
-            <a href="https://sabeydatacenters.com/" target="_blank">See our track record →</a>
-          </div>
-          <div class="faq-item">
-            <h3>How will this affect property values?</h3>
-            <p>Data centers typically enhance property values through job creation, tax revenue, and infrastructure improvements, while maintaining community character through thoughtful design.</p>
-          </div>
+    <script>
+    (function() {
+        var password = 'SabeyIndy'; // Updated password as requested
+        var userInput = prompt("Please enter the password to access this site:");
+        if (userInput !== password) {
+            document.body.innerHTML = "<div style='display:flex;align-items:center;justify-content:center;height:100vh;'><h1>Access Denied</h1></div>";
+        }
+    })();
+    </script>
+    <!-- Navigation -->
+    <header class="sticky top-0 bg-white sticky-nav z-50">
+        <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
+            <a href="#" class="text-xl font-bold text-blue-700">Sabey Data Centers</a>
+            <ul class="flex space-x-4">
+                <li><a href="#about" class="hover:text-blue-600">About</a></li>
+                <li><a href="#community" class="hover:text-blue-600">Community</a></li>
+                <li><a href="#locations" class="hover:text-blue-600">Locations</a></li>
+                <li><a href="#resources" class="hover:text-blue-600">Resources</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-600 to-green-500 text-white py-20 overflow-hidden">
+        <img src="https://source.unsplash.com/1920x1080/?data-center,technology" alt="Data center" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+        <div class="container mx-auto text-center px-4 relative z-10">
+            <h1 class="text-5xl font-bold mb-4">Powering Communities Through Data</h1>
+            <p class="text-lg mb-6">Our multi-billion-dollar data center campus delivers reliable capacity, billions in investment, and long-term community benefits. Located at the corner of Kentucky Avenue & Camby Road on a 130-acre site previously zoned for light industrial use, our campus will generate significantly less commercial and employee traffic than the previously planned industrial warehouse park.</p>
+            <a href="#about" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100">Learn More About Sabey</a>
         </div>
-      </div>
-
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Timeline</h3>
-        <p>Construction is planned over multiple phases, with groundbreaking in 2025 and full operations expected by 2028.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">How It Works</h3>
-        <p>Data centers are secure, energy-efficient facilities housing servers and networking equipment that store and process digital information.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Benefits for Indiana</h3>
-        <!-- Update the benefits cards with specific community concerns -->
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <h3>Real Economic Impact</h3>
-            <ul>
-              <li><strong>50+ permanent jobs</strong> averaging $75k-$100k annually</li>
-              <li><strong>1,000 construction jobs</strong> during build phase</li>
-              <li><strong>4.9-7.1 additional jobs</strong> created per direct job</li>
-              <li><strong>Millions in property tax revenue</strong> for schools and services</li>
-            </ul>
-            <a href="https://sabeydatacenters.com/locations/austin-data-center" target="_blank">See Austin Success Story →</a>
-          </div>
-          <div class="benefit-card">
-            <h3>Noise Mitigation Promise</h3>
-            <ul>
-              <li><strong>Enclosed equipment</strong> with acoustic barriers</li>
-              <li><strong>Meets/exceeds</strong> local noise ordinances</li>
-              <li><strong>Daytime testing only</strong> with advance notice</li>
-              <li><strong>Patented systems</strong> for precise airflow control</li>
-            </ul>
-            <a href="https://sabeydatacenters.com/expertise/compliance" target="_blank">View Compliance Standards →</a>
-          </div>
-          <div class="benefit-card">
-            <h3>Environmental Leadership</h3>
-            <ul>
-              <li><strong>Net-zero by 2029</strong> carbon commitment</li>
-              <li><strong>Closed-loop cooling</strong> minimizing water use</li>
-              <li><strong>100% renewable energy</strong> options available</li>
-              <li><strong>Sustainable design</strong> with natural landscaping</li>
-            </ul>
-            <a href="https://sabeydatacenters.com/locations/seattle-data-center" target="_blank">See Seattle's Green Success →</a>
-          </div>
-          <div class="benefit-card">
-            <h3>Infrastructure Enhancement</h3>
-            <ul>
-              <li><strong>Grid investment</strong> improving local resilience</li>
-              <li><strong>Traffic management</strong> with planned routing</li>
-              <li><strong>Stormwater systems</strong> with retention ponds</li>
-              <li><strong>Fiber connectivity</strong> boosting regional access</li>
-            </ul>
-            <a href="https://sabeydatacenters.com/locations" target="_blank">View All Campus Locations →</a>
-          </div>
+    </section>
+    <!-- Partnership Section -->
+    <section class="partnership-section bg-gray-100 py-16">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold mb-4 text-blue-700">Partnering with Proven Excellence</h2>
+            <p class="lead text-lg mb-6">Sabey Data Centers has more than 20 years of industry-leading expertise, a proven community partnership record, and operational excellence.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-green-600 mb-2">Sabey Data Centers: Your Trusted Partner</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>20+ years</strong> of data center innovation</li>
+                        <li><strong>3.5 million sq ft</strong> successfully operated</li>
+                        <li><strong>Zero downtime</strong> track record with major clients</li>
+                        <li><strong>Award-winning</strong> operations teams</li>
+                    </ul>
+                </div>
+                <div>
+                    <blockquote class="italic bg-white p-4 rounded-lg border-l-4 border-blue-600">
+                        “We have had no downtime with Sabey. They absolutely understand infrastructure needs and put patient safety first.”
+                        <cite class="block mt-2 text-sm text-gray-600">– Providence Health Services</cite>
+                    </blockquote>
+                    <blockquote class="italic bg-white p-4 rounded-lg border-l-4 border-blue-600 mt-4">
+                        “Meeting our design objectives on time and under budget through their partnership approach.”
+                        <cite class="block mt-2 text-sm text-gray-600">– BlackRock</cite>
+                    </blockquote>
+                </div>
+            </div>
         </div>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Sustainability Commitments</h3>
-        <p>We’re committed to renewable energy, efficient cooling, and minimal environmental impact.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Partnerships</h3>
-        <p>Dataland collaborates with local utilities, technology providers, and community organizations.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Workforce Opportunities</h3>
-        <p>We’ll offer training, apprenticeships, and career pathways in technology and construction for local talent.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold text-green-600 mb-2">Supplier &amp; Contractor Opportunities</h3>
-        <p>Local businesses can register to supply goods and services during construction and operation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Community Section -->
-<section id="community" class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <h2 class="text-3xl font-bold mb-8 text-blue-700">Community</h2>
-    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="bg-white rounded-lg shadow p-6">
-        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
-        <h3 class="text-xl font-semibold mb-2 text-green-600">Residents</h3>
-        <p>Stay up to date on construction progress, traffic notices, and community meetings.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow p-6">
-        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1"/><path d="M5 7h14l1 11H4L5 7z"/><path d="M9 14a3 3 0 0 0 6 0"/></svg>
-        <h3 class="text-xl font-semibold mb-2 text-green-600">Local Businesses</h3>
-        <p>Discover partnership programs, supplier registration, and service opportunities.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow p-6">
-        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5a2.5 2.5 0 0 1 1.85-2.44l6.15-1.54 6.15 1.54A2.5 2.5 0 0 1 20 21H5a2 2 0 0 1-1-1.5z"/><path d="M8 3h8a2 2 0 0 1 2 2v14"/></svg>
-        <h3 class="text-xl font-semibold mb-2 text-green-600">Education</h3>
-        <p>Explore apprenticeships, skilled-trades training, and STEM outreach for students.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow p-6">
-        <svg class="h-8 w-8 text-sky-700 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18v-2a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v2"/><path d="M7 10V6a5 5 0 0 1 10 0v4"/></svg>
-        <h3 class="text-xl font-semibold mb-2 text-green-600">Contractors</h3>
-        <p>Access bid calendars, safety guidelines, and site logistics information.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Updates Section -->
-<section id="updates" class="py-16 bg-white">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <h2 class="text-3xl font-bold mb-8 text-blue-700">Latest Updates</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div class="bg-gray-50 p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2 text-green-600">News</h3>
-        <ul class="list-disc pl-5 space-y-2">
-          <li><a href="#" class="text-blue-600 hover:underline">Groundbreaking ceremony set for Spring 2025</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Partnership announced with local university for STEM training</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Data center design update released</a></li>
-        </ul>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2 text-green-600">Events</h3>
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Community open house – Nov 15, 2025</li>
-          <li>Supplier registration workshop – Dec 2, 2025</li>
-          <li>STEM career fair – Jan 20, 2026</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Resources Section -->
-<section id="resources" class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <h2 class="text-3xl font-bold mb-8 text-blue-700">Resources</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <div>
-        <h3 class="text-xl font-semibold mb-2 text-green-600">Resource Library</h3>
-        <ul class="list-disc pl-5 space-y-2">
-          <li><a href="#" class="text-blue-600 hover:underline">Project Overview (PDF)</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Sustainability Fact Sheet (PDF)</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Supplier &amp; Contractor Guide (PDF)</a></li>
-          <li><a href="#" class="text-blue-600 hover:underline">Noise &amp; Air Quality FAQ (PDF)</a></li>
-                    <li><a href="air-cooled-chiller.pdf" class="text-blue-600 hover:underline">Air Cooled Chiller (PDF)</a></li>
-        <li><a href="zoning-faq.pdf" class="text-blue-600 hover:underline">Zoning &amp; Land Use FAQ (PDF)</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2 text-green-600">FAQs</h3>
-        <div class="space-y-4">
-          <details class="bg-white p-4 rounded-lg shadow">
-            <summary class="font-semibold cursor-pointer">When will the data center be operational?</summary>
-            <p class="mt-2">The first phase is expected to be online by 2026, with full operations by 2028.</p>
-          </details>
-          <details class="bg-white p-4 rounded-lg shadow">
-            <summary class="font-semibold cursor-pointer">How many jobs will be created?</summary>
-            <p class="mt-2">Thousands of direct and indirect jobs will be created during construction and operations.</p>
-          </details>
-          <details class="bg-white p-4 rounded-lg shadow">
-            <summary class="font-semibold cursor-pointer">What sustainability measures are being used?</summary>
-            <p class="mt-2">The project incorporates renewable energy, efficient cooling, and water-saving technologies.</p>
-                          <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">What zoning classifications apply to the data center?</summary>
-                <p class="mt-2">Data centers are typically classified as light industrial, high-tech industrial or commercial uses. Sabey works with local planning and zoning departments to ensure compatibility and compliance.</p>
-            </details>
-            <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">How are utilities managed for the facility?</summary>
-                <p class="mt-2">Sabey collaborates with local utilities on phased power delivery and integrates renewable energy and efficiency measures where possible.</p>
-            </details>
-            <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">How much water will the facility use?</summary>
-                <p class="mt-2">The facility uses an air-based, closed-loop cooling system. Once filled, ongoing water consumption is minimal—about the same as a typical office building.</p>
-            </details>
-            <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">What traffic impacts are expected?</summary>
-                <p class="mt-2">Day-to-day traffic is low, with fewer than 50 employees on site. During construction, Sabey coordinates traffic management with local authorities.</p>
-            </details>
-            <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">How will noise be managed?</summary>
-                <p class="mt-2">Cooling systems and backup generators are acoustically treated to meet or exceed local noise ordinances, and testing is scheduled during daytime hours.</p>
-            </details>
-            <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">How will stormwater be managed?</summary>
-                <p class="mt-2">The development incorporates engineered stormwater solutions—such as retention ponds, bioswales, and permeable surfaces—to manage runoff and protect local waterways.</p>
-            </details>
-            <details class="bg-white p-4 rounded-lg shadow">
-                <summary class="font-semibold cursor-pointer">How will the facility integrate with the community?</summary>
-                <p class="mt-2">Sabey uses architectural treatments, landscaping, screening, and shielded lighting to minimize visual impact and ensure the facility complements the surrounding environment.</p>
-            </details>
-          </details>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold mb-8 text-blue-700">About Sabey Data Centers</h2>
+            <p class="mb-6">Sabey Data Centers builds and operates mission‑critical facilities across the United States with a commitment to sustainability, resilience, and community partnership. Our Indiana campus continues this legacy with state‑of‑the‑art design, robust power infrastructure, and <strong>low water usage</strong> thanks to closed‑loop, air‑cooled chiller systems that recirculate water and drastically reduce consumption【407554511351221†L16-L27】. We strive to ensure that our developments enrich the communities we join by investing in local workforce training, infrastructure, and environmental stewardship.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-white">
-  <div class="container mx-auto px-4 max-w-3xl">
-    <h2 class="text-3xl font-bold mb-8 text-blue-700">Contact Us</h2>
-    <form class="grid gap-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <input type="text" placeholder="First Name" class="p-4 border rounded-lg" required />
-        <input type="text" placeholder="Last Name" class="p-4 border rounded-lg" required />
-      </div>
-      <input type="email" placeholder="Email Address" class="p-4 border rounded-lg" required />
-      <textarea placeholder="Your Message" class="p-4 border rounded-lg h-32" required></textarea>
-      <button type="submit" class="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-800">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-8">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <div class="flex flex-col md:flex-row justify-between items-center mb-4">
-      <ul class="flex space-x-4 mb-4 md:mb-0">
-        <li><a href="#about" class="hover:underline">About</a></li>
-        <li><a href="#community" class="hover:underline">Community</a></li>
-        <li><a href="#updates" class="hover:underline">Updates</a></li>
-        <li><a href="#resources" class="hover:underline">Resources</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
-      </ul>
-      <div class="flex space-x-4">
-        <a href="#" aria-label="LinkedIn" class="hover:text-blue-400">LinkedIn</a>
-        <a href="#" aria-label="X/Twitter" class="hover:text-blue-400">X</a>
-        <a href="#" aria-label="YouTube" class="hover:text-blue-400">YouTube</a>
-      </div>
-    </div>
-      <!-- Technology Partner Links -->
-      <div class="footer-partner mb-6">
-        <h4 class="text-lg font-semibold mb-2">Our Technology Partner</h4>
-        <ul class="space-y-1">
-          <li><a href="https://sabeydatacenters.com/" target="_blank" class="hover:underline">Sabey Data Centers</a></li>
-          <li><a href="https://sabeydatacenters.com/locations" target="_blank" class="hover:underline">National Portfolio</a></li>
-          <li><a href="https://sabeydatacenters.com/expertise/compliance" target="_blank" class="hover:underline">Compliance &amp; Certifications</a></li>
-          <li><a href="https://sabeydatacenters.com/about" target="_blank" class="hover:underline">20+ Year Track Record</a></li>
-        </ul>
-      </div>
-    <p class="text-center text-sm">&copy; 2025 Dataland Project. All rights reserved.</p>
-  </div>
-</footer>
+    </section>
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold mb-8 text-blue-700">Benefits for Communities</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-2">Real Economic Impact</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>50+ permanent jobs</strong> averaging $75k–$100k annually</li>
+                        <li><strong>1,000 construction jobs</strong> during the build phase</li>
+                        <li><strong>4.9–7.1 additional jobs</strong> created per direct job</li>
+                        <li><strong>Millions in property tax revenue</strong> for schools and services【462808654766062†L93-L97】</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-2">Environmental Leadership</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Net-zero by 2029</strong> carbon commitment</li>
+                        <li><strong>Closed-loop cooling</strong> minimizing <strong>water use</strong>【407554511351221†L16-L27】</li>
+                        <li><strong>100% renewable energy</strong> options available</li>
+                        <li><strong>Sustainable design</strong> with natural landscaping</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-2">Infrastructure & Fair Share</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Grid investment</strong> improving local resilience</li>
+                        <li><strong>Traffic management</strong> with planned routing</li>
+                        <li><strong>Stormwater systems</strong> with retention ponds</li>
+                        <li><strong>Stable electric bills</strong> thanks to energy‑efficient design【345476460734987†L85-L96】</li>
+                        <li><strong>Significant property tax contributions</strong> supporting schools, hospitals, and community services【462808654766062†L93-L97】</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-2">Community Engagement</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Local workforce training</strong> with schools and colleges【910258960152208†L79-L84】</li>
+                        <li><strong>Community service</strong> initiatives such as food drives and charity partnerships【582692096175607†L56-L112】</li>
+                        <li><strong>Diverse internships</strong> creating opportunities for underrepresented groups【910258960152208†L79-L84】</li>
+                        <li><strong>Collaborations with utilities and planning departments</strong> to integrate renewable energy and phased power delivery【910258960152208†L54-L98】</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Locations Section -->
+    <section id="locations" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl font-bold mb-8 text-blue-700">Our Data Center Locations</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Seattle -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?seattle,data-center" alt="Seattle Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Seattle, WA</h3>
+                    <p class="text-sm">One of the West Coast's largest and most energy‑efficient campuses.</p>
+                </div>
+                <!-- Columbia (East Wenatchee) -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?columbia-river,data-center" alt="Columbia Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Columbia, WA</h3>
+                    <p class="text-sm">Hydro‑powered campus in East Wenatchee with abundant renewable energy.</p>
+                </div>
+                <!-- Quincy -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?quincy,data-center" alt="Quincy Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Quincy, WA</h3>
+                    <p class="text-sm">Highly efficient campus in central Washington, known for low power costs.</p>
+                </div>
+                <!-- Umatilla -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?oregon,data-center" alt="Umatilla Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Umatilla, OR</h3>
+                    <p class="text-sm">State‑of‑the‑art facility leveraging Oregon's renewable energy mix.</p>
+                </div>
+                <!-- Manhattan -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?new-york-city,data-center" alt="Manhattan Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Manhattan, NY</h3>
+                    <p class="text-sm">Urban data center offering unrivaled connectivity in the heart of NYC.</p>
+                </div>
+                <!-- Austin -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?austin,data-center" alt="Austin Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Austin, TX</h3>
+                    <p class="text-sm">Cutting‑edge campus in Round Rock with scalable infrastructure.</p>
+                </div>
+                <!-- Ashburn -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="https://source.unsplash.com/600x400/?ashburn,data-center" alt="Ashburn Data Center" class="w-full h-40 object-cover rounded-lg mb-3">
+                    <h3 class="text-xl font-semibold text-green-600 mb-1">Ashburn, VA</h3>
+                    <p class="text-sm">Premier facility in the heart of the world’s largest data center hub.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Community Section -->
+    <section id="community" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold mb-8 text-blue-700">Community Involvement</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Workforce Development</h3>
+                    <p>We partner with local schools, colleges, and workforce boards to create training programs, apprenticeships, and internships that prepare students and underrepresented groups for mission‑critical roles【910258960152208†L79-L84】.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Service & Giving Back</h3>
+                    <p>SabeyServes teams organize food drives, fundraisers, and hands‑on volunteer projects like community garden restorations to support the people who welcome us【582692096175607†L56-L112】.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Sustainable Partnerships</h3>
+                    <p>We collaborate with utilities and planners to integrate renewable power, phased delivery, and water‑conserving design, ensuring our investments enhance local infrastructure【910258960152208†L54-L98】.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold mb-8 text-blue-700">Resource Library</h2>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><a href="air-cooled-chiller.pdf" class="text-blue-700 hover:underline">Air-Cooled Chiller (PDF)</a></li>
+                <li><a href="zoning-faq.pdf" class="text-blue-700 hover:underline">Zoning & Land Use FAQ (PDF)</a></li>
+            </ul>
+            <div class="mt-8">
+                <h3 class="text-2xl font-semibold text-green-600 mb-4">Frequently Asked Questions</h3>
+                <div class="space-y-4">
+                    <details class="bg-gray-50 p-4 rounded-lg shadow">
+                        <summary class="font-semibold">Where is the project site located?</summary>
+                        <p>The campus is located at the corner of Kentucky Avenue & Camby Road on a 130-acre site that was already zoned for light industrial use. Our data center will generate significantly less commercial and employee traffic than the previously planned industrial warehouse park.</p>
+                    </details>
+                    <details class="bg-gray-50 p-4 rounded-lg shadow">
+                        <summary class="font-semibold">Will this be noisy?</summary>
+                        <p>No. All cooling equipment is enclosed within buildings with acoustic barriers. We meet or exceed local noise ordinances and conduct equipment testing only during daytime hours with advance community notice.</p>
+                    </details>
+                    <details class="bg-gray-50 p-4 rounded-lg shadow">
+                        <summary class="font-semibold">How much water will you use?</summary>
+                        <p>Our facilities use closed-loop or air-based cooling systems, consuming water comparable to office buildings. Many locations use “free cooling” most of the year, drastically reducing water needs【407554511351221†L16-L27】.</p>
+                    </details>
+                    <details class="bg-gray-50 p-4 rounded-lg shadow">
+                        <summary class="font-semibold">What about traffic impact?</summary>
+                        <p>Once operational, fewer than 50 employees work daily shifts. Construction traffic is managed with planned routing and timing to minimize disruption to local roads.</p>
+                    </details>
+                    <details class="bg-gray-50 p-4 rounded-lg shadow">
+                        <summary class="font-semibold">Will electric bills go up?</summary>
+                        <p>No. Sabey’s energy-efficient design and use of renewable energy ensure stable energy usage that does not increase local electric rates【345476460734987†L85-L96】.</p>
+                    </details>
+                    <details class="bg-gray-50 p-4 rounded-lg shadow">
+                        <summary class="font-semibold">Does Sabey pay its fair share?</summary>
+                        <p>Yes. Data centers make significant contributions to local budgets through property taxes. For example, data centers in Quincy, WA account for about 75% of the city’s property tax revenue, funding schools and public services【462808654766062†L93-L97】.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-5xl text-center">
+            <h2 class="text-3xl font-bold mb-4 text-blue-700">Get in Touch</h2>
+            <p class="mb-6">Have questions about our Indiana campus or want to learn more about Sabey Data Centers? We’d love to hear from you.</p>
+            <a href="mailto:info@sabey.com" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800">Contact Us</a>
+        </div>
+    </section>
 </body>
 </html>
