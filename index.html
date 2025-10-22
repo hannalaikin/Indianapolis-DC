@@ -2,170 +2,356 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sabey Data Centers – Indianapolis Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabey Data Centers – Decatur Technology Park (Community Information)</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --container:1240px; --radius:20px; }
-    body{font-family:'Inter',sans-serif;color:#111;background:#fff;scroll-behavior:smooth;}
+    html,body{background:#fff;color:#111;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth;}
     .container{max-width:var(--container);margin:0 auto;padding:0 1.25rem;}
-    .hero{position:relative;}
-    .hero img{width:100%;height:600px;object-fit:cover;}
-    .hero__content{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;}
-    .content-inner{width:100%;padding-bottom:5rem;display:flex;justify-content:center;}
-    .hero-glass{background:rgba(255,255,255,0.75);backdrop-filter:blur(10px);border-radius:var(--radius);padding:2rem 2.5rem;color:#111;max-width:700px;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
-    .btn{padding:.85rem 1.2rem;border-radius:9999px;font-weight:700;transition:all .2s ease;}
-    .btn-black{background:#0a0a0a;color:#fff;}
-    .btn-black:hover{background:#111;}
-    .btn-ghost{border:1px solid #e5e7eb;background:#fff;color:#111;}
-    .pro-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.05);}
-    .lead{color:#4b5563;line-height:1.7;}
-    .gradient-section{position:relative;background:linear-gradient(to bottom,rgba(255,255,255,0)0%,#f9fafb 100%);padding-top:4rem;padding-bottom:4rem;}
-    .gradient-section::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.4),rgba(249,250,251,1));z-index:0;}
-    .gradient-section>*{position:relative;z-index:1;}
-    .video-wrapper{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.1);aspect-ratio:16/9;}
-    .video-wrapper iframe{width:100%;height:100%;border:none;}
-    .video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);color:#fff;font-weight:700;letter-spacing:.05em;font-size:1.2rem;text-transform:uppercase;opacity:0;transition:opacity .4s ease;}
-    .video-wrapper:hover .video-overlay{opacity:1;}
-    @media(max-width:768px){.video-overlay{opacity:1;background:rgba(0,0,0,0.35);font-size:1rem;}}
-    .fade-up{opacity:0;transform:translateY(12px);transition:all .6s ease;}
-    .fade-up.show{opacity:1;transform:translateY(0);}
-    footer{background:#111;color:#fff;padding:2rem 0;text-align:center;margin-top:4rem;}
-    /* Accordion FAQ */
-    .faq-item{border-bottom:1px solid #e5e7eb;padding:1rem 0;}
-    .faq-q{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-    .faq-item.open .faq-a{max-height:500px;}
+    .headline{letter-spacing:-.015em}
+    .lead{color:#4b5563;line-height:1.7}
+    .btn{display:inline-block;padding:.85rem 1.2rem;border-radius:9999px;font-weight:700;transition:all .2s ease}
+    .btn-black{background:#0a0a0a;color:#fff}
+    .btn-black:hover{opacity:.9}
+    .btn-ghost{border:1px solid #e5e7eb;background:#fff;color:#111}
+    .pro-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.05)}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);transition:box-shadow .3s ease}
+    header.scrolled{box-shadow:0 2px 4px rgba(0,0,0,.06)}
+    /* HERO */
+    .hero{position:relative}
+    .hero img{width:100%;height:600px;object-fit:cover;filter:brightness(.9)}
+    .hero__content{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
+    .content-inner{width:100%;padding-bottom:4.5rem;display:flex;justify-content:center}
+    .hero-glass{background:rgba(255,255,255,.78);backdrop-filter:blur(10px);border-radius:var(--radius);padding:2rem 2.2rem;max-width:760px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+    /* Section gradients */
+    .gradient-section{position:relative;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%, #f9fafb 100%);padding:4rem 0}
+    .gradient-section::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.4),rgb(249,250,251));z-index:0}
+    .gradient-section>*{position:relative;z-index:1}
+    /* Video */
+    .video-wrapper{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.1);aspect-ratio:16/9}
+    .video-wrapper iframe{width:100%;height:100%;border:none}
+    .video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);color:#fff;font-weight:700;letter-spacing:.05em;font-size:1.1rem;text-transform:uppercase;opacity:0;transition:opacity .4s ease}
+    .video-wrapper:hover .video-overlay{opacity:1}
+    @media (max-width:768px){.video-overlay{opacity:1;background:rgba(0,0,0,.35)}}
+    /* Reveal on scroll */
+    .fade-up{opacity:0;transform:translateY(12px);transition:all .6s ease}
+    .fade-up.show{opacity:1;transform:translateY(0)}
+    /* Myth vs Fact cards */
+    .myth-card{border:1px solid #e5e7eb;border-radius:16px;padding:18px;background:#fff}
+    .myth{font-weight:700;color:#991b1b;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em}
+    .fact{font-weight:700;color:#065f46;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em}
+    /* Doc tiles */
+    .doc-tile{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;border:1px solid rgba(0,0,0,.08);background:#fff}
+    /* FAQ accordion */
+    .faq-item{border-bottom:1px solid #e5e7eb;padding:1rem 0}
+    .faq-q{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-item.open .faq-a{max-height:600px}
+    /* Back to top */
+    #backToTop{position:fixed;bottom:28px;right:28px;background:#000;color:#fff;border-radius:9999px;padding:.7rem .9rem;font-weight:700;opacity:0;pointer-events:none;transform:translateY(8px);transition:all .3s ease;z-index:40}
+    #backToTop.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+    footer{background:#111;color:#fff;margin-top:3rem}
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- Header -->
+  <header>
+    <div class="container flex items-center justify-between py-4">
+      <div class="text-lg font-semibold">Sabey Data Centers – Decatur Technology Park</div>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#concerns" class="hover:underline">What You’re Wondering</a>
+        <a href="#inside" class="hover:underline">What’s Inside</a>
+        <a href="#about-sabey" class="hover:underline">Who is Sabey</a>
+        <a href="#why" class="hover:underline">Why Indiana</a>
+        <a href="#partner" class="hover:underline">Partnership</a>
+        <a href="#docs" class="hover:underline">See for Yourself</a>
+        <a href="#faq" class="hover:underline">FAQ</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (Community-first) -->
   <section class="hero">
-    <img src="assets/community-2.jpg" alt="Community near the project">
+    <img src="community-hero.jpg" alt="Local community near the project">
     <div class="hero__content">
       <div class="content-inner">
         <div class="hero-glass fade-up">
-          <div class="text-gray-700 text-sm uppercase tracking-wider">Community Information</div>
-          <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Building the future of Decatur Township — responsibly</h2>
-          <p class="lead mt-3">Zero impact on your utility bill. Virtually no water use. Significant local investment for schools, roads, and public safety.</p>
+          <div class="text-gray-700 text-xs uppercase tracking-wider">Community Information</div>
+          <h1 class="text-4xl md:text-5xl font-extrabold headline mt-1">Reliable technology. Responsible growth. Real benefits for Decatur Township.</h1>
+          <p class="lead mt-3">Your power bill won’t change. Our cooling uses virtually no water. Daily traffic and noise are far below typical industrial uses — by design.</p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#about-sabey" class="btn btn-black">Our Story</a>
-            <a href="#benefits" class="btn btn-ghost">See Community Benefits</a>
+            <a href="#concerns" class="btn btn-black">Top Questions, Answered</a>
+            <a href="#docs" class="btn btn-ghost">See the Documents</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHO IS SABEY -->
+  <!-- What you might be wondering (Myth vs Fact) -->
+  <section id="concerns" class="container py-12">
+    <h2 class="text-3xl font-bold headline">What you might be wondering</h2>
+    <p class="lead mt-2">It’s fair to have questions. Here are the big three — answered plainly, with links to full documents.</p>
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+      <div class="myth-card fade-up">
+        <div class="myth">Myth</div>
+        <p class="mt-1 font-semibold">“My power bill will go up because of this.”</p>
+        <div class="fact mt-4">Fact</div>
+        <p class="mt-1 lead">No. Sabey pays 100% of customer-specific and dedicated facilities and applicable riders. New load adds utility revenue that helps spread fixed costs.</p>
+        <a href="will-to-serve.pdf" target="_blank" class="inline-block mt-3 text-sm underline">Read the AES Will-to-Serve Letter</a>
+      </div>
+      <div class="myth-card fade-up">
+        <div class="myth">Myth</div>
+        <p class="mt-1 font-semibold">“Data centers use huge amounts of local water.”</p>
+        <div class="fact mt-4">Fact</div>
+        <p class="mt-1 lead">Our Indianapolis design uses closed-loop cooling — <strong>virtually no water</strong> during normal operation. Technology choices are tailored for efficiency and local conditions.</p>
+        <a href="air-cooled-chiller.pdf" target="_blank" class="inline-block mt-3 text-sm underline">Cooling Technology Overview</a>
+      </div>
+      <div class="myth-card fade-up">
+        <div class="myth">Myth</div>
+        <p class="mt-1 font-semibold">“Noise and traffic will disrupt the neighborhood.”</p>
+        <div class="fact mt-4">Fact</div>
+        <p class="mt-1 lead">Operations are quiet and low-traffic. Independent analysis shows ~<strong>80% fewer</strong> peak-hour trips than a previously approved industrial plan; generators run briefly for tests and rare outages.</p>
+        <a href="traffic-study.pdf" target="_blank" class="inline-block mt-3 text-sm underline">See the Traffic Study</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What’s inside a data center (plain-English explainer) -->
+  <section id="inside" class="bg-gray-50">
+    <div class="container py-14">
+      <h2 class="text-3xl font-bold headline fade-up">What’s inside a data center?</h2>
+      <div class="grid lg:grid-cols-2 gap-8 mt-6 items-center">
+        <div class="pro-card overflow-hidden fade-up">
+          <img src="aerial-1.jpg" alt="Aerial view" class="w-full h-72 object-cover">
+        </div>
+        <div class="fade-up">
+          <p class="lead">Think of it as reliable, efficient infrastructure that keeps hospitals, schools, local businesses, and public agencies online. There are no retail storefronts, no stadium-level crowds — just secure rooms with computers, advanced cooling, and clean power systems.</p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-gray-700">
+            <li>• Built for efficiency and uptime, not crowds</li>
+            <li>• Secure, sealed, temperature-controlled rooms</li>
+            <li>• Quiet operations with limited daily staff</li>
+            <li>• Designed to minimize neighborhood impacts</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8 mt-8 items-center">
+        <div class="fade-up order-2 lg:order-1">
+          <p class="lead">Our Indianapolis plan emphasizes closed-loop cooling (virtually no water in normal operation), shielded lighting, landscaped buffers, and engineered stormwater systems to protect local waterways.</p>
+        </div>
+        <div class="pro-card overflow-hidden fade-up order-1 lg:order-2">
+          <img src="aerial-2.jpg" alt="Aerial view 2" class="w-full h-72 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who is Sabey (video + history) -->
   <section id="about-sabey" class="gradient-section">
     <div class="container grid lg:grid-cols-2 gap-8 items-center">
       <div class="video-wrapper fade-up">
         <iframe
-          src="https://player.vimeo.com/video/655304527?autoplay=1&muted=1&loop=1&background=1&playsinline=1"
+          src="https://www.youtube.com/embed/tnvA3Ajc3qc?autoplay=1&mute=1&loop=1&playlist=tnvA3Ajc3qc&controls=0&modestbranding=1&playsinline=1"
           title="Sabey Data Centers Brand Film"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen></iframe>
         <div class="video-overlay">Our&nbsp;Story</div>
       </div>
       <div class="fade-up">
-        <h3 class="text-3xl font-bold">Who is Sabey Data Centers?</h3>
-        <p class="lead mt-3">Sabey designs, builds, and operates highly efficient data centers across the U.S. The company has <strong>six campuses</strong> and a <strong>3.5M+ sq ft</strong> track record, focused on reliability, sustainability, and long-term community partnerships.</p>
+        <h2 class="text-3xl font-bold headline">Who is Sabey Data Centers?</h2>
+        <p class="lead mt-3">For over 25 years, Sabey has designed, built, and operated highly efficient data centers across the U.S. With six active campuses and 3.5M+ square feet delivered, Sabey is known for reliability, environmental stewardship, and long-term community partnerships.</p>
+        <p class="lead mt-3">Every project starts the same way — transparency, collaboration with local leaders, and a design that keeps neighborhood impacts low while growing opportunity.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://sabeydatacenters.com/" target="_blank" class="btn btn-black">Visit Sabey Data Centers</a>
-          <a href="https://sabeydatacenters.com/about" target="_blank" class="btn btn-ghost">Learn More</a>
+          <a href="https://sabeydatacenters.com/" target="_blank" class="btn btn-black">Visit Sabey</a>
+          <a href="https://sabeydatacenters.com/about" target="_blank" class="btn btn-ghost">History & Values</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS -->
-  <section id="benefits" class="container py-16">
-    <h3 class="text-3xl font-bold">Benefits for Decatur Township</h3>
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <div class="pro-card p-6 fade-up">
-        <h4 class="text-lg font-semibold">Major Investment</h4>
-        <p class="lead mt-2">$4B+ in capital investment will strengthen the local tax base and help fund schools, roads, and essential services.</p>
+  <!-- Why here, why now -->
+  <section id="why" class="container py-14">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold headline">Why Indiana — and why Decatur Township?</h2>
+        <p class="lead mt-3">Indiana’s stable business climate, strong utility partnerships, and skilled workforce make it a natural home for technology infrastructure. Decatur Township offers logistics access, community leadership, and room to create a thoughtfully buffered campus that fits its surroundings.</p>
+        <p class="lead mt-3">This project helps anchor the local tax base for decades while creating high-skill jobs and supplier opportunities — without shifting utility costs to neighbors.</p>
       </div>
-      <div class="pro-card p-6 fade-up">
-        <h4 class="text-lg font-semibold">Better Roads</h4>
-        <p class="lead mt-2">Sabey is contributing to paving and infrastructure improvements throughout Decatur Township.</p>
-      </div>
-      <div class="pro-card p-6 fade-up">
-        <h4 class="text-lg font-semibold">Jobs & Training</h4>
-        <p class="lead mt-2">Hundreds of construction jobs and long-term data center roles — with partnerships for local school training programs.</p>
+      <div class="pro-card overflow-hidden fade-up">
+        <img src="community-1.jpg" alt="Local neighborhood" class="w-full h-72 object-cover">
       </div>
     </div>
   </section>
 
-  <!-- DOCUMENTS -->
-  <section id="documents" class="container py-16">
-    <h3 class="text-3xl font-bold">Project Documents</h3>
-    <p class="lead mt-3">Explore detailed planning materials, traffic studies, and community FAQs.</p>
+  <!-- A partner, not just a project -->
+  <section id="partner" class="bg-gray-50">
+    <div class="container py-14">
+      <h2 class="text-3xl font-bold headline fade-up">A partner, not just a project</h2>
+      <div class="grid md:grid-cols-4 gap-6 mt-6">
+        <div class="pro-card p-6 fade-up">
+          <h3 class="font-semibold">Listen first</h3>
+          <p class="lead mt-2">Community meetings and open communication so neighbors shape how we build and operate.</p>
+        </div>
+        <div class="pro-card p-6 fade-up">
+          <h3 class="font-semibold">Invest locally</h3>
+          <p class="lead mt-2">Funding for road improvements in Decatur Township; hiring local trades and vendors wherever possible.</p>
+        </div>
+        <div class="pro-card p-6 fade-up">
+          <h3 class="font-semibold">Grow talent</h3>
+          <p class="lead mt-2">Partnerships with schools and colleges for pathways into good, high-skill jobs — many not requiring four-year degrees.</p>
+        </div>
+        <div class="pro-card p-6 fade-up">
+          <h3 class="font-semibold">Stay accountable</h3>
+          <p class="lead mt-2">Transparent documents, ongoing updates, and a community liaison who responds to every message.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency Hub (See for yourself) -->
+  <section id="docs" class="container py-16">
+    <h2 class="text-3xl font-bold headline">See for yourself</h2>
+    <p class="lead mt-2">We don’t ask you to take our word for it — the key documents are here for you to review.</p>
+
     <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <a href="assets/site-map-updated.pdf" target="_blank" class="pro-card overflow-hidden block hover:shadow-lg transition">
-        <img src="assets/center-1.jpg" alt="Site plan thumbnail" class="w-full h-56 object-cover">
+      <a href="site-map-updated.pdf" target="_blank" class="pro-card overflow-hidden block hover:shadow-lg transition">
+        <img src="center-1.jpg" alt="Site plan thumbnail" class="w-full h-56 object-cover">
         <div class="p-5">
-          <h4 class="text-xl font-semibold">Updated Site Plan (PDF)</h4>
-          <p class="lead mt-2">View how the data center fits within the site with buffers, greenspace, and road access.</p>
+          <h3 class="text-xl font-semibold">Updated Site Plan (PDF)</h3>
+          <p class="lead mt-2">Buffers, greenspace, lighting, and access — see how the campus fits the site.</p>
         </div>
       </a>
-      <a href="assets/will-to-serve.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
-        <h4 class="text-xl font-semibold">AES Will-to-Serve Letter</h4>
-        <p class="lead mt-2">Confirmation of reliable utility power and phased delivery.</p>
+
+      <a href="will-to-serve.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold">AES Will-to-Serve Letter</h3>
+        <p class="lead mt-2">Phased power delivery and cost responsibility — proof that your bill won’t change because of this project.</p>
       </a>
-      <a href="assets/traffic-study.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
-        <h4 class="text-xl font-semibold">Traffic Study (PDF)</h4>
-        <p class="lead mt-2">Confirms 80% fewer peak trips than the previously approved plan.</p>
+
+      <a href="traffic-study.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold">Traffic Study (PDF)</h3>
+        <p class="lead mt-2">Independent analysis shows ~80% fewer peak-hour trips compared to a prior approved industrial plan.</p>
       </a>
-      <a href="assets/faq.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
-        <h4 class="text-xl font-semibold">Full FAQ (PDF)</h4>
-        <p class="lead mt-2">Answers to zoning, water, noise, and power questions.</p>
+
+      <a href="faq.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold">Full Zoning & Development FAQ (PDF)</h3>
+        <p class="lead mt-2">Deeper answers on zoning, utilities, environment, and visual design.</p>
+      </a>
+
+      <a href="zoning-faq.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold">Zoning FAQ (PDF)</h3>
+        <p class="lead mt-2">Land use classifications and planning approach in plain language.</p>
+      </a>
+
+      <a href="air-cooled-chiller.pdf" target="_blank" class="pro-card p-5 block hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold">Air-Cooled Chiller (PDF)</h3>
+        <p class="lead mt-2">Cooling reference for how closed-loop systems minimize water use.</p>
       </a>
     </div>
   </section>
 
-  <!-- INLINE FAQ -->
-  <section id="faq" class="container py-16">
-    <h3 class="text-3xl font-bold">Frequently Asked Questions</h3>
-    <div class="mt-6">
-      <div class="faq-item">
-        <div class="faq-q">Will my utility bill increase?<span>+</span></div>
-        <div class="faq-a lead mt-2">No. Sabey covers all incremental costs for dedicated infrastructure. Community power rates remain unchanged.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How much water will the facility use?<span>+</span></div>
-        <div class="faq-a lead mt-2">The Indianapolis project uses a closed-loop cooling system that requires virtually no water during normal operation.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What about noise or traffic?</div>
-        <div class="faq-a lead mt-2">Noise and traffic levels are significantly below typical industrial uses. Independent studies show 80% fewer trips than previously approved plans.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How does this benefit our community?</div>
-        <div class="faq-a lead mt-2">The project brings major investment, better roads, and job opportunities — strengthening Decatur Township for the long term.</div>
+  <!-- Inline FAQ -->
+  <section id="faq" class="bg-gray-50">
+    <div class="container py-16">
+      <h2 class="text-3xl font-bold headline">Frequently asked questions</h2>
+      <p class="lead mt-2">These questions came directly from neighbors and local partners. If you don’t see yours, email us — we’ll add it.</p>
+
+      <div class="mt-6">
+        <div class="faq-item">
+          <div class="faq-q">Will my utility bill increase?<span class="ml-2">+</span></div>
+          <div class="faq-a lead mt-2">
+            No. Sabey covers 100% of customer-specific and dedicated facilities and pays all applicable riders.
+            New loads add utility revenue that helps spread fixed costs. See the <a class="underline" href="will-to-serve.pdf" target="_blank">AES Will-to-Serve Letter</a>.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How much water will the facility use?<span class="ml-2">+</span></div>
+          <div class="faq-a lead mt-2">
+            The Indianapolis design is closed-loop, meaning virtually no water during normal operation. Cooling choices are selected for local efficiency and sustainability.
+            Reference: <a class="underline" href="air-cooled-chiller.pdf" target="_blank">Air-Cooled Chiller</a>.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What about noise and generators?<span class="ml-2">+</span></div>
+          <div class="faq-a lead mt-2">
+            Equipment is enclosed and acoustically treated; exterior lighting is shielded. Generators run briefly for testing and during rare utility outages — typically ~20 hours per year total.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Will traffic increase in our neighborhood?<span class="ml-2">+</span></div>
+          <div class="faq-a lead mt-2">
+            Daily operations are low-traffic with designated truck routes. Independent study shows ~80% fewer peak-hour trips than a previously approved industrial plan. See the
+            <a class="underline" href="traffic-study.pdf" target="_blank">Traffic Study</a>.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How does this help Decatur Township?<span class="ml-2">+</span></div>
+          <div class="faq-a lead mt-2">
+            Significant long-term capital investment (~$4B+) strengthens the tax base that funds schools, roads, and public safety. We’re also committing funds to road improvements and partnering with schools on workforce programs.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Who can I talk to if I have concerns?<span class="ml-2">+</span></div>
+          <div class="faq-a lead mt-2">
+            We welcome every question. Email our community liaison at
+            <a class="underline" href="mailto:hannalaikin@gmail.com">hannalaikin@gmail.com</a>. We aim to reply within two business days.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Contact -->
+  <section id="contact" class="container py-16">
+    <div class="pro-card p-6 md:p-8 fade-up">
+      <h2 class="text-3xl font-bold headline">Talk with us</h2>
+      <p class="lead mt-2">Questions, ideas, or concerns — we want to hear them. We live with the results of this project together, and we’re committed to doing this right.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="mailto:hannalaikin@gmail.com" class="btn btn-black">Email the Community Liaison</a>
+        <a href="#docs" class="btn btn-ghost">Review the Documents</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> Sabey Data Centers | Indianapolis Project | All rights reserved.</p>
+    <div class="container py-8 text-sm">
+      <div>© <span id="year"></span> Sabey Data Centers — Decatur Technology Park · Last updated: <span id="updated"></span></div>
+      <div class="mt-2">Community contact: <a class="underline" href="mailto:hannalaikin@gmail.com">hannalaikin@gmail.com</a></div>
+    </div>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
-    },{threshold:0.12});
-    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+  <!-- Back to Top -->
+  <button id="backToTop" title="Back to Top">↑</button>
 
-    document.querySelectorAll('.faq-q').forEach(q=>{
-      q.addEventListener('click',()=>{
-        const item=q.parentElement;
-        item.classList.toggle('open');
-      });
+  <!-- Scripts -->
+  <script>
+    // Header shadow + back-to-top visibility
+    const header = document.querySelector('header');
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+      if (window.scrollY > 400) backToTopBtn.classList.add('show'); else backToTopBtn.classList.remove('show');
     });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }), {threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q=>{
+      q.addEventListener('click',()=>{ q.parentElement.classList.toggle('open'); });
+    });
+
+    // Footer dates
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = 'October 2025';
   </script>
 </body>
 </html>
