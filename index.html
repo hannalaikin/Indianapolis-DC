@@ -3,363 +3,368 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sabey Indianapolis Data Center</title>
-  <meta name="description" content="Community-first information for the Sabey Indianapolis Data Center: water, power, traffic, rates, documents, and FAQs." />
+  <title>Indianapolis Technology Campus — Community Information</title>
+  <meta name="description" content="A neighbor-first overview of the proposed Sabey Data Centers project in Decatur Township: your bill, water, traffic, community benefits, and how to stay involved." />
 
   <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    html, body { background:#fff; font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
-    .card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; box-shadow:0 1px 2px rgba(0,0,0,.03); }
-    .btn { display:inline-block; padding:.8rem 1.2rem; border-radius:9999px; font-weight:600; }
-    .btn-black { background:#0a0a0a; color:#fff; }
-    .btn-ghost { border:1px solid #e5e7eb; color:#0a0a0a; }
+    /* Base */
+    html, body { background:#fff; color:#111; font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
     .muted { color:#6b7280; }
-    .mono { font-variant-numeric: tabular-nums; }
-    summary::-webkit-details-marker { display:none; }
-    .grad-top { background:linear-gradient(180deg,rgba(17,17,17,0.06),rgba(17,17,17,0) 60%); }
-    .grad-stripe { background:linear-gradient(90deg,rgba(17,17,17,0.08),rgba(17,17,17,0) 40%,rgba(17,17,17,0.08)); }
     .headline { letter-spacing:-0.02em; }
+
+    /* Containers & rhythm */
+    :root { --container:1240px; --radius:18px; }
+    .container { max-width:var(--container); margin-inline:auto; padding-inline:1.25rem; }
+    h2, h3 { letter-spacing:-.015em }
+    .lead { font-size:1.1rem; line-height:1.7; color:#4b5563 }
+
+    /* Cards */
+    .card { background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:16px; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+    .pro-card{
+      background:#fff; border:1px solid rgba(0,0,0,.08); border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,.05), 0 2px 6px rgba(0,0,0,.04); overflow:hidden;
+    }
+    .pro-card--subtle{
+      border:1px solid rgba(0,0,0,.06); border-radius: var(--radius);
+      box-shadow: 0 6px 16px rgba(0,0,0,.04); background:#fff;
+    }
+
+    /* Buttons */
+    .btn { display:inline-block; padding:.85rem 1.2rem; border-radius:9999px; font-weight:700; letter-spacing:.01em; }
+    .btn-black{
+      background:#0a0a0a; color:#fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,.18);
+      transition: transform .18s ease, box-shadow .18s ease, opacity .2s ease;
+    }
+    .btn-black:hover{ transform: translateY(-1px); box-shadow:0 12px 24px rgba(0,0,0,.22) }
+    .btn-ghost{ border:1px solid #e5e7eb; background:#fff; color:#111 }
+    .btn-outline{ border:1px solid #111; color:#111; background:#fff }
+
+    /* Sticky header */
+    header { position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background:rgba(255,255,255,.9); transition: box-shadow .3s ease; }
+    header.scrolled { box-shadow:0 2px 4px rgba(0,0,0,.06); }
+    nav a{ position:relative; padding-bottom:2px }
+    nav a::after{ content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:#111; transition:width .2s ease; }
+    nav a:hover::after{ width:100% }
+
+    /* Section dividers */
+    .divider { height:12px; border-radius:9999px; background:linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,0) 40%, rgba(0,0,0,.08)); }
+
+    /* Hero */
+    .hero { position:relative; isolation:isolate; }
+    .hero::after{
+      content:""; position:absolute; inset:0; z-index:0;
+      background:
+        radial-gradient(1200px 600px at 20% 110%, rgba(0,0,0,.35), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.1) 60%, transparent);
+      pointer-events:none;
+    }
+    .hero__content{ position:absolute; inset:0; display:flex; align-items:end }
+    .content-inner{ padding:0 1.25rem 4.5rem; margin-inline:auto; max-width:var(--container); color:#fff }
+    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; opacity:.9 }
+
+    /* Facts row */
+    .fact { display:flex; gap:.75rem; align-items:center }
+    .fact svg { width:22px; height:22px }
+
+    /* FAQ */
+    summary::-webkit-details-marker { display:none; }
+    details[open] summary .arrow { transform:rotate(90deg); }
+    .arrow { transition: transform .2s ease; }
+
+    /* Back to Top */
+    #backToTop {
+      position:fixed; bottom:32px; right:32px; background:#000; color:#fff; border-radius:9999px;
+      padding:.75rem .9rem; font-size:.9rem; font-weight:600; box-shadow:0 4px 12px rgba(0,0,0,.15);
+      cursor:pointer; opacity:0; transform:translateY(10px); pointer-events:none; transition:all .3s ease; z-index:50;
+    }
+    #backToTop.show { opacity:1; transform:translateY(0); pointer-events:auto; }
+
+    /* Reveal on scroll */
+    .fade-up{ opacity:0; transform: translateY(12px); transition: all .6s ease; }
+    .fade-up.show{ opacity:1; transform: translateY(0) }
+
+    /* Doc tiles */
+    .doc-tile{
+      display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:14px;
+      border:1px solid rgba(0,0,0,.08); background:#fff;
+    }
+    .doc-tile svg{ width:24px; height:24px }
+
+    /* Responsive tweaks */
+    @media (max-width:768px){ h1{font-size:1.125rem} h2{font-size:1.6rem} .btn{font-size:.95rem} }
   </style>
 </head>
 
-<body class="text-gray-900">
-  <!-- Transparency Note -->
-  <div class="w-full border-b border-neutral-200">
-    <div class="max-w-6xl mx-auto px-4 py-2 text-sm text-neutral-700">
-      We know new development brings questions. We're here to answer your community concerns and bring updates about the project straight to you.
-    </div>
-  </div>
-
+<body>
   <!-- Header -->
-  <header class="max-w-6xl mx-auto px-4 py-6">
-    <div class="flex items-center justify-between">
-      <h1 class="text-xl font-semibold tracking-tight">Sabey Indianapolis Data Center</h1>
+  <header>
+    <div class="container flex items-center justify-between py-4">
+      <h1 class="text-xl font-semibold tracking-tight">Indianapolis Technology Campus</h1>
       <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#community" class="hover:underline">Community</a>
-        <a href="#top" class="hover:underline">Top Questions</a>
-        <a href="#rates" class="hover:underline">Your Bill</a>
-        <a href="#utility-docs" class="hover:underline">Documents</a>
-        <a href="#traffic-study" class="hover:underline">Traffic Study</a>
-        <a href="#gallery" class="hover:underline">Photos</a>
-        <a href="#faq" class="hover:underline">FAQ</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+        <a href="#siteplan">Site Plan</a>
+        <a href="#neighbor">For Neighbors</a>
+        <a href="#benefits">Community Benefits</a>
+        <a href="#env">Environment</a>
+        <a href="#traffic">Traffic</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="community" class="max-w-6xl mx-auto px-4 py-12 lg:py-16 relative">
-    <div class="absolute inset-x-0 -top-8 h-24 grad-top pointer-events-none"></div>
-    <div class="grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <h2 class="text-4xl font-extrabold headline">Building a reliable digital future with our community</h2>
-        <p class="mt-4 text-lg muted">
-          Sabey designs, builds, and operates with transparency, environmental care, and long-term partnership.
-          Your questions matter. This page puts answers first.
-        </p>
+  <!-- 1) HERO VISUAL -->
+  <section class="hero">
+    <img src="assets/rendering-hero.jpg" alt="Concept rendering with landscaped buffers" class="w-full h-[560px] object-cover">
+    <div class="hero__content">
+      <div class="content-inner">
+        <div class="eyebrow">Community information</div>
+        <h2 class="text-4xl md:text-5xl font-extrabold headline mt-1">Building the future of Decatur Township — responsibly</h2>
+        <p class="lead mt-3 max-w-2xl">Zero impact on your utility bill. Virtually no water use. Significant local investment for schools, roads, and public safety.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="s/faq.pdf" class="btn btn-black">Download Full FAQ (PDF)</a>
-          <a href="#top" class="btn btn-ghost">Quick Answers</a>
+          <a href="#siteplan" class="btn btn-black">View Site Plan</a>
+          <a href="#neighbor" class="btn btn-ghost">What this means for you</a>
         </div>
-      </div>
-      <div class="card overflow-hidden">
-        <img src="community-2.jpg" alt="The Sabey Team and Community" class="w-full h-80 object-cover">
+        <div class="mt-8 grid sm:grid-cols-3 gap-3 max-w-3xl">
+          <div class="pro-card--subtle p-4 fact fade-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h18v10H3z"/><path d="M7 7v10M17 7v10"/><circle cx="12" cy="12" r="2"/></svg>
+            <div><div class="font-semibold">$4B+ investment</div><div class="text-sm text-gray-600">Anchors local tax base</div></div>
+          </div>
+          <div class="pro-card--subtle p-4 fact fade-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 3h10v18l-5-2-5 2z"/></svg>
+            <div><div class="font-semibold">0% bill impact</div><div class="text-sm text-gray-600">We pay our fair share</div></div>
+          </div>
+          <div class="pro-card--subtle p-4 fact fade-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2s7 7 7 12a7 7 0 0 1-14 0C5 9 12 2 12 2z"/></svg>
+            <div><div class="font-semibold">Closed-loop cooling</div><div class="text-sm text-gray-600">Virtually no water</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MYTH/FACT STRIP -->
-  <section class="max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="card p-5">
-        <div class="text-xs uppercase tracking-wide muted">Myth</div>
-        <div class="mt-1 font-semibold">Data centers always use huge amounts of water</div>
-        <div class="mt-2 text-sm">For Indianapolis Sabey is designing closed-loop cooling. Normal operation uses virtually no water.</div>
+  <!-- Quick Facts divider -->
+  <section class="container py-8">
+    <div class="divider"></div>
+  </section>
+
+  <!-- 2) SITE PLAN PREVIEW + DOCS -->
+  <section id="siteplan" class="container py-14">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="pro-card overflow-hidden fade-up">
+        <img src="assets/site-plan-thumb.jpg" alt="Updated site plan thumbnail" class="w-full h-[360px] object-cover">
       </div>
-      <div class="card p-5">
-        <div class="text-xs uppercase tracking-wide muted">Myth</div>
-        <div class="mt-1 font-semibold">My bill will go up because of this project</div>
-        <div class="mt-2 text-sm">Customer-specific costs are paid by the project. New load adds revenue that helps spread fixed costs. See “Your Bill.”</div>
-      </div>
-      <div class="card p-5">
-        <div class="text-xs uppercase tracking-wide muted">Myth</div>
-        <div class="mt-1 font-semibold">Traffic will be heavy every day</div>
-        <div class="mt-2 text-sm">Operations have low daily trips. Construction traffic is scheduled and managed.</div>
+      <div class="fade-up">
+        <h3 class="text-3xl font-bold headline">See where everything goes</h3>
+        <p class="lead mt-3">Buffers, greenspace, shielded lighting, stormwater features, and designated truck routes that avoid neighborhood streets. We want you to see exactly how it fits in.</p>
+        <div class="mt-6 space-y-3">
+          <a class="doc-tile" href="assets/site-map-updated.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/></svg>
+            <div><div class="font-semibold">Updated Site Plan (PDF)</div><div class="text-sm text-gray-600">Buffers, access points, landscaping</div></div>
+          </a>
+          <a class="doc-tile" href="assets/will-to-serve.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div><div class="font-semibold">AES Will-to-Serve Letter</div><div class="text-sm text-gray-600">Power reliability & phased delivery</div></div>
+          </a>
+          <a class="doc-tile" href="assets/traffic-study.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19h16M4 5h16M8 9h8M8 15h6"/></svg>
+            <div><div class="font-semibold">Traffic Study (PDF)</div><div class="text-sm text-gray-600">≈80% fewer peak trips vs 2020 plan</div></div>
+          </a>
+          <a class="doc-tile" href="assets/faq.pdf" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 1 1 5.82 1c0 2-3 2-3 4"/><circle cx="12" cy="17" r="1"/></svg>
+            <div><div class="font-semibold">Full FAQ (PDF)</div><div class="text-sm text-gray-600">Zoning, utilities, environment</div></div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TOP QUESTIONS -->
-  <section id="top" class="max-w-6xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold headline">Top Questions from Neighbors</h3>
-    <p class="mt-2 muted">Short answers first. More detail lives in the FAQ and the PDF.</p>
+  <!-- 3) WHAT THIS MEANS FOR YOU -->
+  <section id="neighbor" class="bg-neutral-50">
+    <div class="container py-14">
+      <h3 class="text-3xl font-bold headline fade-up">What this means for you</h3>
 
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="card p-6">
-        <h4 class="text-lg font-semibold">Water</h4>
-        <p class="mt-2">Closed-loop system planned for Indianapolis. Normal operation uses virtually no water.</p>
-        <a href="#faq-water" class="mt-3 inline-block text-sm underline">More on Water</a>
+      <div class="pro-card p-6 md:p-8 mt-6 fade-up">
+        <div class="text-sm uppercase tracking-wide text-green-700 font-semibold">Your bill</div>
+        <h4 class="text-2xl font-bold mt-1">Your power bill will not go up because of this project</h4>
+        <p class="mt-3 text-gray-700">We pay our fair share. Service will be under a cost-of-service tariff or a Commission-approved customer-specific contract. The project pays all applicable riders and customer-specific facilities so costs aren’t shifted to neighbors.</p>
       </div>
-      <div class="card p-6">
-        <h4 class="text-lg font-semibold">Power</h4>
-        <p class="mt-2">Phased delivery with the utility to match buildout. Backup systems for resiliency with limited run hours.</p>
-        <a href="#faq-power" class="mt-3 inline-block text-sm underline">More on Power</a>
-      </div>
-      <div class="card p-6">
-        <h4 class="text-lg font-semibold">Traffic</h4>
-        <p class="mt-2">Low daily trips during operations. Shift changes and deliveries only. Construction routes coordinated with the city.</p>
-        <a href="#faq-traffic" class="mt-3 inline-block text-sm underline">More on Traffic</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- COST-SHARING -->
-  <section id="rates" class="max-w-6xl mx-auto px-4">
-    <div class="card p-6 md:p-8">
-      <h3 class="text-2xl font-bold headline">What This Means for Your Bill</h3>
-      <p class="mt-2">We do not expect upward pressure on other customers’ rates. The project pays all applicable riders under a cost-of-service tariff or a Commission-approved customer-specific contract.</p>
-    </div>
-  </section>
-
-  <!-- DOCUMENTS -->
-  <section id="utility-docs" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="h-10 w-full grad-stripe rounded-lg mb-6"></div>
-    <h3 class="text-2xl font-bold headline">Utility & Site Documents</h3>
-    <div class="mt-6 grid md:grid-cols-2 gap-6">
-      <div class="card p-6">
-        <h4 class="text-lg font-semibold">AES “Will to Serve” Letter</h4>
-        <p class="mt-2">AES Indiana confirmed reliable power delivery through phased service.</p>
-        <a href="s/will-to-serve.pdf" target="_blank" class="btn btn-black mt-4">View Will to Serve (PDF)</a>
-      </div>
-      <div class="card p-6">
-        <h4 class="text-lg font-semibold">Updated Site Plan (PDF)</h4>
-        <p class="mt-2">Shows building locations, access points, and buffer areas designed to minimize community impacts.</p>
-        <a href="s/site-map-updated.pdf" target="_blank" class="btn btn-black mt-4">View Site Plan (PDF)</a>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="pro-card p-6 fade-up">
+          <h4 class="text-lg font-semibold">Low water usage</h4>
+          <p class="mt-2 text-gray-700">For Indianapolis, our closed-loop design uses virtually no water during normal operation. Where water is used elsewhere, recycled sources are often leveraged.</p>
+        </div>
+        <div class="pro-card p-6 fade-up">
+          <h4 class="text-lg font-semibold">Quiet by design</h4>
+          <p class="mt-2 text-gray-700">Cooling equipment and generators are enclosed and acoustically treated. Generator run time is limited (testing and true outages) and facilities meet or exceed local noise standards.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TRAFFIC STUDY -->
-  <section id="traffic-study" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="h-10 w-full grad-stripe rounded-lg mb-6"></div>
-    <h3 class="text-2xl font-bold headline">Traffic Study Summary</h3>
-    <p class="mt-2 muted">
-      The <strong>Decatur Technology Park Data Center – Trip Generation Comparison</strong> confirms that the updated plan will generate far fewer vehicle trips than the previously approved industrial use.
-      Study prepared by <em>American Structurepoint, Inc.</em>
-    </p>
-
-    <div class="mt-6 card p-6 space-y-4">
-      <h4 class="text-lg font-semibold">Summary Findings</h4>
-      <ul class="list-disc list-inside text-sm leading-relaxed">
-        <li>The new plan (Oct 1, 2025) replaces prior warehouse uses with two data centers and an electrical substation.</li>
-        <li>Using the <em>ITE Trip Generation Manual, 12th Edition</em>, the analysis shows an <strong>~80% reduction in total trips</strong> during AM and PM peaks compared to the 2020 plan.</li>
-        <li>The prior 2020 traffic improvements remain valid and sufficient given the lower trip volumes.</li>
-      </ul>
-
-      <div class="mt-4 p-4 bg-neutral-50 rounded-xl border border-neutral-200">
-        <p class="text-sm font-semibold">Table 1 – Trip Generation Comparison</p>
-        <table class="min-w-full mt-2 text-sm border border-neutral-200 text-left">
-          <thead class="bg-neutral-100">
-            <tr>
-              <th class="px-3 py-2 border-b">Description</th>
-              <th class="px-3 py-2 border-b">AM Peak</th>
-              <th class="px-3 py-2 border-b">PM Peak</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="px-3 py-2 border-b">Old Site Plan (11/24/2020)</td><td class="px-3 py-2 border-b">558</td><td class="px-3 py-2 border-b">554</td></tr>
-            <tr><td class="px-3 py-2 border-b">New Site Plan (10/01/2025)</td><td class="px-3 py-2 border-b">111</td><td class="px-3 py-2 border-b">106</td></tr>
-            <tr class="bg-neutral-50"><td class="px-3 py-2 border-b font-medium">Percent Change</td><td class="px-3 py-2 border-b text-red-600">–80%</td><td class="px-3 py-2 border-b text-red-600">–81%</td></tr>
-          </tbody>
-        </table>
+  <!-- 4) COMMUNITY BENEFITS -->
+  <section id="benefits" class="container py-16">
+    <h3 class="text-3xl font-bold headline fade-up">Benefits for Decatur Township</h3>
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="pro-card p-6 fade-up">
+        <h4 class="text-lg font-semibold">Major investment</h4>
+        <p class="lead mt-2">$4B+ over time. That scale helps anchor the local tax base and supports essential services.</p>
       </div>
-
-      <div class="mt-6">
-        <p class="text-sm muted">The full report, including Attachments A–C, is available below.</p>
-        <a href="traffic-study.pdf" target="_blank" class="btn btn-black mt-3">Download Full Traffic Study (PDF)</a>
+      <div class="pro-card p-6 fade-up">
+        <h4 class="text-lg font-semibold">Better roads</h4>
+        <p class="lead mt-2">We’re committing funding for township road improvements tied to the project. Final segments will be coordinated with local partners and shared publicly.</p>
+      </div>
+      <div class="pro-card p-6 fade-up">
+        <h4 class="text-lg font-semibold">Jobs & training</h4>
+        <p class="lead mt-2">High-skill, clean roles in operations; long-term work for electricians, HVAC, and local suppliers. We’ll partner with schools and community colleges to grow local talent.</p>
       </div>
     </div>
   </section>
 
-  <!-- PHOTOS -->
-  <section id="gallery" class="max-w-6xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-bold headline">Photos</h3>
-    <p class="mt-2 muted"/p>
-
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="card overflow-hidden">
-        <img src="community-hero.jpg" alt="Community" class="w-full h-56 object-cover">
-      </div>
-      <div class="card overflow-hidden">
-        <img src="aerial-1.jpg" alt="Aerial view one" class="w-full h-56 object-cover">
-      </div>
-      <div class="card overflow-hidden">
-        <img src="aerial-2.jpg" alt="Aerial view two" class="w-full h-56 object-cover">
-      </div>
-    </div>
-
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="card overflow-hidden">
-        <img src="closeup-1.jpg" alt="Close-up of enclosure/facade" class="w-full h-56 object-cover">
-      </div>
-      <div class="card overflow-hidden">
-        <img src="community-2.jpg" alt="Community" class="w-full h-56 object-cover">
-      </div>
-      <div class="card overflow-hidden">
-        <img src="community-hero.jpg" alt="Community" class="w-full h-56 object-cover">
-    
+  <!-- 5) ENVIRONMENT & DESIGN -->
+  <section id="env" class="bg-neutral-50">
+    <div class="container py-14">
+      <h3 class="text-3xl font-bold headline fade-up">Environment & design</h3>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="pro-card p-6 fade-up">
+          <h4 class="text-lg font-semibold">Stormwater</h4>
+          <p class="mt-2 text-gray-700">Engineered retention, bioswales, and permeable surfaces manage runoff on site and protect local waterways.</p>
+        </div>
+        <div class="pro-card p-6 fade-up">
+          <h4 class="text-lg font-semibold">Lighting & visuals</h4>
+          <p class="mt-2 text-gray-700">Shielded lighting, landscape screening, and materials that respect surrounding uses reduce visual impact.</p>
+        </div>
+        <div class="pro-card p-6 fade-up">
+          <h4 class="text-lg font-semibold">Efficient power use</h4>
+          <p class="mt-2 text-gray-700">Purpose-built efficiency and strong PUE performance; our facilities routinely earn top ENERGY STAR scores.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ (UPDATED) -->
-  <section id="faq" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="h-10 w-full grad-stripe rounded-lg mb-6"></div>
-    <h3 class="text-2xl font-bold headline">Frequently Asked Questions</h3>
-    <p class="mt-2 muted">Zoning, utilities, water, traffic, noise, stormwater, visual design, economics, workforce, energy leadership, and reliability.</p>
+  <!-- 6) TRAFFIC -->
+  <section id="traffic" class="container py-16">
+    <h3 class="text-3xl font-bold headline fade-up">Traffic & transportation</h3>
+    <p class="mt-3 text-gray-700 max-w-3xl fade-up">Independent analysis shows the current plan generates about 80% fewer peak-hour trips than the previously approved industrial plan. Operations have low daily trips; construction traffic is scheduled and managed with the city.</p>
 
-    <div class="mt-6 space-y-3">
-      <!-- Land Use & Zoning -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Land use & zoning</summary>
-        <div class="mt-3">
-          In most jurisdictions, data centers are classified as light industrial, high-tech industrial, or commercial uses. Sabey works closely with local planning departments to confirm zoning compatibility early in the process.
-        </div>
-      </details>
+    <div class="mt-6 overflow-x-auto fade-up">
+      <table class="min-w-full text-sm border border-neutral-200 bg-white">
+        <thead class="bg-neutral-100 font-semibold">
+          <tr><th class="px-3 py-2 border-b">Scenario</th><th class="px-3 py-2 border-b">AM Peak</th><th class="px-3 py-2 border-b">PM Peak</th><th class="px-3 py-2 border-b">% Change</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="px-3 py-2 border-b">Old Approved Plan (2020)</td><td class="px-3 py-2 border-b">558</td><td class="px-3 py-2 border-b">554</td><td class="px-3 py-2 border-b">—</td></tr>
+          <tr><td class="px-3 py-2 border-b">Current Plan (2025)</td><td class="px-3 py-2 border-b">111</td><td class="px-3 py-2 border-b">106</td><td class="px-3 py-2 border-b text-red-600">≈ –80%</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-      <!-- Power & Energy Efficiency -->
-      <details class="card p-5" id="faq-power">
-        <summary class="cursor-pointer text-lg font-semibold">Power & energy efficiency</summary>
-        <div class="mt-3 space-y-3">
-          <p>We collaborate directly with the utility to plan phased power delivery aligned with development. Sabey facilities are purpose-built for exceptional efficiency beyond the compute load, with strong PUE performance; sites routinely earn ENERGY STAR scores in the high 90s.</p>
-          <p>Facilities include backup generators for resiliency; fuel is stored and maintained to safety standards. In a typical year, run hours are limited.</p>
-        </div>
-      </details>
-
-      <!-- Water & Cooling -->
-      <details class="card p-5" id="faq-water">
-        <summary class="cursor-pointer text-lg font-semibold">Water & cooling</summary>
-        <div class="mt-3 space-y-3">
-          <p>We select the most efficient cooling technology by climate and sustainability goals. For Indianapolis, Sabey is designing a closed-loop cooling system that uses virtually no water during normal operation, while maintaining acceptable energy efficiency.</p>
-          <p>Across markets, many facilities are waterless or closed-loop; where water is used, operators often leverage recycled or reclaimed sources. Independent studies in major markets show usage comparable to large office buildings.</p>
-        </div>
-      </details>
-
-      <!-- Community Rate Impact & Cost-Sharing -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Community rate impact & cost-sharing</summary>
-        <div class="mt-3 space-y-3">
-          <p>We do not expect upward pressure on other customers’ rates. Sabey anticipates service under a cost-of-service tariff or a Commission-approved customer-specific contract, with all applicable riders paid by the project.</p>
-          <p>Sabey funds 100% of customer-specific and dedicated facilities and makes CIAC for incremental upstream reinforcements attributable to our load — so costs are not shifted to general ratepayers. New loads mean new revenues that help spread fixed costs.</p>
-          <p>Broad grid programs are reviewed by the Commission with public disclosure of projected rate effects. Final rate impacts, if any, are determined through utility filings and orders.</p>
-        </div>
-      </details>
-
-      <!-- How the Power Agreement Works -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">How the power agreement works</summary>
-        <div class="mt-3">
-          We sign a long-term service agreement. The utility owns the grid to the point of interconnection (POI); we own on the customer side. Final responsibilities are defined in CIAC and interconnection agreements.
-        </div>
-      </details>
-
-      <!-- Traffic -->
-      <details class="card p-5" id="faq-traffic">
-        <summary class="cursor-pointer text-lg font-semibold">Traffic & transportation</summary>
-        <div class="mt-3">
-          Data centers have relatively low daily trips once operational — mostly shift changes and routine deliveries. During construction, we coordinate schedules, routes, and traffic control with the city. Recent comparisons suggest far fewer trips than many alternative uses at this location.
-        </div>
-      </details>
-
-      <!-- Noise & Environmental -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Noise & environmental</summary>
-        <div class="mt-3">
-          We design to comply with or surpass local noise ordinances and apply industry best practices. Cooling equipment and generators use enclosures and acoustic treatments; independent reviews find typical data center sound is low-frequency and rarely violates local limits. We invest in studies and mitigation where prudent.
-        </div>
-      </details>
-
-      <!-- Stormwater & Environmental Protection -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Stormwater & environmental protection</summary>
-        <div class="mt-3">
-          Developments include engineered systems — retention ponds, bioswales, permeable surfaces — to manage runoff on-site and protect waterways. We comply with environmental regulations and work to avoid impacts to wetlands, sensitive habitats, and existing trees when possible.
-        </div>
-      </details>
-
-      <!-- Community & Visual Considerations -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Community & visual considerations</summary>
-        <div class="mt-3">
-          Sabey designs with architectural treatments, landscaping, and screening to respect surrounding uses. Exterior lighting is shielded to reduce spill. A buffer along Camby is planned to be more substantial than previously approved buffers on this site.
-        </div>
-      </details>
-
-      <!-- Economic & Workforce Benefits -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Economic & workforce benefits</summary>
-        <div class="mt-3 space-y-3">
-          <p>Data centers are significant economic engines — supporting jobs, tax revenues for essential services, and local supply chains. Mature markets have seen substantial annual local tax revenue, with support for schools and public safety. Each job can support 4–6 additional jobs across the economy; construction programs can span years.</p>
-          <p>In Quincy, WA, an expanded tax base helped fund a new high school with a performing arts center, a new city hall, and a new medical facility.</p>
-          <p>Roles are high-wage and high-skill; many do not require a four-year degree. Clean, safe environments with paths through trades training and certificates.</p>
-        </div>
-      </details>
-
-      <!-- Schools & Workforce Programs -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Schools & workforce programs</summary>
-        <div class="mt-3 space-y-3">
-          <p>We partner with schools and community colleges to create programs that prepare students for data center roles. In Quincy and Wenatchee, CTE programs expanded with industry input and created paths into technology and trades.</p>
-          <p>Subjects like computers, networking, HVAC, and electrical are universal and apply across industries. We welcome collaboration with educators and administrators in Indianapolis.</p>
-        </div>
-      </details>
-
-      <!-- Energy Use & Clean Energy Leadership -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Energy use & clean energy leadership</summary>
-        <div class="mt-3 space-y-3">
-          <p>Digital demand grows; operators upgrade chips, servers, and processes to produce more with the same energy, improving efficiency and generating sales-tax through refresh cycles.</p>
-          <p>Digital services reduce commuting and shipping; small savings across many users add up to meaningful system-wide gains.</p>
-          <p>Sabey designs for efficiency beyond compute load. Sites deliver strong PUE and frequent ENERGY STAR scores in the high 90s. The sector partners with utilities on clean energy and grid innovations.</p>
-        </div>
-      </details>
-
-      <!-- Backup Power & Reliability -->
-      <details class="card p-5">
-        <summary class="cursor-pointer text-lg font-semibold">Backup power & reliability</summary>
-        <div class="mt-3">
-          Emergency generators protect service during outages. They are regulated and used sparingly for short tests and true outages. Mission-critical users need continuous power so essential services remain available.
-        </div>
-      </details>
+    <div class="mt-6 flex flex-wrap gap-3 fade-up">
+      <a href="assets/traffic-study.pdf" target="_blank" class="btn btn-outline">Download Full Traffic Study (PDF)</a>
+      <a href="assets/site-map-updated.pdf" target="_blank" class="btn btn-outline">View Site Plan (PDF)</a>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="max-w-6xl mx-auto px-4 pb-16">
-    <div class="card p-6 md:p-8">
-      <h3 class="text-2xl font-bold headline">Stay in touch</h3>
-      <p class="mt-2 muted">Share your questions or request a meeting. A community liaison will respond.</p>
+  <!-- 7) FAQ -->
+  <section id="faq" class="bg-neutral-50">
+    <div class="container py-14">
+      <h3 class="text-3xl font-bold headline fade-up">Frequently asked questions</h3>
+      <p class="mt-2 text-gray-700 fade-up">Short, plain-English answers. Download the full FAQ for more detail.</p>
+      <div class="mt-4 fade-up">
+        <a href="assets/faq.pdf" target="_blank" class="btn btn-black">Download Full FAQ (PDF)</a>
+      </div>
+
+      <div class="mt-8 space-y-3">
+        <details class="pro-card p-5 fade-up">
+          <summary class="cursor-pointer text-lg font-semibold flex items-center gap-2">
+            <span class="arrow">▶</span> Will my power bill go up?
+          </summary>
+          <div class="mt-3 text-gray-700">No. The project pays its own customer-specific costs under regulated agreements. New load also adds revenue that helps spread fixed costs.</div>
+        </details>
+
+        <details class="pro-card p-5 fade-up">
+          <summary class="cursor-pointer text-lg font-semibold flex items-center gap-2">
+            <span class="arrow">▶</span> How much water will this use?
+          </summary>
+          <div class="mt-3 text-gray-700">The Indianapolis design is closed-loop, which means virtually no water during normal operation. Cooling choices are made to fit local conditions and sustainability goals.</div>
+        </details>
+
+        <details class="pro-card p-5 fade-up">
+          <summary class="cursor-pointer text-lg font-semibold flex items-center gap-2">
+            <span class="arrow">▶</span> What about noise?
+          </summary>
+          <div class="mt-3 text-gray-700">Equipment is enclosed and acoustically treated. We adhere to local noise standards; generators run briefly for testing and in rare outages.</div>
+        </details>
+
+        <details class="pro-card p-5 fade-up">
+          <summary class="cursor-pointer text-lg font-semibold flex items-center gap-2">
+            <span class="arrow">▶</span> Traffic and trucks in neighborhoods?
+          </summary>
+          <div class="mt-3 text-gray-700">Daily trips are low. Access is planned to keep trucks on designated routes. The traffic study shows ~80% fewer peak trips than the previously approved use.</div>
+        </details>
+
+        <details class="pro-card p-5 fade-up">
+          <summary class="cursor-pointer text-lg font-semibold flex items-center gap-2">
+            <span class="arrow">▶</span> What do we get as a community?
+          </summary>
+          <div class="mt-3 text-gray-700">$4B+ investment over time, new tax revenues that support schools, roads, and public safety, road improvements we help fund, and local jobs with training pathways.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8) CONTACT -->
+  <section id="contact" class="container py-16">
+    <div class="pro-card p-6 md:p-8 fade-up">
+      <h3 class="text-3xl font-bold headline">Talk with us</h3>
+      <p class="mt-2 text-gray-700">We welcome questions, ideas, and feedback. A community liaison will read every message and follow up.</p>
       <form class="mt-6 grid md:grid-cols-2 gap-4">
         <input class="px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-black" placeholder="Full name" />
         <input class="px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-black" placeholder="Email" />
-        <input class="px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-black md:col-span-2" placeholder="Organization or neighborhood" />
-        <textarea class="px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-black md:col-span-2" rows="4" placeholder="Questions or ideas"></textarea>
+        <input class="px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-black md:col-span-2" placeholder="Neighborhood or organization (optional)" />
+        <textarea class="px-4 py-3 rounded-xl border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-black md:col-span-2" rows="4" placeholder="Your question or comment"></textarea>
         <button type="button" class="btn btn-black w-max">Submit</button>
       </form>
     </div>
   </section>
 
-  <footer class="border-top border-neutral-200">
-    <div class="max-w-6xl mx-auto px-4 py-8 text-sm muted">
-      © <span id="year"></span> Sabey Data Centers — Indianapolis community information
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200">
+    <div class="container py-8 text-sm text-gray-600">
+      © <span id="year"></span> Sabey Data Centers — Indianapolis Community Information · Last updated: <span id="updated"></span>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- Back to Top -->
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <!-- Scripts -->
+  <script>
+    // Header shadow + back-to-top visibility
+    const header = document.querySelector('header');
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+      if (window.scrollY > 400) backToTopBtn.classList.add('show'); else backToTopBtn.classList.remove('show');
+    });
+
+    // Back to top
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }), {threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+    // Footer dates
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = 'October 2025';
+  </script>
 </body>
 </html>
