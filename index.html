@@ -118,6 +118,10 @@
     .form-input:focus{outline:none;border-color:var(--green)}
     .form-textarea{min-height:120px;resize:vertical}
 
+    /* Video Wrapper */
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
     /* Back to top */
     #backToTop{position:fixed;bottom:32px;right:32px;background:var(--accent);color:var(--bg);border-radius:9999px;padding:.8rem 1rem;font-weight:700;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .3s ease;z-index:40;font-size:1.125rem}
     #backToTop.show{opacity:1;pointer-events:auto;transform:translateY(0)}
@@ -193,7 +197,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img src="aerial-1.jpg" alt="Sabey Data Center rendering for Decatur Township">
+    <img src="rendering-hero.jpg" alt="Sabey Data Center rendering for Decatur Township">
     <div class="hero__content">
       <div class="content-inner">
         <div class="hero-glass fade-up">
@@ -235,7 +239,7 @@
         <div class="question">Question</div>
         <p class="mt-1 font-semibold text-lg">"Will noise and traffic disrupt our neighborhood?"</p>
         <div class="answer">Answer</div>
-        <p class="mt-1 lead">No. Operations are designed to be quiet and low-traffic. Independent analysis shows approximately 80% fewer peak-hour vehicle trips than a previously approved industrial plan. Generators run briefly for testing and during rare utility outages—typically about 20 hours per year total. Equipment is enclosed and acoustically treated; exterior lighting is shielded.</p>
+        <p class="mt-1 lead">No. Operations are designed to be quiet and low-traffic. Independent analysis shows approximately 80% fewer peak-hour vehicle trips than a previously approved industrial plan. Generators run briefly for testing and during rare utility outages, typically about 20 hours per year total. Equipment is enclosed and acoustically treated; exterior lighting is shielded.</p>
         <a href="traffic-study.pdf" target="_blank" class="inline-block mt-4 text-sm font-semibold underline hover:text-green-700">Read the Independent Traffic Study (PDF)</a>
       </div>
     </div>
@@ -402,7 +406,7 @@
     <div class="container">
       <div class="text-center max-w-4xl mx-auto mb-12 fade-up">
         <h2 class="text-4xl md:text-5xl font-bold headline">Real Economic Benefits for Decatur Township</h2>
-        <p class="lead mt-4">Data centers are proven economic drivers, creating high-paying jobs, generating substantial tax revenue, and supporting local businesses—all while having minimal impact on roads, schools, and community services.</p>
+        <p class="lead mt-4">Data centers are proven economic drivers, creating high-paying jobs, generating substantial tax revenue, and supporting local businesses. These facilities have minimal impact on roads, schools, and community services.</p>
       </div>
 
       <!-- Key Stats -->
@@ -502,7 +506,7 @@
           </div>
           <div class="mt-10 p-8 bg-green-50 rounded-xl border border-green-200">
             <p class="font-bold text-xl mb-3">Strong Tax Revenue Potential for Decatur Township:</p>
-            <p class="lead">Research on data centers nationally shows substantial tax revenue generation potential. According to U.S. Chamber of Commerce analysis, large-scale data centers can generate significant property tax, personal property tax, and sales tax revenues—providing stable, long-term funding for schools, emergency services, roads, and public infrastructure without increasing residential property taxes.</p>
+            <p class="lead">Research on data centers nationally shows substantial tax revenue generation potential. According to U.S. Chamber of Commerce analysis, large-scale data centers can generate significant property tax, personal property tax, and sales tax revenues. These revenues provide stable, long-term funding for schools, emergency services, roads, and public infrastructure without increasing residential property taxes.</p>
             <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="text-sm underline mt-3 inline-block font-semibold" style="color:#065f46">Source: U.S. Chamber of Commerce Research on Data Center Economic Impact</a>
           </div>
         </div>
@@ -518,7 +522,7 @@
       <!-- Research Articles -->
       <div class="mt-20 fade-up">
         <h3 class="text-3xl font-bold headline mb-6">Independent Research on Data Center Economic Impact</h3>
-        <p class="lead mb-10 max-w-4xl">Leading research institutions, business organizations, and financial analysts have extensively documented the substantial economic benefits data centers bring to communities. These are independent, third-party studies—not commissioned by data center operators:</p>
+        <p class="lead mb-10 max-w-4xl">Leading research institutions, business organizations, and financial analysts have extensively documented the substantial economic benefits data centers bring to communities. These are independent, third-party studies, not commissioned by data center operators.</p>
         
         <div class="grid md:grid-cols-2 gap-6">
           <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="article-card">
@@ -569,7 +573,7 @@
                 <span style="font-size:1.75rem">📚</span>
               </div>
               <h4 class="font-bold text-lg mb-3">Better-Funded Schools</h4>
-              <p class="lead">Increased property and equipment tax revenue flows directly to school district funding, enabling improved facilities, expanded programs, updated technology, competitive teacher salaries, and reduced class sizes—without raising residential property taxes.</p>
+              <p class="lead">Increased property and equipment tax revenue flows directly to school district funding. This enables improved facilities, expanded programs, updated technology, competitive teacher salaries, and reduced class sizes without raising residential property taxes.</p>
             </div>
             <div>
               <div class="benefit-icon">
@@ -583,7 +587,7 @@
                 <span style="font-size:1.75rem">💼</span>
               </div>
               <h4 class="font-bold text-lg mb-3">Local Career Pathways</h4>
-              <p class="lead">Partnerships with Decatur Township schools, community colleges, and trade programs create workforce training initiatives opening doors to high-paying technology careers—many positions requiring technical certifications rather than four-year degrees.</p>
+              <p class="lead">Partnerships with Decatur Township schools, community colleges, and trade programs create workforce training initiatives. These initiatives open doors to high-paying technology careers, with many positions requiring technical certifications rather than four-year degrees.</p>
             </div>
             <div>
               <div class="benefit-icon">
@@ -620,9 +624,9 @@
         <h3 class="text-2xl font-bold headline text-center mb-6">See Sabey Data Centers in Action</h3>
         <p class="lead text-center mb-8 max-w-3xl mx-auto">Watch how Sabey builds and operates world-class data center facilities with a focus on community partnership and environmental responsibility.</p>
         
-        <div class="video-wrapper" style="max-width:900px;margin:0 auto">
+        <div class="video-wrapper" style="max-width:1200px;margin:0 auto">
           <iframe 
-            src="https://www.youtube.com/embed/tnvA3Ajc3qc" 
+            src="https://www.youtube.com/embed/tnvA3Ajc3qc?autoplay=1&mute=1&loop=1&playlist=tnvA3Ajc3qc" 
             title="Sabey Data Centers" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -644,16 +648,18 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="pro-card p-7">
             <h4 class="font-bold text-xl mb-3">Seattle Region</h4>
-            <p class="lead">Sabey's Intergate campus facilities have operated successfully for over 20 years, becoming integral parts of their communities with consistent high-quality employment, substantial tax contributions, workforce development partnerships, and minimal neighborhood impacts.</p>
+            <p class="lead">Sabey's Intergate campus facilities have operated successfully for over 20 years, becoming integral parts of their communities. The campuses provide consistent high-quality employment, substantial tax contributions, and workforce development partnerships while maintaining minimal neighborhood impacts.</p>
+            <a href="https://sabeydatacenters.com/locations/seattle-data-center" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: Sabey Data Centers</a>
           </div>
           <div class="pro-card p-7">
             <h4 class="font-bold text-xl mb-3">Northern Virginia</h4>
-            <p class="lead">Data center development has fundamentally transformed Loudoun County's economy. Computer equipment tax revenue surged 170% in just two years while creating thousands of high-paying technology jobs and attracting complementary businesses that further strengthened the local economy.</p>
+            <p class="lead">Data center development has fundamentally transformed Loudoun County's economy. Computer equipment tax revenue surged 170% in just two years while creating thousands of high-paying technology jobs. This growth attracted complementary businesses that further strengthened the local economy.</p>
             <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: Federal Reserve Bank of Richmond</a>
           </div>
           <div class="pro-card p-7">
             <h4 class="font-bold text-xl mb-3">Ohio Markets</h4>
-            <p class="lead">Data center development across Ohio has generated thousands of construction and permanent operations jobs, contributed billions of dollars to the state's GDP, and funded comprehensive workforce development programs that create pathways from local schools to technology careers.</p>
+            <p class="lead">Data center development across Ohio has generated thousands of construction and permanent operations jobs. These facilities have contributed billions of dollars to the state's GDP and funded comprehensive workforce development programs. These programs create clear pathways from local schools to technology careers.</p>
+            <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: U.S. Chamber of Commerce Research</a>
           </div>
         </div>
       </div>
@@ -661,13 +667,13 @@
       <!-- What is a Data Center -->
       <div class="mt-16 fade-up">
         <h3 class="text-3xl font-bold headline mb-6">What is a Data Center?</h3>
-        <p class="lead mb-8 text-lg">Think of it as essential infrastructure—like a power plant or water treatment facility—that keeps hospitals, schools, local businesses, government agencies, and everyday cloud services operating reliably. There are no retail storefronts, no stadium-level crowds, no constant truck traffic. Just secure, climate-controlled spaces with computer equipment, advanced cooling systems, and clean power delivery.</p>
+        <p class="lead mb-8 text-lg">Think of it as essential infrastructure, like a power plant or water treatment facility, that keeps hospitals, schools, local businesses, government agencies, and everyday cloud services operating reliably. There are no retail storefronts, no stadium-level crowds, no constant truck traffic. Just secure, climate-controlled spaces with computer equipment, advanced cooling systems, and clean power delivery.</p>
         
         <div class="pro-card p-8">
           <div class="grid md:grid-cols-2 gap-8">
             <div>
               <h4 class="font-bold text-lg mb-3">Server Infrastructure</h4>
-              <p class="lead">Rows of servers and networking equipment processing the cloud computing workloads that modern life depends on—from business applications to healthcare systems to online education.</p>
+              <p class="lead">Rows of servers and networking equipment processing the cloud computing workloads that modern life depends on. This includes business applications, healthcare systems, and online education.</p>
             </div>
             <div>
               <h4 class="font-bold text-lg mb-3">Advanced Cooling Systems</h4>
@@ -675,7 +681,7 @@
             </div>
             <div>
               <h4 class="font-bold text-lg mb-3">Backup Power Systems</h4>
-              <p class="lead">Generators that ensure uninterrupted operations during utility outages. These are regulated and run briefly for mandatory testing and during rare power disruptions—averaging approximately 20 hours per year total across all units.</p>
+              <p class="lead">Generators that ensure uninterrupted operations during utility outages. These are regulated and run briefly for mandatory testing and during rare power disruptions, averaging approximately 20 hours per year total across all units.</p>
             </div>
             <div>
               <h4 class="font-bold text-lg mb-3">Security & Monitoring</h4>
@@ -784,7 +790,7 @@
     <div class="container">
       <div class="fade-up">
         <h2 class="text-4xl font-bold headline">Our Partnership with Decatur Township</h2>
-        <p class="lead mt-4 text-lg">Sabey Data Centers is committed to being a responsible, transparent, and genuinely engaged community partner—not just during the construction phase, but throughout the entire life of this facility and beyond.</p>
+        <p class="lead mt-4 text-lg">Sabey Data Centers is committed to being a responsible, transparent, and genuinely engaged community partner. This commitment extends not just during the construction phase, but throughout the entire life of this facility and beyond.</p>
         
         <div class="grid md:grid-cols-2 gap-8 mt-12">
           <div class="pro-card p-8">
@@ -799,7 +805,7 @@
           
           <div class="pro-card p-8">
             <h4 class="font-bold text-xl mb-4">Workforce Development Programs</h4>
-            <p class="lead">Partnerships with Decatur Township schools, community colleges, and vocational programs creating clear pathways into high-skill, high-wage technology careers. Includes internships, apprenticeships, and training programs—many not requiring four-year college degrees.</p>
+            <p class="lead">Partnerships with Decatur Township schools, community colleges, and vocational programs creating clear pathways into high-skill, high-wage technology careers. This includes internships, apprenticeships, and training programs, many not requiring four-year college degrees.</p>
           </div>
           
           <div class="pro-card p-8">
@@ -816,7 +822,7 @@
     <div class="container">
       <div class="fade-up text-center max-w-4xl mx-auto mb-12">
         <h2 class="text-4xl font-bold headline">Built Union. Built Right. Built for Decatur Township.</h2>
-        <p class="lead mt-4 text-lg">Sabey Data Centers has a longstanding commitment to union labor and is backed by union pension fund investment. This means good-paying union construction jobs for Decatur Township and Indiana workers—and a proven track record of quality craftsmanship.</p>
+        <p class="lead mt-4 text-lg">Sabey Data Centers has a longstanding commitment to union labor and is backed by union pension fund investment. This means good-paying union construction jobs for Decatur Township and Indiana workers, with a proven track record of quality craftsmanship.</p>
       </div>
 
       <!-- Union Investment Partnership -->
@@ -828,7 +834,7 @@
             </div>
             <div>
               <h3 class="text-3xl font-bold mb-3">National Electrical Benefit Fund Partnership</h3>
-              <p class="lead">Sabey Data Centers is jointly owned by Sabey Corporation and National Real Estate Advisors, which manages investments for the National Electrical Benefit Fund (NEBF)—the pension fund for IBEW (International Brotherhood of Electrical Workers) members.</p>
+              <p class="lead">Sabey Data Centers is jointly owned by Sabey Corporation and National Real Estate Advisors, which manages investments for the National Electrical Benefit Fund (NEBF). The NEBF is the pension fund for IBEW (International Brotherhood of Electrical Workers) members.</p>
             </div>
           </div>
 
@@ -902,17 +908,17 @@
             <div class="text-center">
               <div class="benefit-icon mx-auto" style="background:#dbeafe;width:64px;height:64px;font-size:2rem">👥</div>
               <h4 class="font-bold text-xl mb-3">Local Union Jobs</h4>
-              <p class="lead">Hundreds of construction jobs for Indiana IBEW electricians, pipefitters, HVAC technicians, and skilled tradespeople. Union wages mean family-sustaining income with excellent benefits—not low-wage temporary work.</p>
+              <p class="lead">Hundreds of construction jobs for Indiana IBEW electricians, pipefitters, HVAC technicians, and skilled tradespeople. Union wages mean family-sustaining income with excellent benefits, not low-wage temporary work.</p>
             </div>
             <div class="text-center">
               <div class="benefit-icon mx-auto" style="background:#dbeafe;width:64px;height:64px;font-size:2rem">✓</div>
               <h4 class="font-bold text-xl mb-3">Proven Quality</h4>
-              <p class="lead">Union electricians undergo rigorous apprenticeship training through the IBEW Joint Apprenticeship Training Committee. This ensures the highest standards of safety, craftsmanship, and technical expertise—critical for mission-critical data center infrastructure.</p>
+              <p class="lead">Union electricians undergo rigorous apprenticeship training through the IBEW Joint Apprenticeship Training Committee. This ensures the highest standards of safety, craftsmanship, and technical expertise, which is critical for mission-critical data center infrastructure.</p>
             </div>
             <div class="text-center">
               <div class="benefit-icon mx-auto" style="background:#dbeafe;width:64px;height:64px;font-size:2rem">↑</div>
               <h4 class="font-bold text-xl mb-3">Shared Prosperity</h4>
-              <p class="lead">When union workers earn good wages on this project, they spend locally—at restaurants, shops, gas stations, and service businesses throughout Decatur Township. Union labor creates a multiplier effect that strengthens the entire local economy.</p>
+              <p class="lead">When union workers earn good wages on this project, they spend locally at restaurants, shops, gas stations, and service businesses throughout Decatur Township. Union labor creates a multiplier effect that strengthens the entire local economy.</p>
             </div>
           </div>
 
