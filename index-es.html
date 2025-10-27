@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabey Data Centers – Parque Tecnológico de Decatur</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --container:1240px; --radius:20px;
+      --bg:#ffffff; --text:#111111; --accent:#0a0a0a; --card-bg:#ffffff; --muted:#4b5563;
+      --green:#065f46; --green-light:#d1fae5; --blue:#1e40af; --blue-light:#dbeafe;
+    }
+
+    html,body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth;}
+    .container{max-width:var(--container);margin:0 auto;padding:0 1.25rem;}
+    .headline{letter-spacing:-.015em;line-height:1.2}
+    .lead{color:var(--muted);line-height:1.7;font-size:1.0625rem}
+    .btn{display:inline-block;padding:.85rem 1.2rem;border-radius:9999px;font-weight:700;transition:all .2s ease;font-size:0.9375rem}
+    .btn-black{background:var(--accent);color:var(--bg)}
+    .btn-black:hover{opacity:.92;box-shadow:0 0 0 3px rgba(0,0,0,.12)}
+    .btn-ghost{border:1px solid #e5e7eb;background:var(--bg);color:var(--text)}
+    .btn-ghost:hover{border-color:#9ca3af}
+    .pro-card{background:var(--card-bg);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.06);transition:all .35s cubic-bezier(.4,0,.2,1)}
+    .pro-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);transition:box-shadow .3s ease;border-bottom:1px solid rgba(0,0,0,.06)}
+    header.scrolled{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    nav a{position:relative;padding-bottom:2px;font-weight:500}
+    nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:currentColor;transition:width .2s ease}
+    nav a:hover::after{width:100%}
+
+    section{position:relative;padding-top:7rem;padding-bottom:7rem}
+    @media (max-width:768px){ section{padding-top:4.5rem;padding-bottom:4.5rem} }
+    section:nth-of-type(odd){background:#ffffff}
+    section:nth-of-type(even){background:#fafafa}
+    section::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.08), rgba(0,0,0,0))}
+    .grid{row-gap:2.5rem}
+
+    .hero{position:relative;margin-bottom:0}
+    .hero img{width:100%;height:650px;object-fit:cover;filter:brightness(.82)}
+    @media (max-width:768px){ .hero img{height:500px} }
+    .hero__content{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
+    .content-inner{width:100%;padding-bottom:5rem;display:flex;justify-content:center}
+    @media (max-width:768px){ .content-inner{padding-bottom:2.5rem;padding-left:1rem;padding-right:1rem} }
+    .hero-glass{background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(12px);border-radius:var(--radius);padding:2.5rem 2.8rem;max-width:820px;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+    @media (max-width:768px){ .hero-glass{padding:1.75rem} }
+
+    .image-section{margin:3rem 0;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.1)}
+    .image-section img{width:100%;height:auto;display:block}
+    .image-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.5rem;margin:2rem 0}
+    .image-grid img{width:100%;height:280px;object-fit:cover;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+
+    .fade-up{opacity:0;transform:translateY(15px);transition:all .7s ease}
+    .fade-up.show{opacity:1;transform:translateY(0)}
+    @keyframes fadeZoom{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .hero-glass.fade-up.show{animation:fadeZoom 1.3s ease forwards}
+
+    .question-card{border:1px solid #e5e7eb;border-radius:16px;padding:20px;background:var(--card-bg);height:100%}
+    .question{font-weight:700;color:#1e40af;font-size: 0.9375rem;text-transform:uppercase;letter-spacing:.06em}
+    .answer{font-weight:700;color:#065f46;font-size: 0.9375rem;text-transform:uppercase;letter-spacing:.06em;margin-top:1.25rem}
+
+    .faq-item{border-bottom:1px solid #e5e7eb;padding:1.25rem 0}
+    .faq-q{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1.0625rem}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;padding-top:0}
+    .faq-item.open .faq-a{max-height:1000px;padding-top:1rem}
+    .faq-q span{transition:transform .3s ease;font-size:1.5rem;font-weight:400}
+    .faq-item.open .faq-q span{transform:rotate(45deg)}
+
+    .stat-card{text-align:center;padding:2.25rem 1.75rem;background:var(--card-bg);border-radius:16px;border:1px solid #e5e7eb;height:100%}
+    .stat-number{font-size:3.25rem;font-weight:800;line-height:1;color:var(--green);margin-bottom:0.75rem}
+    @media (max-width:768px){ .stat-number{font-size:2.5rem} }
+    .stat-label{font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:700;margin-bottom:0.5rem}
+    .stat-detail{font-size:0.9375rem;margin-top:0.75rem;line-height:1.6;color:var(--text)}
+
+    .multiplier-visual{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;padding:2.5rem;background:linear-gradient(135deg, #d1fae5 0%, #dbeafe 100%);border-radius:16px;margin:2.5rem 0}
+    .multiplier-box{background:white;padding:2rem 1.5rem;border-radius:12px;text-align:center;min-width:160px;box-shadow:0 6px 16px rgba(0,0,0,.1)}
+    .multiplier-arrow{font-size:2.5rem;color:var(--green);font-weight:300}
+    @media (max-width:768px){ .multiplier-arrow{transform:rotate(90deg);margin:0.5rem 0} }
+
+    .timeline-item{position:relative;padding-left:2.75rem;padding-bottom:2.5rem;border-left:2px solid #e5e7eb}
+    .timeline-item:last-child{border-left:none;padding-bottom:0}
+    .timeline-dot{position:absolute;left:-7px;top:6px;width:14px;height:14px;background:var(--green);border-radius:50%;box-shadow:0 0 0 5px var(--green-light)}
+    .timeline-phase{font-weight:700;font-size:1.1875rem;color:var(--green);margin-bottom:0.5rem}
+    .timeline-content{color:var(--text);line-height:1.7;font-size:1rem}
+
+    .article-card{display:block;padding:1.75rem;background:var(--card-bg);border:1px solid #e5e7eb;border-radius:12px;transition:all .3s ease;height:100%}
+    .article-card:hover{border-color:var(--green);box-shadow:0 10px 30px rgba(6,95,70,.15);transform:translateY(-3px)}
+    .article-source{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--green);font-weight:700;margin-bottom:0.75rem}
+    .article-title{font-weight:700;font-size:1.125rem;line-height:1.4;margin-bottom:0.75rem;color:var(--text)}
+    .article-excerpt{font-size:0.9375rem;color:var(--muted);line-height:1.7}
+
+    .traffic-chart{background:white;border-radius:16px;padding:2rem;box-shadow:0 4px 16px rgba(0,0,0,.08);margin:2rem 0}
+    .chart-bars{display:flex;gap:3rem;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+    .chart-group{text-align:center;min-width:200px}
+    .chart-label{font-weight:700;font-size:1.125rem;margin-bottom:1rem;color:var(--text)}
+    .chart-bar{display:flex;align-items:flex-end;justify-content:center;gap:1.5rem;height:200px}
+    .bar{width:80px;background:linear-gradient(to top, #dc2626, #ef4444);border-radius:8px 8px 0 0;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:0.5rem;color:white;font-weight:700;font-size:0.875rem}
+    .bar.new{background:linear-gradient(to top, #059669, #10b981)}
+    .bar-label{position:absolute;bottom:-2rem;left:50%;transform:translateX(-50%);font-size:0.75rem;font-weight:600;color:var(--muted);white-space:nowrap}
+
+    .contact-form{max-width:600px}
+    .form-group{margin-bottom:1.25rem}
+    .form-label{display:block;font-weight:600;margin-bottom:0.5rem;font-size:0.9375rem}
+    .form-input{width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:border-color .2s ease}
+    .form-input:focus{outline:none;border-color:var(--green)}
+    .form-textarea{min-height:120px;resize:vertical}
+
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+    #backToTop{position:fixed;bottom:2rem;right:2rem;width:3rem;height:3rem;background:var(--green);color:white;border:none;border-radius:50%;font-size:1.5rem;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s ease;box-shadow:0 4px 12px rgba(6,95,70,.3);z-index:100}
+    #backToTop.show{opacity:1;visibility:visible}
+    #backToTop:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(6,95,70,.4)}
+
+    .site-plan-key{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin-top:1rem;font-size:0.9375rem;line-height:1.8}
+    .site-plan-key strong{color:var(--green);font-weight:700}
+
+    .route-map{background:#f9fafb;border:2px solid var(--green);border-radius:12px;padding:2rem;margin:2rem 0;text-align:center}
+    .route-map-content{max-width:600px;margin:0 auto}
+    .route-arrow{font-size:2rem;color:var(--green);margin:0.5rem 0}
+
+    .lang-toggle{position:fixed;bottom:6rem;right:2rem;z-index:100}
+    .lang-btn{background:white;border:2px solid var(--green);color:var(--green);padding:0.5rem 1rem;border-radius:9999px;font-weight:700;font-size:0.875rem;cursor:pointer;transition:all .2s ease;box-shadow:0 4px 12px rgba(6,95,70,.2)}
+    .lang-btn:hover{background:var(--green);color:white}
+
+    /* Custom Icon Styles */
+    .icon-box{width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--green-light) 0%, var(--blue-light) 100%);border-radius:16px;margin-bottom:1.5rem;position:relative;overflow:hidden}
+    .icon-box::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(6,95,70,0.1) 0%, rgba(30,64,175,0.1) 100%);opacity:0;transition:opacity .3s ease}
+    .pro-card:hover .icon-box::before{opacity:1}
+    .icon-svg{width:32px;height:32px;fill:var(--green);transition:transform .3s ease}
+    .pro-card:hover .icon-svg{transform:scale(1.1)}
+    
+    .section-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:var(--green);border-radius:12px;margin-right:1rem;position:relative}
+    .section-icon svg{width:24px;height:24px;fill:white}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="topbar">
+    <div class="container">
+      <div class="flex items-center justify-between h-20">
+        <div class="text-xl font-bold">
+          <a href="#home">Sabey Data Centers</a>
+        </div>
+        <nav class="hidden md:flex space-x-8 text-sm">
+          <a href="#project">Descripción del Proyecto</a>
+          <a href="#questions">Preguntas Principales</a>
+          <a href="#impact">Impacto Económico</a>
+          <a href="#traffic">Tráfico y Medio Ambiente</a>
+          <a href="#timeline">Cronología</a>
+          <a href="#faq">Preguntas Frecuentes</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+        <div id="hamburger" class="md:hidden cursor-pointer">
+          <div style="width:28px;height:2px;background:var(--text);margin:6px 0;transition:all .3s"></div>
+          <div style="width:28px;height:2px;background:var(--text);margin:6px 0;transition:all .3s"></div>
+          <div style="width:28px;height:2px;background:var(--text);margin:6px 0;transition:all .3s"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div id="mobileNav" style="position:fixed;top:81px;left:0;right:0;background:white;box-shadow:0 8px 16px rgba(0,0,0,.1);z-index:999;max-height:0;overflow:hidden;transition:max-height .4s ease">
+    <nav style="padding:2rem 1.5rem;display:flex;flex-direction:column;gap:1.25rem">
+      <a href="#project" style="font-weight:600;font-size:1.0625rem">Descripción del Proyecto</a>
+      <a href="#questions" style="font-weight:600;font-size:1.0625rem">Preguntas Principales</a>
+      <a href="#impact" style="font-weight:600;font-size:1.0625rem">Impacto Económico</a>
+      <a href="#traffic" style="font-weight:600;font-size:1.0625rem">Tráfico y Medio Ambiente</a>
+      <a href="#timeline" style="font-weight:600;font-size:1.0625rem">Cronología</a>
+      <a href="#faq" style="font-weight:600;font-size:1.0625rem">Preguntas Frecuentes</a>
+      <a href="#contact" style="font-weight:600;font-size:1.0625rem">Contacto</a>
+    </nav>
+  </div>
+  <style>
+    #hamburger.open div:nth-child(1){transform:rotate(45deg) translateY(12px)}
+    #hamburger.open div:nth-child(2){opacity:0}
+    #hamburger.open div:nth-child(3){transform:rotate(-45deg) translateY(-12px)}
+    #mobileNav.open{max-height:500px}
+  </style>
+
+  <!-- Hero -->
+  <section id="home" class="hero" style="padding:0">
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600" alt="Campus moderno de centro de datos">
+    <div class="hero__content">
+      <div class="content-inner">
+        <div class="hero-glass fade-up">
+          <h1 class="text-4xl md:text-5xl font-bold headline">Parque Tecnológico de Decatur</h1>
+          <p class="lead mt-4 text-lg">Un campus de centro de datos cuidadosamente diseñado que traerá empleos bien remunerados, millones en fondos escolares y mejoras de infraestructura a Decatur Township, con un impacto mínimo en los vecindarios residenciales.</p>
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a href="#questions" class="btn btn-black">Preguntas Principales</a>
+            <a href="#project" class="btn btn-ghost">Más Información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section id="project">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <h2 class="text-5xl font-bold headline">Lo Que Estamos Construyendo</h2>
+        <p class="lead mt-6 text-lg">Un campus de centro de datos de última generación en 79 acres a lo largo de Kentucky Avenue, diseñado específicamente para satisfacer las necesidades de infraestructura digital del siglo XXI, al mismo tiempo que protege y mejora la calidad de vida en Decatur Township.</p>
+      </div>
+
+      <!-- Site Plan with Key -->
+      <div class="mt-12 fade-up">
+        <div class="image-section">
+          <img src="https://via.placeholder.com/1200x800/065f46/ffffff?text=Plano+del+Sitio+Actualizado" alt="Plano del Sitio del Parque Tecnológico de Decatur">
+        </div>
+        <div class="site-plan-key">
+          <strong>Clave del Plano del Sitio:</strong><br>
+          <strong>Edificio A:</strong> 1 piso, aproximadamente 570,300 pies cuadrados, 42' de altura (más cercano a las viviendas residenciales con zona de protección de 200')<br>
+          <strong>Edificio B:</strong> 2 pisos, aproximadamente 231,300 pies cuadrados, 65' de altura (más cercano a Kentucky Avenue)
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div class="pro-card p-8 fade-up">
+          <div class="icon-box">
+            <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Ubicación Estratégica</h3>
+          <p class="lead">Sitio de 79 acres en Kentucky Avenue con acceso directo a la autopista, zonificación industrial existente e infraestructura de servicios públicos disponible, minimizando las interrupciones en las áreas residenciales.</p>
+        </div>
+        <div class="pro-card p-8 fade-up">
+          <div class="icon-box">
+            <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L2 9v11h20V9L12 3zm-2 14H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Diseño Profesional</h3>
+          <p class="lead">Dos edificios con un total de aproximadamente 800,000 pies cuadrados con amplios jardines, zonas de protección residenciales de 200 pies y arquitectura reflexiva que respeta el carácter de la comunidad.</p>
+        </div>
+        <div class="pro-card p-8 fade-up">
+          <div class="icon-box">
+            <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Huella Mínima</h3>
+          <p class="lead">Sistemas de enfriamiento por aire de circuito cerrado que utilizan prácticamente nada de agua, control de ruido sofisticado y 80% menos de tráfico que el desarrollo industrial típico de tamaño similar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Questions -->
+  <section id="questions">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <h2 class="text-5xl font-bold headline">Preguntas Principales de los Vecinos</h2>
+        <p class="lead mt-4 text-lg">Hemos escuchado atentamente los comentarios de la comunidad. Estas son las preguntas que escuchamos con más frecuencia, respondidas con total transparencia.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+        <!-- Question 1 -->
+        <div class="question-card fade-up">
+          <div class="question">Pregunta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">¿Este proyecto aumentará mi factura de electricidad?</p>
+          <div class="answer">Respuesta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">No se espera que las tarifas de los clientes existentes se vean afectadas negativamente según el plan de AES y el proceso revisado por la IURC. Los centros de datos como este pagan tarifas comerciales más altas y a menudo apoyan mejoras en la red eléctrica que benefician a todos los clientes. AES Indiana ha confirmado por escrito que este proyecto se alinea con sus planes de infraestructura a largo plazo.</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-card fade-up">
+          <div class="question">Pregunta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">¿Cuánto tráfico creará esto?</p>
+          <div class="answer">Respuesta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">Solo 50-75 viajes diarios en operación completa, un 80% menos que el desarrollo industrial típico. No se permite tráfico de las instalaciones fuera de Camby Road. Todo el tráfico usará exclusivamente Kentucky Avenue y Ronald Reagan Parkway. Los estudios de tráfico de terceros confirman un impacto insignificante en las calles locales.</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-card fade-up">
+          <div class="question">Pregunta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">¿Escucharé ruido de las instalaciones?</p>
+          <div class="answer">Respuesta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">No. La tecnología sofisticada de reducción de ruido, la ubicación estratégica de los edificios con zonas de protección de 200 pies y los jardines profesionales aseguran que las operaciones permanezcan inaudibles desde las propiedades residenciales. Los estudios acústicos independientes verifican el cumplimiento de todas las ordenanzas de ruido con un margen significativo.</p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-card fade-up">
+          <div class="question">Pregunta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">¿Cuánta agua usará esto?</p>
+          <div class="answer">Respuesta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">Prácticamente nada. Esta instalación utiliza tecnología de enfriamiento por aire de circuito cerrado, consumiendo 95-99% menos agua que los centros de datos tradicionales. El uso total de agua será menor que el de una tienda minorista típica de tamaño similar, principalmente para baños y jardinería.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-card fade-up">
+          <div class="question">Pregunta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">¿Qué tipo de empleos creará esto?</p>
+          <div class="answer">Respuesta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">50-75 puestos permanentes bien remunerados con un promedio de $70,000-$90,000 anuales, más 350-550 empleos indirectos en la economía más amplia. La construcción empleará a 500-800 trabajadores durante 2-3 años. Prioridad de contratación para residentes de la comunidad y asociaciones con escuelas locales para trayectorias profesionales.</p>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-card fade-up">
+          <div class="question">Pregunta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">¿Cómo beneficiará esto a las escuelas de Decatur Township?</p>
+          <div class="answer">Respuesta</div>
+          <p class="mt-3" style="font-size:1.0625rem;line-height:1.6;color:var(--text)">$3-5 millones en ingresos anuales de impuestos a la propiedad que apoyan mejores maestros, programas, instalaciones y tecnología, sin ningún aumento en los impuestos a la propiedad residencial. Esta financiación estable y resistente a las recesiones ayuda a las escuelas a competir por los mejores educadores y proporcionar recursos de vanguardia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Economic Impact -->
+  <section id="impact">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <h2 class="text-5xl font-bold headline">Impacto Económico Real</h2>
+        <p class="lead mt-4 text-lg">Esto no es teórico: estos son resultados comprobados de proyectos similares de centros de datos en todo Estados Unidos, respaldados por investigaciones independientes de terceros y datos gubernamentales.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div class="stat-card fade-up">
+          <div class="stat-label">Inversión Total</div>
+          <div class="stat-number">$4B+</div>
+          <p class="stat-detail">Inversión de capital privado en infraestructura y tecnología de Decatur Township</p>
+        </div>
+        <div class="stat-card fade-up">
+          <div class="stat-label">Ingresos por Impuestos a la Propiedad</div>
+          <div class="stat-number">$3-5M</div>
+          <p class="stat-detail">Financiación anual para escuelas, servicios de emergencia e infraestructura, resistente a las recesiones</p>
+        </div>
+        <div class="stat-card fade-up">
+          <div class="stat-label">Empleos Directos</div>
+          <div class="stat-number">50-75</div>
+          <p class="stat-detail">Puestos permanentes con un promedio de $70K-$90K anuales con beneficios completos</p>
+        </div>
+        <div class="stat-card fade-up">
+          <div class="stat-label">Empleos de Construcción</div>
+          <div class="stat-number">500-800</div>
+          <p class="stat-detail">2-3 años de empleo de construcción bien remunerado para oficios especializados</p>
+        </div>
+        <div class="stat-card fade-up">
+          <div class="stat-label">Empleos Indirectos</div>
+          <div class="stat-number">350-550</div>
+          <p class="stat-detail">Empleos creados en la economía más amplia a través del gasto y la cadena de suministro</p>
+        </div>
+        <div class="stat-card fade-up">
+          <div class="stat-label">Financiación de Infraestructura</div>
+          <div class="stat-number">$2-3M</div>
+          <p class="stat-detail">Contribución directa a mejoras de carreteras y actualizaciones de servicios públicos que benefician a todos los residentes</p>
+        </div>
+      </div>
+
+      <div class="multiplier-visual fade-up">
+        <div class="multiplier-box">
+          <div class="text-3xl font-bold text-green-700 mb-2">1</div>
+          <div class="text-sm font-semibold text-gray-700">Empleo en Centro de Datos</div>
+        </div>
+        <div class="multiplier-arrow">→</div>
+        <div class="multiplier-box">
+          <div class="text-3xl font-bold text-green-700 mb-2">7-11</div>
+          <div class="text-sm font-semibold text-gray-700">Total de Empleos Creados</div>
+        </div>
+      </div>
+      <p class="text-center lead mt-4">Cada empleo en un centro de datos crea 7-11 empleos adicionales en la economía local a través de la construcción, la cadena de suministro y el gasto de los empleados (Fuente: U.S. Chamber of Commerce Technology Engagement Center)</p>
+    </div>
+  </section>
+
+  <!-- Traffic & Environment -->
+  <section id="traffic">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <h2 class="text-5xl font-bold headline">Tráfico e Impacto Ambiental</h2>
+        <p class="lead mt-4 text-lg">Los centros de datos son fundamentalmente diferentes del desarrollo industrial típico, con un tráfico, ruido, uso de agua e impacto ambiental dramáticamente menores.</p>
+      </div>
+
+      <!-- Traffic Comparison Chart -->
+      <div class="traffic-chart fade-up">
+        <h3 class="text-2xl font-bold text-center mb-2">Comparación de Tráfico Diario</h3>
+        <p class="text-center lead">Instalaciones de tamaño similar (800,000 pies cuadrados)</p>
+        <div class="chart-bars">
+          <div class="chart-group">
+            <div class="chart-label">Almacén Típico</div>
+            <div class="chart-bar">
+              <div class="bar" style="height:180px">
+                <div>400-500</div>
+                <div class="bar-label">Viajes Diarios</div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-group">
+            <div class="chart-label">Este Centro de Datos</div>
+            <div class="chart-bar">
+              <div class="bar new" style="height:36px">
+                <div>50-75</div>
+                <div class="bar-label">Viajes Diarios</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center lead mt-6"><strong>80% menos tráfico</strong> que el desarrollo industrial típico de tamaño similar</p>
+      </div>
+
+      <!-- Traffic Routing Map -->
+      <div class="route-map fade-up">
+        <div class="route-map-content">
+          <h3 class="text-xl font-bold mb-4">Ruta de Tráfico de las Instalaciones</h3>
+          <p class="lead mb-3"><strong>NO se permite tráfico de las instalaciones fuera de Camby Road</strong></p>
+          <div class="route-arrow">↓</div>
+          <p class="font-semibold">Todo el tráfico de las instalaciones usa:</p>
+          <p class="lead mt-2">Kentucky Avenue → Ronald Reagan Parkway</p>
+          <p class="text-sm text-gray-600 mt-4">Esta ruta mantiene todo el tráfico del centro de datos en los principales corredores comerciales, lejos de los vecindarios residenciales.</p>
+        </div>
+      </div>
+
+      <!-- Environmental Features -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div class="pro-card p-8 fade-up">
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="section-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </span>
+            Conservación de Agua
+          </h3>
+          <p class="lead mb-4"><strong>Prácticamente ningún uso de agua</strong> a través de tecnología de enfriamiento por aire de circuito cerrado, 95-99% más eficiente que los centros de datos tradicionales.</p>
+          <p class="lead">El consumo total de agua será menor que el de una tienda minorista típica, utilizado principalmente para baños e irrigación de jardines. <a href="#" class="underline font-semibold text-green-700">Explicación técnica</a></p>
+        </div>
+        <div class="pro-card p-8 fade-up">
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="section-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+              </svg>
+            </span>
+            Control de Ruido
+          </h3>
+          <p class="lead mb-4">Ingeniería acústica sofisticada con barreras de atenuación de sonido, ubicación estratégica de edificios y zonas de protección residenciales de 200 pies aseguran que las operaciones permanezcan inaudibles.</p>
+          <p class="lead">Los estudios independientes verifican el cumplimiento de todas las ordenanzas de ruido con un margen significativo de seguridad.</p>
+        </div>
+        <div class="pro-card p-8 fade-up">
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="section-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+              </svg>
+            </span>
+            Generadores de Respaldo
+          </h3>
+          <p class="lead mb-4">Los generadores se prueban solo durante el día, con aproximadamente 20 horas totales de prueba por año en todas las unidades. El uso real durante cortes de energía es raro, típicamente menos de una vez al año.</p>
+          <p class="lead">Motores modernos compatibles con EPA Nivel 4 con controles de emisiones avanzados minimizan el impacto ambiental.</p>
+        </div>
+        <div class="pro-card p-8 fade-up">
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="section-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 8c0-1.1-.9-2-2-2s-2 .9-2 2c0 .74.4 1.38 1 1.72V13h-2V9.72c.6-.34 1-.98 1-1.72 0-1.1-.9-2-2-2s-2 .9-2 2c0 .74.4 1.38 1 1.72V13H8c-1.1 0-2 .9-2 2v4h3v3h6v-3h3v-4c0-1.1-.9-2-2-2h-2V9.72c.6-.34 1-.98 1-1.72z"/>
+              </svg>
+            </span>
+            Jardinería y Zonas de Protección
+          </h3>
+          <p class="lead">Jardinería profesional con árboles y vegetación nativos, amplios espacios verdes y zonas de protección mínimas de 200 pies de las propiedades residenciales crean un ambiente de campus tipo parque.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <h2 class="text-5xl font-bold headline">Cronología del Proyecto</h2>
+        <p class="lead mt-4 text-lg">Una mirada transparente a lo que sucederá a continuación, sujeto a estudios de interconexión de servicios públicos y la IURC y programación.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-12">
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Fase 1: Participación Comunitaria (Actual)</div>
+          <div class="timeline-content">Diálogo abierto con residentes, funcionarios del municipio y partes interesadas. Estamos escuchando inquietudes, respondiendo preguntas e incorporando los comentarios de la comunidad en el diseño del proyecto.</div>
+        </div>
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Fase 2: Ingeniería y Permisos (2025-2026)</div>
+          <div class="timeline-content">Estudios de ingeniería detallados, evaluaciones ambientales y solicitudes de permisos. Todas las revisiones regulatorias son procesos públicos en los que los miembros de la comunidad pueden participar, sujeto a estudios de interconexión de servicios públicos y la IURC y programación.</div>
+        </div>
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Fase 3: Infraestructura y Preparación del Sitio (2026-2027)</div>
+          <div class="timeline-content">Mejoras de carreteras, instalaciones de servicios públicos y preparación del sitio. Contratistas locales priorizados para el trabajo, sujeto a estudios de interconexión de servicios públicos y la IURC y programación.</div>
+        </div>
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Fase 4: Construcción (2027-2029)</div>
+          <div class="timeline-content">Construcción de edificios con 500-800 trabajadores. Implementaremos gestión estricta del tráfico, controles de ruido y enlace comunitario durante toda la construcción, sujeto a estudios de interconexión de servicios públicos y la IURC y programación.</div>
+        </div>
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Fase 5: Operaciones (2029+)</div>
+          <div class="timeline-content">Las instalaciones comienzan operaciones con 50-75 empleados permanentes. Los ingresos anuales de impuestos a la propiedad comienzan a fluir a las escuelas y al gobierno local, sujeto a estudios de interconexión de servicios públicos y la IURC y programación.</div>
+        </div>
+      </div>
+
+      <!-- Construction Logistics -->
+      <div class="pro-card p-8 mt-12 fade-up">
+        <h3 class="text-2xl font-bold mb-4">Logística de Construcción</h3>
+        <div class="lead">
+          <p class="mb-3"><strong>Gestión del Tráfico:</strong> No se permite tráfico de las instalaciones fuera de Camby Road. Todo el tráfico de construcción usará Kentucky Avenue y Ronald Reagan Parkway. Personal de control de tráfico estará apostado durante los períodos de construcción máxima.</p>
+          <p class="mb-3"><strong>Horas de Trabajo:</strong> Construcción limitada a 7 AM - 6 PM entre semana para minimizar las interrupciones en las áreas residenciales.</p>
+          <p class="mb-3"><strong>Enlace Comunitario:</strong> Punto de contacto dedicado disponible durante toda la construcción para abordar cualquier inquietud de inmediato.</p>
+          <p><strong>Seguridad y Limpieza:</strong> Limpieza diaria de carreteras, supresión de polvo y protocolos de seguridad estrictos para proteger a los trabajadores y la comunidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AES & Electric Rates -->
+  <section id="aes">
+    <div class="container">
+      <div class="max-w-3xl mx-auto fade-up">
+        <h2 class="text-4xl font-bold headline text-center">Entendiendo las Tarifas Eléctricas y AES Indiana</h2>
+        <p class="lead mt-6 text-lg">Abordemos la cuestión de la electricidad con total transparencia y hechos.</p>
+
+        <div class="pro-card p-8 mt-8">
+          <h3 class="text-2xl font-bold mb-4">Cómo Funcionan las Tarifas Eléctricas en Indiana</h3>
+          <div class="lead space-y-4">
+            <p>Las tarifas eléctricas en Indiana están reguladas por la Comisión Reguladora de Servicios Públicos de Indiana (IURC), una agencia estatal independiente. Ninguna empresa de servicios públicos puede cambiar las tarifas sin la aprobación de la IURC después de audiencias públicas en las que los clientes pueden participar.</p>
+            <p><strong>Los casos de tarifas y los principales programas de capital son públicos y decididos por la IURC.</strong> Esto garantiza que las decisiones sobre tarifas se tomen de manera transparente y en interés público.</p>
+            <p>AES Indiana ha confirmado por escrito que no se espera que las tarifas de los clientes existentes se vean afectadas negativamente según el plan de AES y el proceso revisado por la IURC.</p>
+          </div>
+        </div>
+
+        <div class="pro-card p-8 mt-8">
+          <h3 class="text-2xl font-bold mb-4">Cómo los Centros de Datos a Menudo Benefician a los Clientes Existentes</h3>
+          <div class="lead space-y-4">
+            <p><strong>Tarifas Comerciales Más Altas:</strong> Los centros de datos pagan tarifas eléctricas comerciales/industriales significativamente más altas que los clientes residenciales, a menudo 50-100% más por kilovatio-hora.</p>
+            <p><strong>Inversión en Infraestructura de la Red:</strong> Los grandes clientes a menudo financian mejoras de la red (subestaciones, líneas de transmisión) que benefician a todos los clientes pero son pagadas por el gran cliente.</p>
+            <p><strong>Dilución de la Base de Tarifas:</strong> Cuando los costos de infraestructura se distribuyen entre más kilovatios-hora totales consumidos, el costo por unidad para todos puede disminuir.</p>
+            <p><strong>Desarrollo Económico:</strong> Los reguladores de servicios públicos consideran los beneficios económicos al revisar las tarifas: los empleos, los ingresos fiscales y la inversión comunitaria importan en los casos de tarifas.</p>
+          </div>
+        </div>
+
+        <div class="pro-card p-8 mt-8">
+          <h3 class="text-2xl font-bold mb-4">Historial de AES Indiana</h3>
+          <div class="lead space-y-4">
+            <p>AES Indiana sirve a más de 500,000 clientes en Indianápolis y áreas circundantes. Han servido con éxito a múltiples centros de datos y grandes clientes industriales sin impactos adversos en las tarifas residenciales.</p>
+            <p>AES tiene amplia experiencia integrando grandes cargas comerciales en su planificación de infraestructura de red y ha apoyado públicamente la creciente industria de centros de datos de Indiana.</p>
+            <p>El plan de infraestructura a largo plazo de la empresa ya tiene en cuenta el crecimiento comercial en el área metropolitana de Indianápolis.</p>
+          </div>
+        </div>
+
+        <div class="pro-card p-8 mt-8 bg-green-50">
+          <h3 class="text-2xl font-bold mb-4">En Resumen</h3>
+          <p class="lead text-lg"><strong>No se espera que las tarifas de los clientes existentes se vean afectadas negativamente según el plan de AES y el proceso revisado por la IURC.</strong> Los centros de datos como este típicamente apoyan mejoras de la red que benefician a todos mientras pagan tarifas comerciales premium. Todas las decisiones sobre tarifas las toma públicamente la IURC, donde los miembros de la comunidad pueden participar y expresar sus inquietudes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <h2 class="text-5xl font-bold headline">Preguntas Frecuentes</h2>
+        <p class="lead mt-4 text-lg">Respuestas completas a preguntas comunes sobre el proyecto.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-12">
+        <div class="faq-item">
+          <div class="faq-q">¿Qué es exactamente un centro de datos?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Un centro de datos es una instalación segura que alberga servidores de computadoras y equipos de red que alimentan Internet, la computación en la nube y los servicios digitales que usamos todos los días, desde la transmisión de video hasta la banca en línea y los registros médicos. Piense en ello como un edificio altamente seguro, con clima controlado, lleno de computadoras que necesitan funcionar las 24 horas del día, los 7 días de la semana, para mantener los servicios digitales disponibles.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Por qué Decatur Township?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Esta ubicación ofrece la combinación perfecta: infraestructura eléctrica disponible, acceso a la autopista para entregas raras de equipos, zonificación industrial existente y proximidad a redes de fibra óptica, todo mientras mantiene la distancia adecuada de los vecindarios residenciales. El sitio ya está zonificado para uso industrial y ha sido designado para desarrollo durante años.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Esto realmente no aumentará mi factura de electricidad?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            No se espera que las tarifas de los clientes existentes se vean afectadas negativamente según el plan de AES y el proceso revisado por la IURC. Los centros de datos pagan tarifas comerciales significativamente más altas y a menudo financian mejoras de infraestructura que benefician a todos los clientes. Todas las decisiones sobre tarifas las toma públicamente la Comisión Reguladora de Servicios Públicos de Indiana (IURC) después de audiencias públicas en las que los clientes pueden participar. AES Indiana ha confirmado que este proyecto se alinea con sus planes de infraestructura a largo plazo. Los casos de tarifas y los principales programas de capital son públicos y decididos por la IURC.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Cómo pueden prometer tan pocos viajes por día?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Los centros de datos son fundamentalmente diferentes de los almacenes o la manufactura. Una vez construidos y operativos, requieren muy pocas personas en el sitio (50-75 empleados trabajando en turnos) y muy pocas entregas (los servidores se instalan durante la construcción y luego duran 5-7 años). Empresas de ingeniería de tráfico de terceros han estudiado este sitio específico y confirmado 50-75 viajes diarios en operación completa, verificado contra datos reales de instalaciones similares en todo el país.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Qué pasa con el ruido del equipo de enfriamiento?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Los centros de datos modernos utilizan ingeniería acústica sofisticada diseñada específicamente para eliminar el impacto del ruido. Esto incluye: barreras de atenuación de sonido y recintos alrededor del equipo, ubicación estratégica de edificios con zonas de protección mínimas de 200 pies de las casas, jardinería profesional con barreras densas de vegetación, y el edificio más cercano (Edificio A a 42' de altura) posicionado hacia las áreas residenciales con el equipo de menor ruido. Ingenieros acústicos independientes han verificado que esta instalación será inaudible desde las propiedades residenciales.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Cómo funciona el sistema de enfriamiento por aire de circuito cerrado?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            En lugar de usar agua para enfriar el equipo (como los centros de datos tradicionales), esta instalación utiliza enfriamiento basado en aire en un circuito cerrado, similar a cómo funciona su refrigerador pero a mayor escala. El aire circula por la instalación, se enfría mediante grandes intercambiadores de calor y se recircula continuamente. El sistema es aproximadamente 95-99% más eficiente en agua que los centros de datos tradicionales enfriados con agua. El consumo total de agua será menor que el de una tienda minorista típica de tamaño similar.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Esto perjudicará el valor de mi propiedad?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            La evidencia de proyectos similares en todo el país sugiere lo contrario. Los centros de datos bien diseñados con amplios jardines, bajo tráfico y sin contaminación generalmente mantienen o aumentan los valores de las propiedades cercanas debido a: infraestructura mejorada (carreteras, servicios públicos), estabilidad económica y creación de empleos, mayor base impositiva que apoya mejores escuelas y servicios, y apariencia profesional tipo campus con zonas de protección significativas. Estamos comprometidos con una instalación que mejore en lugar de restar valor a la comunidad.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Qué tipo de empleos estarán disponibles y quién puede solicitarlos?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Los puestos permanentes incluyen: Gerentes de Operaciones de Instalaciones, Ingenieros y Técnicos Eléctricos, Ingenieros y Técnicos de HVAC/Mecánicos, Ingenieros de Redes, Personal de Seguridad y Personal de Mantenimiento de Instalaciones. Los salarios oscilan entre $70,000-$90,000+ con beneficios completos. Estamos comprometidos con la prioridad de contratación para residentes de Decatur Township y nos asociaremos con escuelas locales para programas de desarrollo de la fuerza laboral, aprendizajes y trayectorias profesionales en tecnología y operaciones de instalaciones.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Cómo funcionará exactamente la financiación escolar?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            La instalación se evaluará en $500 millones-$1 mil millones+ para fines de impuestos a la propiedad. Con las tasas locales típicas, esto genera $3-5 millones anuales, con aproximadamente 50-60% destinado a las escuelas de Decatur Township. Esta financiación es permanente, confiable (los centros de datos no cierran ni se mudan) y crece con el valor de la propiedad. Críticamente, esto es un ingreso nuevo sin ningún aumento en los impuestos a la propiedad residencial: cada dólar beneficia a las escuelas sin costarles nada a los residentes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Qué sucede durante la construcción?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            <strong>Cronología:</strong> 2-3 años de construcción con 500-800 trabajadores en el pico.
+            <br><br>
+            <strong>Gestión del Tráfico:</strong> No se permite tráfico de las instalaciones fuera de Camby Road. Todo el tráfico de construcción usa Kentucky Avenue → Ronald Reagan Parkway. Personal de control de tráfico durante períodos pico.
+            <br><br>
+            <strong>Horas de Trabajo:</strong> Solo de 7 AM a 6 PM entre semana, sin construcción los fines de semana o por la noche.
+            <br><br>
+            <strong>Control de Polvo y Ruido:</strong> Limpieza diaria de carreteras, sistemas de supresión de agua, equipo moderno con silenciadores.
+            <br><br>
+            <strong>Enlace Comunitario:</strong> Persona de contacto dedicada disponible para abordar inquietudes de inmediato durante toda la construcción.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Qué pasa con la energía de respaldo de emergencia y los generadores?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Los generadores de respaldo son legalmente requeridos para mantener la infraestructura digital crítica durante raros cortes de energía. Los generadores se prueban solo durante el día, con aproximadamente 20 horas totales de prueba por año en todas las unidades. El uso real de emergencia es raro, típicamente menos de una vez al año durante períodos breves. Todos los generadores cumplen con los estándares de emisiones EPA Nivel 4 con controles de emisiones avanzados y atenuación de sonido para minimizar el impacto.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿Cómo beneficia específicamente este proyecto a los residentes de Decatur Township?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            <strong>Escuelas Más Fuertes:</strong> Millones en ingresos anuales de impuestos que apoyan mejores maestros, programas, instalaciones y tecnología sin aumentar los impuestos a la propiedad residencial.
+            <br><br>
+            <strong>Infraestructura Mejorada:</strong> Financiación directa para mejoras de carreteras más servicios públicos mejorados que benefician a todos los residentes y negocios.
+            <br><br>
+            <strong>Empleos Locales:</strong> 50-75 puestos permanentes bien remunerados más 350-550 empleos indirectos en la economía más amplia, con prioridad de contratación para residentes de la comunidad.
+            <br><br>
+            <strong>Estabilidad Económica:</strong> Inversión resistente a las recesiones de $4+ mil millones que proporciona una base impositiva estable para escuelas, servicios de emergencia e infraestructura pública durante décadas.
+            <br><br>
+            <strong>Trayectorias Profesionales:</strong> Asociaciones de desarrollo de la fuerza laboral que crean oportunidades para estudiantes y residentes para acceder a carreras tecnológicas bien remuneradas.
+            <br><br>
+            <strong>Crecimiento Empresarial:</strong> El gasto local de trabajadores de construcción y empleados del centro de datos apoya restaurantes, comercio minorista y servicios. El "efecto halo" atrae negocios complementarios.
+            <br><br>
+            <strong>Impacto Mínimo:</strong> A diferencia del desarrollo industrial típico: 80% menos tráfico, sin contaminación, sin interrupción de ruido, prácticamente ningún uso de agua con sistemas de enfriamiento por aire de circuito cerrado, jardinería profesional y diseño con zonas de protección residenciales de 200 pies.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">¿A quién puedo contactar si tengo preguntas o inquietudes adicionales?<span class="ml-2">+</span></div>
+          <div class="faq-a lead">
+            Damos la bienvenida genuinamente a cada pregunta, inquietud y sugerencia. Por favor, use el <a class="underline font-semibold" href="#contact">formulario de contacto</a> para comunicarse con nuestro enlace comunitario dedicado. Nos comprometemos a responder a cada consulta dentro de dos días hábiles. Su opinión importa y queremos asegurarnos de que tenga toda la información que necesita.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="pro-card p-10 fade-up">
+        <h2 class="text-4xl font-bold headline">Queremos Escuchar de Usted</h2>
+        <p class="lead mt-4 text-lg">Preguntas, ideas, inquietudes o sugerencias: realmente queremos escucharlas todas. Este proyecto será parte de Decatur Township durante décadas y estamos comprometidos a hacerlo bien junto con la comunidad.</p>
+        
+        <div class="max-w-2xl mx-auto mt-10">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 text-center">Envíenos un Mensaje</h3>
+            <p class="lead mb-6 text-center">Respondemos a cada consulta dentro de dos días hábiles.</p>
+            <form class="contact-form" action="https://formspree.io/f/mnngenvr" method="POST">
+              <div class="form-group">
+                <label class="form-label" for="name">Nombre</label>
+                <input class="form-input" type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Correo Electrónico</label>
+                <input class="form-input" type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Mensaje</label>
+                <textarea class="form-input form-textarea" id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-black">Enviar Mensaje</button>
+            </form>
+            <p class="text-sm text-gray-600 mt-4 text-center"></p>
+            <div class="mt-8 text-center">
+              <a href="#docs" class="btn btn-ghost">Revisar Documentos del Proyecto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding:3rem 0;background:var(--accent);color:var(--bg)">
+    <div class="container text-sm">
+      <div class="font-semibold">Sabey Data Centers</div>
+      <div class="mt-1">Parque Tecnológico de Decatur</div>
+      <div class="mt-3">© <span id="year"></span> Sabey Data Centers. Todos los derechos reservados.</div>
+      <div class="mt-1">Última actualización: <span id="updated">Octubre 2025</span></div>
+      <div class="mt-6 text-xs opacity-75" style="max-width:800px;line-height:1.6">
+        Los datos de impacto económico provienen de investigaciones independientes de terceros: CBRE, PwC, U.S. Chamber of Commerce, Federal Reserve Bank of Richmond, AWS Economic Impact Study y Data Center Coalition. Todas las afirmaciones se basan en estudios revisados por pares y datos gubernamentales.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Spanish/English Language Toggle -->
+  <div class="lang-toggle">
+    <a href="updated-website.html" class="lang-btn">English</a>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="backToTop" title="Volver arriba">↑</button>
+
+  <!-- Scripts -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    const topbar = document.getElementById('topbar');
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) topbar.classList.add('scrolled'); else topbar.classList.remove('scrolled');
+      if (window.scrollY > 500) backToTopBtn.classList.add('show'); else backToTopBtn.classList.remove('show');
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }), {threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+    document.querySelectorAll('.faq-q').forEach(q=>{
+      q.addEventListener('click',()=>{ 
+        const item = q.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
