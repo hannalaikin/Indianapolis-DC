@@ -151,7 +151,79 @@
   </style>
 </head>
 <body>
+<!-- Sabey Open House Banner START -->
+<style>
+  :root {
+    --oh-bg: #0a2a66;      /* Sabey navy blue */
+    --oh-text: #ffffff;
+    --oh-accent: #7ec8ff;
+  }
 
+  html { scroll-behavior: smooth; }
+
+  .oh-banner {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--oh-bg);
+    color: var(--oh-text);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,.18);
+  }
+
+  .oh-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px 28px;
+  }
+
+  .oh-title {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .oh-meta {
+    font-size: clamp(15px, 2vw, 18px);
+    margin-bottom: 18px;
+    opacity: 0.95;
+  }
+
+  .oh-cta {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #0a2a66;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .oh-cta:hover {
+    background: var(--oh-accent);
+    color: #0a2a66;
+  }
+
+  @media (max-width: 640px) {
+    .oh-wrap { padding: 20px 12px 24px; }
+    .oh-title { font-size: 18px; }
+    .oh-meta { font-size: 14px; }
+  }
+</style>
+
+<div id="open-house-banner" class="oh-banner" role="region" aria-label="Open House announcement">
+  <div class="oh-wrap">
+    <p class="oh-title">Sabey Data Centers Open House — Tuesday, November 18 at 6:30 PM</p>
+    <p class="oh-meta">📍 Decatur Township School for Excellence, Community Room — 4335 Decatur Blvd</p>
+    <a class="oh-cta" href="#open-house">Learn More</a>
+  </div>
+</div>
+<!-- Sabey Open House Banner END -->
   <!-- Header -->
   <header id="topbar">
     <div class="container flex items-center gap-4 py-4">
