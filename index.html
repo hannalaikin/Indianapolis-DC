@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sabey Data Centers – Decatur Technology Park</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
     @keyframes fadeZoom{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
     .hero-glass.fade-up.show{animation:fadeZoom 1.3s ease forwards}
 
-    /* Myth vs Fact - Changed to Common Questions */
+    /* Q&A cards */
     .question-card{border:1px solid #e5e7eb;border-radius:16px;padding:20px;background:var(--card-bg);height:100%}
     .question{font-weight:700;color:#1e40af;font-size: 0.9375rem;text-transform:uppercase;letter-spacing:.06em}
     .answer{font-weight:700;color:#065f46;font-size: 0.9375rem;text-transform:uppercase;letter-spacing:.06em;margin-top:1.25rem}
@@ -73,7 +73,7 @@
     .faq-q span{transition:transform .3s ease;font-size:1.5rem;font-weight:400}
     .faq-item.open .faq-q span{transform:rotate(45deg)}
 
-    /* Economic Impact Stats */
+    /* Stats */
     .stat-card{text-align:center;padding:2.25rem 1.75rem;background:var(--card-bg);border-radius:16px;border:1px solid #e5e7eb;height:100%}
     .stat-number{font-size:3.25rem;font-weight:800;line-height:1;color:var(--green);margin-bottom:0.75rem}
     @media (max-width:768px){ .stat-number{font-size:2.5rem} }
@@ -93,7 +93,7 @@
     .timeline-phase{font-weight:700;font-size:1.1875rem;color:var(--green);margin-bottom:0.5rem}
     .timeline-content{color:var(--text);line-height:1.7;font-size:1rem}
 
-    /* Article Cards */
+    /* Articles */
     .article-card{display:block;padding:1.75rem;background:var(--card-bg);border:1px solid #e5e7eb;border-radius:12px;transition:all .3s ease;height:100%}
     .article-card:hover{border-color:var(--green);box-shadow:0 10px 30px rgba(6,95,70,.15);transform:translateY(-3px)}
     .article-source{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--green);font-weight:700;margin-bottom:0.75rem}
@@ -110,7 +110,7 @@
     .bar.new{background:linear-gradient(to top, #059669, #10b981)}
     .bar-label{position:absolute;bottom:-2rem;left:50%;transform:translateX(-50%);font-size:0.75rem;font-weight:600;color:var(--muted);white-space:nowrap}
 
-    /* Contact Form */
+    /* Contact/Form */
     .contact-form{max-width:600px}
     .form-group{margin-bottom:1.25rem}
     .form-label{display:block;font-weight:600;margin-bottom:0.5rem;font-size:0.9375rem}
@@ -118,7 +118,7 @@
     .form-input:focus{outline:none;border-color:var(--green)}
     .form-textarea{min-height:120px;resize:vertical}
 
-    /* Video Wrapper */
+    /* Video */
     .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:var(--radius);box-shadow:0 10px 40px rgba(0,0,0,.15)}
     .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 
@@ -148,650 +148,751 @@
 
     /* Document metadata */
     .doc-meta{font-size:0.8125rem;color:var(--muted);margin-top:0.5rem}
+
+    /* Empathy cards hover */
+    #voices .pro-card:hover{
+      border-color:#10b981;
+      box-shadow:0 10px 30px rgba(16,185,129,.18);
+      transform:translateY(-2px);
+    }
   </style>
 </head>
 <body>
-<!-- Sabey Open House Banner START -->
+
+<!-- Open House Banner — softened tone -->
 <style>
   :root{
-    --oh-bg:#0a2a66;      /* Sabey navy */
+    --oh-bg:#0a2a66;
     --oh-text:#ffffff;
     --oh-accent:#7ec8ff;
   }
-  html{scroll-behavior:smooth;}
-
   .oh-banner{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:var(--oh-bg);
-    color:var(--oh-text);
+    position:sticky;top:0;z-index:1000;background:var(--oh-bg);color:var(--oh-text);
     font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    text-align:center;
-    box-shadow:0 2px 12px rgba(0,0,0,.18);
-    padding-top:env(safe-area-inset-top);
+    text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.18);padding-top:env(safe-area-inset-top);
   }
-  .oh-wrap{
-    max-width:1200px;
-    margin:0 auto;
-    padding:22px 14px 26px;
-  }
-  .oh-title{
-    font-weight:800;
-    text-transform:uppercase;
-    font-size:clamp(18px,4vw,28px);
-    margin:0 0 8px;
-    line-height:1.2;
-  }
-  .oh-meta{
-    font-size:clamp(14px,3.8vw,18px);
-    margin:0 0 18px;
-    line-height:1.5;
-    opacity:.95;
-  }
+  .oh-wrap{max-width:1200px;margin:0 auto;padding:18px 14px 22px}
+  .oh-title{font-weight:800;text-transform:none;font-size:clamp(18px,4vw,26px);margin:0 0 6px;line-height:1.25}
+  .oh-meta{font-size:clamp(14px,3.6vw,17px);margin:0 0 14px;line-height:1.5;opacity:.95}
   .oh-cta{
-    display:inline-block;
-    padding:14px 26px;
-    border-radius:12px;
-    background:#fff;
-    color:#0a2a66;
-    font-weight:700;
-    font-size:clamp(15px,3.8vw,17px);
-    text-decoration:none;
-    transition:background .2s,transform .15s;
+    display:inline-block;padding:12px 22px;border-radius:12px;background:#fff;color:#0a2a66;
+    font-weight:700;font-size:clamp(15px,3.6vw,16px);text-decoration:none;transition:background .2s,transform .15s;
   }
   .oh-cta:hover{background:var(--oh-accent);}
-  .oh-cta:active{transform:scale(.97);}
-  @media(min-width:768px){.oh-cta{width:auto;}}
+  .oh-cta:active{transform:scale(.98);}
 </style>
 
-<div id="open-house-banner" class="oh-banner" role="region" aria-label="Open House announcement">
+<div id="open-house-banner" class="oh-banner" role="region" aria-label="Open house invitation">
   <div class="oh-wrap">
-    <p class="oh-title">Sabey Data Centers Open House • Tuesday November 18 at 6:30 PM</p>
+    <p class="oh-title">Open House: Your Questions, Our Answers</p>
     <p class="oh-meta">
-      <a href="https://www.google.com/maps?q=5106+S+High+School+Rd,+Indianapolis,+IN+46221" target="_blank" rel="noopener noreferrer">
-        Decatur Township School for Excellence, Community Room • 5106 S High School Rd, Indianapolis, IN 46221
+      Tuesday, November 18 • 6:30 PM — 
+      <a href="https://www.google.com/maps?q=5106+S+High+School+Rd,+Indianapolis,+IN+46221" target="_blank" rel="noopener noreferrer" class="underline">
+        Decatur Township School for Excellence (Community Room), 5106 S High School Rd
       </a>
     </p>
-    <a class="oh-cta" href="#open-house">Learn More</a>
+    <a class="oh-cta" href="#open-house">Details & What to Expect</a>
   </div>
 </div>
-<!-- Sabey Open House Banner END -->
-  <!-- Header -->
-  <header id="topbar">
-    <div class="container flex items-center gap-4 py-4">
-      <div class="flex flex-col">
-        <div class="text-xl font-bold">Sabey Data Centers</div>
-        <div class="text-sm text-gray-600">Decatur Technology Park</div>
-      </div>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex gap-5 text-sm ml-auto">
-        <a href="#concerns">Top Questions</a>
-        <a href="#aes-commitment">AES Commitment</a>
-        <a href="#economic-impact">Economic Impact</a>
-        <a href="#about-sabey">About Sabey</a>
-        <a href="#community">Community Partnership</a>
-        <a href="#union-partnership">Union Partnership</a>
-        <a href="#docs">Documents</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<!-- Header -->
+<header id="topbar">
+  <div class="container flex items-center gap-4 py-4">
+    <div class="flex flex-col">
+      <div class="text-xl font-bold">Sabey Data Centers</div>
+      <div class="text-sm text-gray-600">Decatur Technology Park</div>
+    </div>
 
-      <!-- Mobile Hamburger -->
-      <div class="hamburger md:hidden ml-auto" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-5 text-sm ml-auto">
+      <a href="#voices">What We’ve Heard</a>
+      <a href="#concerns">Top Questions</a>
+      <a href="#aes-commitment">AES Commitment</a>
+      <a href="#economic-impact">Economic Impact</a>
+      <a href="#about-sabey">About Sabey</a>
+      <a href="#community">Community Partnership</a>
+      <a href="#union-partnership">Union Partnership</a>
+      <a href="#docs">Documents</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger md:hidden ml-auto" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#voices">What We’ve Heard</a>
+  <a href="#concerns">Top Questions</a>
+  <a href="#aes-commitment">AES Commitment</a>
+  <a href="#economic-impact">Economic Impact</a>
+  <a href="#about-sabey">About Sabey</a>
+  <a href="#community">Community Partnership</a>
+  <a href="#union-partnership">Union Partnership</a>
+  <a href="#docs">Documents</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="aerial-1.jpg" alt="Sabey Data Center rendering for Decatur Township">
+  <div class="hero__content">
+    <div class="content-inner">
+      <!-- HERO glass — empathy-first -->
+      <div class="hero-glass fade-up">
+        <div class="text-gray-700 text-xs uppercase tracking-wider font-semibold">A conversation, not a pitch</div>
+        <h1 class="text-4xl md:text-5xl font-extrabold headline mt-1">
+          We’ve heard your concerns. Let’s talk through them, plainly.
+        </h1>
+        <p class="lead mt-3">
+          You’ve told us you’re worried about bills, water, jobs, and losing the small-town feel. Those are valid concerns.
+          This page organizes what we’ve heard — and exactly what we’re proposing — so you can decide for yourself.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#voices" class="btn btn-black">What We’ve Heard</a>
+          <a href="#concerns" class="btn btn-ghost">Direct Answers</a>
+        </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- Mobile Nav Menu -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#concerns">Top Questions</a>
-    <a href="#aes-commitment">AES Commitment</a>
-    <a href="#economic-impact">Economic Impact</a>
-    <a href="#about-sabey">About Sabey</a>
-    <a href="#community">Community Partnership</a>
-    <a href="#union-partnership">Union Partnership</a>
-    <a href="#docs">Documents</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+<!-- Voices Section (empathy-first) -->
+<section id="voices" class="container">
+  <h2 class="text-4xl font-bold headline text-center">What We’ve Heard From Neighbors</h2>
+  <p class="lead mt-3 text-center max-w-3xl mx-auto">
+    Real comments from Decatur Township & Greensburg residents. Click any card to jump to our answer.
+  </p>
+
+  <div class="mt-8 grid md:grid-cols-3 gap-4" aria-live="polite">
+    <a href="#faq-bills" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about bills">
+      <p class="font-semibold">“My utilities are drowning me as it is — don’t pile more on our shoulders.”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Utilities · 2 weeks ago</span>
+    </a>
+
+    <a href="#faq-water" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about water">
+      <p class="font-semibold">“You cannot eat or drink money. Will this drain our water?”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Water · 2 months ago</span>
+    </a>
+
+    <a href="#faq-jobs" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about jobs">
+      <p class="font-semibold">“Only 10–12 long-term jobs? People need work for dignity and mental health.”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Jobs · 3 weeks ago</span>
+    </a>
+
+    <a href="#faq-ai" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about AI & community">
+      <p class="font-semibold">“AI data centers will turn this into a future wasteland.”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Quality of life · 1 month ago</span>
+    </a>
+
+    <a href="#faq-trust" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about trust & process">
+      <p class="font-semibold">“This was sprung on us. Why no vote? Why should we trust you?”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Process · 1 month ago</span>
+    </a>
+
+    <a href="#faq-noise-traffic" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about noise & traffic">
+      <p class="font-semibold">“Noise, trucks, brown water — who wants to live near a data center?”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Impacts · 2 months ago</span>
+    </a>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <img src="aerial-1.jpg" alt="Sabey Data Center rendering for Decatur Township">
-    <div class="hero__content">
-      <div class="content-inner">
-        <div class="hero-glass fade-up">
-          <div class="text-gray-700 text-xs uppercase tracking-wider font-semibold">Community Information</div>
-          <h1 class="text-4xl md:text-5xl font-extrabold headline mt-1">Reliable technology. Responsible growth. Real benefits for Decatur Township.</h1>
-          <p class="lead mt-3">Existing customer rates are not expected to be negatively impacted per AES's plan and IURC-reviewed process. Our efficient closed-loop cooling system is designed to minimize water usage. Daily traffic and noise are far below typical industrial uses by design.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#concerns" class="btn btn-black">Common Questions Answered</a>
-            <a href="#economic-impact" class="btn btn-ghost">Economic Benefits</a>
+  <div class="mt-6 text-center text-sm text-gray-500">
+    Don’t see your concern? <a href="#contact" class="underline font-semibold">Tell us — we’ll add it and answer publicly.</a>
+  </div>
+</section>
+
+<!-- Trust & Commitments -->
+<section id="commitments">
+  <div class="container">
+    <div class="pro-card p-8 fade-up">
+      <h2 class="text-3xl font-bold headline mb-4">Why Should You Trust Sabey?</h2>
+      <p class="lead">Short answer: You don’t have to — we’ll earn it. Here are the parts that are on us, in writing:</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">No neighbor cross-subsidy</h3>
+          <p class="lead">We pay 100% of customer-specific infrastructure and required riders. Our power is from a new, dedicated AES substation.</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">Tight water design</h3>
+          <p class="lead">Closed-loop cooling with a one-time initial fill; thereafter usage roughly comparable to an office building.</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">Low daily traffic</h3>
+          <p class="lead">Fewer trips than the already-approved warehouse plan — ~80% lower in peak hour.</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">Show up & listen</h3>
+          <p class="lead">Open meetings before final decisions, publish docs, and answer every question publicly on this page.</p>
+        </div>
+      </div>
+      <div class="mt-6 text-sm text-gray-600">If we can’t meet these commitments, we don’t deserve to build here.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Common Questions -->
+<section id="concerns" class="container">
+  <h2 class="text-4xl font-bold headline text-center">Common Questions & Answers</h2>
+  <p class="lead mt-3 text-center max-w-3xl mx-auto">
+    It's natural to have questions about a project of this scale. Here are the three questions we hear most often, answered directly with links to official documentation.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-6 mt-10">
+    <!-- Question 1 -->
+    <div class="question-card fade-up">
+      <div class="question">Question</div>
+      <p class="mt-1 font-semibold text-lg">"Will my power bill go up because of this?"</p>
+      <div class="answer">Answer</div>
+      <p class="mt-1 lead">
+        Existing customer rates are not expected to be negatively impacted per AES's plan and IURC-reviewed process. Sabey pays 100% of customer-specific and dedicated facilities and applicable riders. New load adds utility revenue that helps spread fixed costs across all customers, which can actually help stabilize rates.
+      </p>
+      <a href="AESWILLSERVE.pdf" target="_blank" class="inline-block mt-4 text-sm font-semibold underline hover:text-green-700">
+        Read the AES Will Serve Letter (PDF)
+      </a>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-card fade-up">
+      <div class="question">Question</div>
+      <p class="mt-1 font-semibold text-lg">"Will data centers use massive amounts of water from our community?"</p>
+      <div class="answer">Answer</div>
+      <p class="mt-1 lead">
+        No. Our closed-loop cooling system is designed for exceptional water efficiency. The system requires a one-time initial load of 1,000,000 gallons (500,000 per building, phased with Building A in 2028 and Building B in 2030). After that, annual water usage is comparable to a typical office building—approximately 200,000 to 300,000 gallons per year total for both buildings. This covers restrooms, kitchen facilities, landscaping, and humidity control. The previously approved Decatur Tech Park would have required significantly more water.
+      </p>
+      <div class="mt-4 space-y-2">
+        <a href="air-cooled-chiller.pdf" target="_blank" class="block text-sm font-semibold underline hover:text-green-700">
+          View Cooling Technology Details (PDF)
+        </a>
+        <a href="Will Serve Letter_Sabey.pdf" target="_blank" class="block text-sm font-semibold underline hover:text-green-700">
+          Read Citizens Water Will Serve Letter (PDF)
+        </a>
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-card fade-up">
+      <div class="question">Question</div>
+      <p class="mt-1 font-semibold text-lg">"Will noise and traffic disrupt our neighborhood?"</p>
+      <div class="answer">Answer</div>
+      <p class="mt-1 lead">
+        No. Operations are designed to be quiet and low-traffic. Independent analysis shows approximately 80% fewer peak-hour vehicle trips than a previously approved industrial plan. Generators run briefly for testing and during rare utility outages, typically about 20 hours per year total. Equipment is enclosed and acoustically treated; exterior lighting is shielded.
+      </p>
+      <a href="Tripgenupdate.pdf" target="_blank" class="inline-block mt-4 text-sm font-semibold underline hover:text-green-700">
+        Read the Independent Traffic Study (PDF)
+      </a>
+    </div>
+  </div>
+
+  <!-- Traffic Chart -->
+  <div class="mt-16 fade-up">
+    <h3 class="text-3xl font-bold headline text-center mb-4">Traffic Impact: Old vs New Peak-Hour Trips</h3>
+    <p class="lead text-center mb-8 max-w-3xl mx-auto">
+      Independent traffic study shows approximately 80% reduction in peak-hour vehicle trips compared to the previously approved industrial plan for this site.
+    </p>
+    <div class="traffic-chart">
+      <div class="chart-bars">
+        <div class="chart-group">
+          <div class="chart-label">AM Peak Hour</div>
+          <div class="chart-bar">
+            <div class="bar" style="height:180px">
+              <span>558</span>
+              <span class="bar-label">Previous Plan</span>
+            </div>
+            <div class="bar new" style="height:36px">
+              <span>111</span>
+              <span class="bar-label">Data Center</span>
+            </div>
+          </div>
+        </div>
+        <div class="chart-group">
+          <div class="chart-label">PM Peak Hour</div>
+          <div class="chart-bar">
+            <div class="bar" style="height:178px">
+              <span>554</span>
+              <span class="bar-label">Previous Plan</span>
+            </div>
+            <div class="bar new" style="height:34px">
+              <span>106</span>
+              <span class="bar-label">Data Center</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-600 mt-8">
+        Source: American Structurepoint Traffic Study, November 2025
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AES Indiana Commitment -->
+<section id="aes-commitment">
+  <div class="container">
+    <div class="fade-up text-center max-w-4xl mx-auto mb-12">
+      <h2 class="text-4xl font-bold headline">AES Indiana: “No Negative Impact Expected to Existing Rates”</h2>
+      <p class="lead mt-4">
+        We support public oversight. AES Indiana has stated their strategy anticipates no negative impact to existing customer rates, subject to IURC review. Here’s how that works.
+      </p>
+    </div>
+
+    <div class="fade-up">
+      <div class="pro-card p-10 bg-blue-50">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0">
+            <div style="width:80px;height:80px;background:#1e40af;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:2rem;font-weight:800">AES</div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-2">From the AES Indiana President</h3>
+            <p class="text-sm text-gray-600">September 19, 2025</p>
+          </div>
+        </div>
+
+        <blockquote style="border-left:4px solid #1e40af;padding-left:1.5rem;margin:1.5rem 0;font-style:italic;color:#374151">
+          "We've developed a strategy that shows <strong>no negative impact to existing customer rates</strong> should AES Indiana power data centers in the future. Even though more investments are required to serve those customers, <strong>we will be able to spread our costs over a larger amount of electricity sold</strong>."
+        </blockquote>
+
+        <p class="lead mt-6">
+          Data centers pay 100% of customer-specific infrastructure and applicable riders. Spreading fixed costs across more electricity sold can help stabilize rates for everyone, with IURC oversight.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-white p-6 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-lg mb-3" style="color:#1e40af">Transparent Public Process</h4>
+            <p class="lead">IURC (state regulators) review rate cases and major capital programs in public. This adds independent oversight to protect customers.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-blue-200">
+            <h4 class="font-bold text-lg mb-3" style="color:#1e40af">Data Centers Pay Their Share</h4>
+            <p class="lead">Sabey funds customer-specific facilities and pays contributions for any upstream reinforcements attributable to our load.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="btn btn-black">
+            Read Full AES Statement
+          </a>
+          <a href="AESWILLSERVE.pdf" target="_blank" class="btn btn-ghost ml-4">
+            View Will Serve Letter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMIC IMPACT -->
+<section id="economic-impact">
+  <div class="container">
+    <div class="text-center max-w-4xl mx-auto mb-12 fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold headline">What’s the Real Economic Impact?</h2>
+      <p class="lead mt-4">
+        We’ve heard “only 10–12 jobs.” Here’s the fuller picture: construction jobs now, high-wage technical careers later, and a broader
+        ripple effect through local businesses — all with a lighter daily footprint than warehouses.
+      </p>
+    </div>
+
+    <!-- Key Stats -->
+    <div class="grid md:grid-cols-4 gap-6 mt-12 fade-up">
+      <div class="stat-card">
+        <div class="stat-label">Job Ripple</div>
+        <div class="stat-number">6–8×</div>
+        <div class="stat-detail">
+          Each direct role supports multiple local jobs in trades, services, and suppliers.
+        </div>
+        <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">CBRE Research</a>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Capital Investment</div>
+        <div class="stat-number">$4B+</div>
+        <div class="stat-detail">
+          Long-term, taxable investment strengthening the local base for schools and services.
+        </div>
+        <div class="text-xs mt-2" style="color:#6b7280">Project estimate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Annual Activity</div>
+        <div class="stat-number">$32.5M</div>
+        <div class="stat-detail">
+          Average economic activity per large facility — wages, vendors, operations.
+        </div>
+        <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">U.S. Chamber</a>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Wage Premium</div>
+        <div class="stat-number">~150%</div>
+        <div class="stat-detail">
+          Data center roles often pay well above county averages with benefits.
+        </div>
+        <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">CBRE Research</a>
+      </div>
+    </div>
+
+    <!-- Job Multiplier Visual -->
+    <div class="mt-20 fade-up">
+      <h3 class="text-3xl font-bold headline text-center mb-8">What “Multiplier” Means Here</h3>
+      <div class="multiplier-visual">
+        <div class="multiplier-box">
+          <div style="font-size:3rem;font-weight:800;color:var(--green);line-height:1">1</div>
+          <div style="font-weight:600;font-size:0.9375rem;margin-top:0.75rem;line-height:1.4">Direct Data<br/>Center Job</div>
+        </div>
+        <div class="multiplier-arrow">→</div>
+        <div class="multiplier-box">
+          <div style="font-size:3rem;font-weight:800;color:var(--blue);line-height:1">6–8</div>
+          <div style="font-weight:600;font-size:0.9375rem;margin-top:0.75rem;line-height:1.4">Additional Local<br/>Jobs Supported</div>
+        </div>
+      </div>
+      <p class="text-center lead mt-8 max-w-3xl mx-auto">
+        Construction, electrical, HVAC, fiber, security, landscaping, restaurants, small businesses — the daily spending and vendor contracts add up.
+      </p>
+    </div>
+
+    <!-- Economic Timeline -->
+    <div class="mt-20 fade-up">
+      <h3 class="text-3xl font-bold headline mb-10">When the Benefits Show Up</h3>
+      <div class="max-w-4xl">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Construction (2–3 years, phased)</div>
+          <div class="timeline-content">
+            Hundreds of union jobs; purchases from local suppliers; road work funded in part by project contributions. Sales and income taxes rise alongside activity.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Operations (20+ years)</div>
+          <div class="timeline-content">
+            50–75 permanent, skilled roles on site; recurring vendor contracts; ongoing equipment refresh cycles that drive new procurement and tax revenue.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-phase">Long-Term Stability</div>
+          <div class="timeline-content">
+            Diversified tax base for schools and services; steady, recession-resistant infrastructure use; pathways for students into technical careers.
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Common Questions -->
-  <section id="concerns" class="container">
-    <h2 class="text-4xl font-bold headline text-center">Common Questions & Answers</h2>
-    <p class="lead mt-3 text-center max-w-3xl mx-auto">It's natural to have questions about a project of this scale. Here are the three questions we hear most often, answered directly with links to official documentation.</p>
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      <div class="question-card fade-up">
-        <div class="question">Question</div>
-        <p class="mt-1 font-semibold text-lg">"Will my power bill go up because of this?"</p>
-        <div class="answer">Answer</div>
-        <p class="mt-1 lead">Existing customer rates are not expected to be negatively impacted per AES's plan and IURC-reviewed process. Sabey pays 100% of customer-specific and dedicated facilities and applicable riders. New load adds utility revenue that helps spread fixed costs across all customers, which can actually help stabilize rates.</p>
-        <a href="AESWILLSERVE.pdf" target="_blank" class="inline-block mt-4 text-sm font-semibold underline hover:text-green-700">Read the AES Will Serve Letter (PDF)</a>
-      </div>
-      <div class="question-card fade-up">
-        <div class="question">Question</div>
-        <p class="mt-1 font-semibold text-lg">"Will data centers use massive amounts of water from our community?"</p>
-        <div class="answer">Answer</div>
-        <p class="mt-1 lead">No. Our closed-loop cooling system is designed for exceptional water efficiency. The system requires a one-time initial load of 1,000,000 gallons (500,000 per building, phased with Building A in 2028 and Building B in 2030). After that, annual water usage is comparable to a typical office building—approximately 200,000 to 300,000 gallons per year total for both buildings. This covers restrooms, kitchen facilities, landscaping, and humidity control. The previously approved Decatur Tech Park would have required significantly more water.</p>
-        <div class="mt-4 space-y-2">
-          <a href="air-cooled-chiller.pdf" target="_blank" class="block text-sm font-semibold underline hover:text-green-700">View Cooling Technology Details (PDF)</a>
-          <a href="Will Serve Letter_Sabey.pdf" target="_blank" class="block text-sm font-semibold underline hover:text-green-700">Read Citizens Water Will Serve Letter (PDF)</a>
-        </div>
-      </div>
-      <div class="question-card fade-up">
-        <div class="question">Question</div>
-        <p class="mt-1 font-semibold text-lg">"Will noise and traffic disrupt our neighborhood?"</p>
-        <div class="answer">Answer</div>
-        <p class="mt-1 lead">No. Operations are designed to be quiet and low-traffic. Independent analysis shows approximately 80% fewer peak-hour vehicle trips than a previously approved industrial plan. Generators run briefly for testing and during rare utility outages, typically about 20 hours per year total. Equipment is enclosed and acoustically treated; exterior lighting is shielded.</p>
-        <a href="Tripgenupdate.pdf" target="_blank" class="inline-block mt-4 text-sm font-semibold underline hover:text-green-700">Read the Independent Traffic Study (PDF)</a>
-      </div>
-    </div>
-
-    <!-- Traffic Comparison Chart -->
-    <div class="mt-16 fade-up">
-      <h3 class="text-3xl font-bold headline text-center mb-4">Traffic Impact: Old vs New Peak-Hour Trips</h3>
-      <p class="lead text-center mb-8 max-w-3xl mx-auto">Independent traffic study shows approximately 80% reduction in peak-hour vehicle trips compared to the previously approved industrial plan for this site.</p>
-      <div class="traffic-chart">
-        <div class="chart-bars">
-          <div class="chart-group">
-            <div class="chart-label">AM Peak Hour</div>
-            <div class="chart-bar">
-              <div class="bar" style="height:180px">
-                <span>558</span>
-                <span class="bar-label">Previous Plan</span>
-              </div>
-              <div class="bar new" style="height:36px">
-                <span>111</span>
-                <span class="bar-label">Data Center</span>
-              </div>
-            </div>
+    <!-- How tax revenue helps -->
+    <div class="mt-20 fade-up">
+      <h3 class="text-3xl font-bold headline mb-8">Where the Money Goes: Schools, Safety, Streets</h3>
+      <div class="pro-card p-10">
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Property Taxes</h4>
+            <p class="lead">Buildings, land, and site improvements support local schools, libraries, fire, and parks — every year.</p>
           </div>
-          <div class="chart-group">
-            <div class="chart-label">PM Peak Hour</div>
-            <div class="chart-bar">
-              <div class="bar" style="height:178px">
-                <span>554</span>
-                <span class="bar-label">Previous Plan</span>
-              </div>
-              <div class="bar new" style="height:34px">
-                <span>106</span>
-                <span class="bar-label">Data Center</span>
-              </div>
-            </div>
+          <div>
+            <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Personal Property</h4>
+            <p class="lead">
+              Servers and equipment generate substantial personal property tax revenue, which has surged in places with data center clusters.
+              <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="text-xs underline" style="color:#065f46">Richmond Fed</a>
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Sales & Use Taxes</h4>
+            <p class="lead">Construction materials and ongoing equipment upgrades contribute significant sales tax over time.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Local Spending</h4>
+            <p class="lead">Workers spend at local businesses; vendors hire locally; the effect compounds each year.</p>
           </div>
         </div>
-        <p class="text-center text-sm text-gray-600 mt-8">Source: American Structurepoint Traffic Study, November 2025</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- AES Indiana Commitment Section -->
-  <section id="aes-commitment">
-    <div class="container">
-      <div class="fade-up text-center max-w-4xl mx-auto mb-12">
-        <h2 class="text-4xl font-bold headline">AES Indiana's Public Commitment: Rates Not Expected to Be Negatively Impacted</h2>
-        <p class="lead mt-4">Don't just take our word for it. AES Indiana, your utility provider, has confirmed that existing customer rates are not expected to be negatively impacted per AES's plan and IURC-reviewed process.</p>
-      </div>
-
-      <!-- AES Statement Card -->
-      <div class="fade-up">
-        <div class="pro-card p-10 bg-blue-50">
-          <div class="flex items-start gap-4 mb-6">
-            <div class="flex-shrink-0">
-              <div style="width:80px;height:80px;background:#1e40af;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:2rem;font-weight:800">AES</div>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold mb-2">Official Statement from AES Indiana President</h3>
-              <p class="text-sm text-gray-600">Brandi Davis-Handy, AES Indiana President • September 19, 2025</p>
-            </div>
-          </div>
-
-          <div class="prose max-w-none">
-            <blockquote style="border-left:4px solid #1e40af;padding-left:1.5rem;margin:1.5rem 0;font-style:italic;color:#374151">
-              "We've developed a strategy that shows <strong>no negative impact to existing customer rates</strong> should AES Indiana power data centers in the future. This is possible because, even though more investments are required to serve those customers, <strong>we will be able to spread our costs over a larger amount of electricity sold</strong>."
-            </blockquote>
-
-            <p class="lead mt-6">AES Indiana has publicly confirmed that existing customer rates are not expected to be negatively impacted per AES's plan and IURC-reviewed process. In fact, by spreading fixed infrastructure costs over a larger customer base, data centers can help stabilize rates for all customers.</p>
-
-            <div class="grid md:grid-cols-2 gap-6 mt-8">
-              <div class="bg-white p-6 rounded-xl border border-blue-200">
-                <h4 class="font-bold text-lg mb-3" style="color:#1e40af">Transparent Public Process</h4>
-                <p class="lead">AES Indiana is required to follow a public review process through the Indiana Utility Regulatory Commission (IURC) for any investments to serve data centers, ensuring full transparency and oversight. Rate cases and major capital programs are public and decided by the IURC.</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl border border-blue-200">
-                <h4 class="font-bold text-lg mb-3" style="color:#1e40af">Independent Validation</h4>
-                <p class="lead">This no-impact strategy was validated in AES Indiana's Integrated Resource Planning (IRP) public stakeholder meetings, with independent analysis confirming the findings.</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl border border-blue-200">
-                <h4 class="font-bold text-lg mb-3" style="color:#1e40af">Data Centers Pay Their Share</h4>
-                <p class="lead">Data centers pay 100% of customer-specific infrastructure, dedicated facilities, and all applicable riders and contributions required for their service.</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl border border-blue-200">
-                <h4 class="font-bold text-lg mb-3" style="color:#1e40af">Cost Spreading Benefits</h4>
-                <p class="lead">By spreading fixed infrastructure costs over more electricity sold, data centers actually help reduce the per-unit cost burden on all customers.</p>
-              </div>
-            </div>
-
-            <div class="mt-10 text-center">
-              <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="btn btn-black">
-                Read Full AES Indiana Statement
-              </a>
-              <a href="AESWILLSERVE.pdf" target="_blank" class="btn btn-ghost ml-4">
-                View Official Will Serve Letter
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Key Facts Visual -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-2xl font-bold headline text-center mb-8">Understanding How Data Centers Actually Help Your Rates</h3>
-        <div class="pro-card p-8">
-          <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div class="benefit-icon mx-auto" style="background:#dbeafe"><span style="font-size:1.75rem">$</span></div>
-              <h4 class="font-bold text-lg mb-3">Fixed Costs Get Shared</h4>
-              <p class="lead">Infrastructure costs like power lines, substations, and grid maintenance are fixed. When more customers share these costs, the burden on each customer decreases.</p>
-            </div>
-            <div>
-              <div class="benefit-icon mx-auto" style="background:#dbeafe"><span style="font-size:1.75rem">⚡</span></div>
-              <h4 class="font-bold text-lg mb-3">More Power Sold</h4>
-              <p class="lead">Data centers consume large amounts of electricity and pay for it. This increases total revenue without adding to residential infrastructure costs.</p>
-            </div>
-            <div>
-              <div class="benefit-icon mx-auto" style="background:#dbeafe"><span style="font-size:1.75rem">✓</span></div>
-              <h4 class="font-bold text-lg mb-3">Regulatory Oversight</h4>
-              <p class="lead">The Indiana Utility Regulatory Commission (IURC) provides public oversight of all rate decisions, ensuring fairness and transparency.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Math Example -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-2xl font-bold headline text-center mb-8">Simple Example: How Cost Spreading Works</h3>
-        <p class="text-center text-sm text-gray-600 mb-4 max-w-3xl mx-auto">Illustrative example based on the cost-spreading principle described in <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="underline font-semibold">AES Indiana's official statement</a></p>
-        <div class="pro-card p-10 bg-green-50">
-          <div class="max-w-3xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8">
-              <div class="bg-white p-6 rounded-xl border-2 border-red-200">
-                <h4 class="font-bold text-lg mb-4 text-red-700">Without Data Center</h4>
-                <div class="space-y-3 text-left">
-                  <p><strong>Fixed Infrastructure Cost:</strong> $100 million</p>
-                  <p><strong>Total Electricity Sold:</strong> 1,000 units</p>
-                  <p><strong>Cost Per Unit:</strong> $100,000</p>
-                  <p class="text-sm text-gray-600">Residential customers share $100M across 1,000 units</p>
-                </div>
-              </div>
-              <div class="bg-white p-6 rounded-xl border-2 border-green-600">
-                <h4 class="font-bold text-lg mb-4 text-green-700">With Data Center</h4>
-                <div class="space-y-3 text-left">
-                  <p><strong>Fixed Infrastructure Cost:</strong> $100 million (same)</p>
-                  <p><strong>Total Electricity Sold:</strong> 1,500 units</p>
-                  <p><strong>Cost Per Unit:</strong> $66,667</p>
-                  <p class="text-sm text-gray-600">Same $100M shared across MORE units = lower cost per unit</p>
-                </div>
-              </div>
-            </div>
-            <div class="text-center mt-8 p-6 bg-white rounded-xl border-2 border-green-600">
-              <p class="text-2xl font-bold" style="color:#065f46">Result: 33% Lower Cost Per Unit</p>
-              <p class="lead mt-2">This simplified example shows how spreading fixed costs over more electricity sold reduces the per-unit burden on all customers.</p>
-            </div>
-          </div>
+        <div class="mt-10 p-8 bg-green-50 rounded-xl border border-green-200">
+          <p class="font-bold text-xl mb-3">Bottom line for Decatur Township:</p>
+          <p class="lead">
+            A steadier tax base for classrooms, first responders, and infrastructure — without adding crowding or heavy daily traffic.
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ECONOMIC IMPACT SECTION -->
-  <section id="economic-impact">
-    <div class="container">
-      <div class="text-center max-w-4xl mx-auto mb-12 fade-up">
-        <h2 class="text-4xl md:text-5xl font-bold headline">Real Economic Benefits for Decatur Township</h2>
-        <p class="lead mt-4">Data centers are proven economic drivers, creating high-paying jobs, generating substantial tax revenue, and supporting local businesses. These facilities have minimal impact on roads, schools, and community services.</p>
-      </div>
-
-      <!-- Key Stats -->
-      <div class="grid md:grid-cols-4 gap-6 mt-12 fade-up">
-        <div class="stat-card">
-          <div class="stat-label">Job Multiplier Effect</div>
-          <div class="stat-number">7.4×</div>
-          <div class="stat-detail">Each direct data center job creates 7.4 additional jobs in the local economy</div>
-          <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: CBRE Research</a>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Capital Investment</div>
-          <div class="stat-number">$4B+</div>
-          <div class="stat-detail">Long-term investment strengthening the local tax base for schools and services</div>
-          <div class="text-xs mt-2" style="color:#6b7280">Project estimate</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Annual Economic Activity</div>
-          <div class="stat-number">$32.5M</div>
-          <div class="stat-detail">Average economic impact added to communities annually per facility</div>
-          <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: U.S. Chamber of Commerce</a>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Wage Premium</div>
-          <div class="stat-number">150%</div>
-          <div class="stat-detail">Data center jobs pay 150% of county average wages with benefits</div>
-          <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: CBRE Research</a>
-        </div>
-      </div>
-
-      <!-- Job Multiplier Visual -->
-      <div class="mt-20 fade-up">
-        <h3 class="text-3xl font-bold headline text-center mb-8">Understanding the Job Multiplier Effect</h3>
-        <div class="multiplier-visual">
-          <div class="multiplier-box">
-            <div style="font-size:3rem;font-weight:800;color:var(--green);line-height:1">1</div>
-            <div style="font-weight:600;font-size:0.9375rem;margin-top:0.75rem;line-height:1.4">Direct Data<br>Center Job</div>
-          </div>
-          <div class="multiplier-arrow">→</div>
-          <div class="multiplier-box">
-            <div style="font-size:3rem;font-weight:800;color:var(--blue);line-height:1">7.4</div>
-            <div style="font-weight:600;font-size:0.9375rem;margin-top:0.75rem;line-height:1.4">Additional Jobs<br>Created Locally</div>
-          </div>
-        </div>
-        <p class="text-center lead mt-8 max-w-3xl mx-auto">These additional jobs span construction, telecommunications, software development, facilities management, security, HVAC maintenance, and local services like restaurants, retail, and professional services that support data center operations and employees.</p>
-      </div>
-
-      <!-- Economic Timeline -->
-      <div class="mt-20 fade-up">
-        <h3 class="text-3xl font-bold headline mb-10">Economic Impact Timeline</h3>
-        <div class="max-w-4xl">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-phase">Construction Phase (2-3 years, subject to utility/IURC interconnection studies and scheduling)</div>
-            <div class="timeline-content">
-              Hundreds of construction jobs for local electricians, HVAC specialists, general contractors, and other skilled trades. Generates $9.9M+ in state and local tax revenue. Substantial spending at local businesses for materials, equipment, and services. Infrastructure improvements funded through direct project contributions to road upgrades and utilities.
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-phase">Operations Phase (20+ years ongoing, subject to utility/IURC interconnection studies and scheduling)</div>
-            <div class="timeline-content">
-              50-75 high-skill, high-wage permanent jobs including data center technicians, network engineers, facilities managers, and security personnel. $32.5M+ in annual economic activity flowing through the community. Consistent tax revenue supporting schools, emergency services, roads, and public infrastructure. Ongoing spending on local services including security, maintenance, utilities, and professional services.
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-phase">Long-Term Community Growth</div>
-            <div class="timeline-content">
-              Attracts complementary technology companies and businesses through the "halo effect." Creates a technology ecosystem that diversifies and strengthens the local economy. Workforce development programs establish clear pathways from local schools to technology careers. Provides a stable, recession-resistant tax base for decades, as data centers represent essential infrastructure with multi-decade operational commitments.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tax Revenue Breakdown -->
-      <div class="mt-20 fade-up">
-        <h3 class="text-3xl font-bold headline mb-8">How Tax Revenue Benefits Your Community</h3>
-        <div class="pro-card p-10">
-          <div class="grid md:grid-cols-2 gap-10">
-            <div>
-              <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Property Taxes</h4>
-              <p class="lead">Buildings, land, and site improvements generate ongoing property tax revenue that flows directly to local schools, libraries, fire departments, parks, and other essential public services.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Personal Property Taxes</h4>
-              <p class="lead">Computer servers, networking equipment, cooling systems, and backup power infrastructure generate substantial personal property tax revenue. In comparable markets, this revenue has increased by 170% following data center development. <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="text-xs underline" style="color:#065f46">(Source: Federal Reserve Bank of Richmond)</a></p>
-            </div>
-            <div>
-              <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Sales & Use Taxes</h4>
-              <p class="lead">Construction materials, ongoing equipment purchases, maintenance supplies, and operational expenditures generate significant sales tax revenue for state and local government budgets.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-xl mb-3" style="color:var(--green)">Income Taxes & Local Spending</h4>
-              <p class="lead">High-paying jobs create income tax revenue while employees spend money locally at restaurants, retail stores, service businesses, and other establishments, creating a multiplier effect throughout the community.</p>
-            </div>
-          </div>
-          <div class="mt-10 p-8 bg-green-50 rounded-xl border border-green-200">
-            <p class="font-bold text-xl mb-3">Strong Tax Revenue Potential for Decatur Township:</p>
-            <p class="lead">Research on data centers nationally shows substantial tax revenue generation potential. According to U.S. Chamber of Commerce analysis, large-scale data centers can generate significant property tax, personal property tax, and sales tax revenues. These revenues provide stable, long-term funding for schools, emergency services, roads, and public infrastructure without increasing residential property taxes.</p>
-            <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="text-sm underline mt-3 inline-block font-semibold" style="color:#065f46">Source: U.S. Chamber of Commerce Research on Data Center Economic Impact</a>
-          </div>
-        </div>
-      </div>
-<!-- Open House Section START -->
+<!-- Open House -->
 <section id="open-house" style="scroll-margin-top:120px;padding:80px 20px;background:#f8fafc;font-family:Inter,system-ui;">
   <div style="max-width:800px;margin:0 auto;text-align:center;">
     <h2 style="font-size:32px;font-weight:800;color:#0a2a66;margin-bottom:16px;">
-      Sabey Data Centers Open House
+      Open House: What to Expect
     </h2>
-    <p style="font-size:18px;color:#333;line-height:1.6;margin-bottom:24px;">
-      Decatur Township residents and businesses are invited to meet the Sabey team and partners behind the Decatur Technology Park project.
+    <p class="lead" style="margin-bottom:16px;">
+      We’ll walk through power, water, traffic, jobs, and exactly what’s in writing. Bring your questions — and your utility bills if you want to talk specifics.
     </p>
     <p style="font-size:18px;color:#333;line-height:1.6;margin-bottom:24px;">
       <strong>Date:</strong> Tuesday, November 18 at 6:30 PM<br>
-      <strong>Location:</strong> Decatur Township School for Excellence, Community Room <br>
+      <strong>Location:</strong> Decatur Township School for Excellence, Community Room<br>
       5106 S High School Rd, Indianapolis, IN 46221
     </p>
-    <p style="font-size:17px;color:#333;line-height:1.6;margin-bottom:32px;">
-      Learn about the project, ask questions in person, and connect with those bringing new technology and infrastructure investment to Decatur Township.
-    </p>
-    <a href="https://maps.google.com/?q=4335+Decatur+Blvd,+Indianapolis,+IN+46241"
+    <a href="https://maps.google.com/?q=5106+S+High+School+Rd,+Indianapolis,+IN+46221"
        target="_blank"
        style="display:inline-block;background:#0a2a66;color:#fff;padding:14px 26px;border-radius:10px;font-weight:600;text-decoration:none;">
-       View Location on Google Maps
+       Directions on Google Maps
     </a>
   </div>
 </section>
-<!-- Open House Section END -->
-      <!-- Research Articles -->
-      <div class="mt-20 fade-up">
-        <h3 class="text-3xl font-bold headline mb-6">Independent Research on Data Center Economic Impact</h3>
-        <p class="lead mb-10 max-w-4xl">Leading research institutions, business organizations, and financial analysts have extensively documented the substantial economic benefits data centers bring to communities. These are independent, third-party studies, not commissioned by data center operators.</p>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-          <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="article-card">
-            <div class="article-source">CBRE Research</div>
-            <div class="article-title">Data Center Growth Has Economic Ripple Effects</div>
-            <div class="article-excerpt">Comprehensive analysis showing data-center-related jobs increased 20% nationwide between 2017-2021 while overall U.S. employment rose just 2%. Includes detailed breakdown of job multipliers, tax revenue impacts, and case studies from Virginia, Nebraska, and Ohio.</div>
-          </a>
 
-          <a href="https://www.pwc.com/us/en/industries/energy-utilities-resources/library/data-centers.html" target="_blank" class="article-card">
-            <div class="article-source">PwC Study</div>
-            <div class="article-title">A New Era of Load Growth: Data Centers and Communities</div>
-            <div class="article-excerpt">Major consulting firm PwC's research finding that data centers provide a 6x multiplier of indirect or induced jobs for every direct job created. Examines how coupling data centers with broader industrial development creates robust economic hubs.</div>
-          </a>
+<!-- Independent Research -->
+<section class="container fade-up">
+  <h3 class="text-3xl font-bold headline mb-6">Independent Research You Can Check</h3>
+  <p class="lead mb-10 max-w-4xl">
+    We’re sharing third-party sources so you can read the same material we’re reading — and push back if you see anything off.
+  </p>
 
-          <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="article-card">
-            <div class="article-source">U.S. Chamber of Commerce</div>
-            <div class="article-title">Data Centers Average $32.5M in Economic Impact</div>
-            <div class="article-excerpt">Report analyzing 244 large data centers across 16 states showing average annual economic activity of $32.5 million per facility. Demonstrates that during construction, typical data centers generate $9.9 million in state and local government revenue.</div>
-          </a>
+  <div class="grid md:grid-cols-2 gap-6">
+    <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="article-card">
+      <div class="article-source">CBRE Research</div>
+      <div class="article-title">Data Center Growth Has Economic Ripple Effects</div>
+      <div class="article-excerpt">Job multipliers, wage impacts, and case studies across several states.</div>
+    </a>
 
-          <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="article-card">
-            <div class="article-source">Federal Reserve Bank of Richmond</div>
-            <div class="article-title">Virginia's Data Centers and Economic Development</div>
-            <div class="article-excerpt">Academic Federal Reserve analysis showing how data centers supported 45,460 jobs and $15.3 billion in economic output in Virginia. Examines ripple effects through supply chains and business-to-business purchases that create disproportionately large local economic impacts.</div>
-          </a>
+    <a href="https://www.pwc.com/us/en/industries/energy-utilities-resources/library/data-centers.html" target="_blank" class="article-card">
+      <div class="article-source">PwC</div>
+      <div class="article-title">A New Era of Load Growth</div>
+      <div class="article-excerpt">How utilities plan for large loads with regulatory oversight.</div>
+    </a>
 
-          <a href="https://www.aboutamazon.com/news/aws/aws-data-center-economic-impact-study" target="_blank" class="article-card">
-            <div class="article-source">AWS Economic Impact Study</div>
-            <div class="article-title">Five Ways Data Centers Benefit Local Communities</div>
-            <div class="article-excerpt">Independent study documenting AWS's $108 billion investment in U.S. infrastructure, contributing $38 billion to GDP and supporting an average of 30,000 jobs annually in local communities. Includes detailed case studies from Virginia, Oregon, Ohio, and California.</div>
-          </a>
+    <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="article-card">
+      <div class="article-source">U.S. Chamber</div>
+      <div class="article-title">Average $32.5M Annual Impact</div>
+      <div class="article-excerpt">Macro data on spending, jobs, and tax revenue.</div>
+    </a>
 
-          <a href="https://www.lightwaveonline.com/data-center/article/14299249/data-centers-contribute-21t-to-the-us-economy" target="_blank" class="article-card">
-            <div class="article-source">Data Center Coalition / PwC</div>
-            <div class="article-title">Data Centers Contribute $2.1 Trillion to U.S. Economy</div>
-            <div class="article-excerpt">Comprehensive industry study documenting $2.1 trillion contribution to U.S. GDP from 2017-2021. Shows 17% growth in direct data center employment versus just 2% overall U.S. employment growth during the same period. Demonstrates each direct job supports more than six jobs elsewhere in the economy.</div>
-          </a>
-        </div>
+    <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="article-card">
+      <div class="article-source">Richmond Fed</div>
+      <div class="article-title">Virginia’s Data Centers</div>
+      <div class="article-excerpt">Tax base growth from computer equipment and local outcomes.</div>
+    </a>
+  </div>
+</section>
+
+<!-- What It Means Here -->
+<section class="container fade-up">
+  <div class="pro-card p-10 bg-blue-50">
+    <h3 class="text-3xl font-bold headline mb-8">What This Means Here — Not in Theory</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <div class="benefit-icon"><span style="font-size:1.75rem">📚</span></div>
+        <h4 class="font-bold text-lg mb-3">Schools</h4>
+        <p class="lead">Stable property and equipment tax revenue helps fund teachers, programs, and facilities — without raising residential rates.</p>
       </div>
-
-      <!-- What This Means Locally -->
-      <div class="mt-20 fade-up">
-        <div class="pro-card p-10 bg-blue-50">
-          <h3 class="text-3xl font-bold headline mb-8">What This Means for Decatur Township Specifically</h3>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <div class="benefit-icon">
-                <span style="font-size:1.75rem">📚</span>
-              </div>
-              <h4 class="font-bold text-lg mb-3">Better-Funded Schools</h4>
-              <p class="lead">Increased property and equipment tax revenue flows directly to school district funding. This enables improved facilities, expanded programs, updated technology, competitive teacher salaries, and reduced class sizes without raising residential property taxes.</p>
-            </div>
-            <div>
-              <div class="benefit-icon">
-                <span style="font-size:1.75rem">🛣️</span>
-              </div>
-              <h4 class="font-bold text-lg mb-3">Improved Infrastructure</h4>
-              <p class="lead">Tax revenue and direct project contributions fund road improvements, utility system upgrades, stormwater management, and other public infrastructure improvements that benefit all residents and businesses in Decatur Township.</p>
-            </div>
-            <div>
-              <div class="benefit-icon">
-                <span style="font-size:1.75rem">💼</span>
-              </div>
-              <h4 class="font-bold text-lg mb-3">Local Career Pathways</h4>
-              <p class="lead">Partnerships with Decatur Township schools, community colleges, and trade programs create workforce training initiatives. These initiatives open doors to high-paying technology careers, with many positions requiring technical certifications rather than four-year degrees.</p>
-            </div>
-            <div>
-              <div class="benefit-icon">
-                <span style="font-size:1.75rem">🏪</span>
-              </div>
-              <h4 class="font-bold text-lg mb-3">Local Business Growth</h4>
-              <p class="lead">Construction workers and data center employees spend locally at restaurants, shops, gas stations, and service businesses. The "halo effect" attracts complementary technology companies and professional services, creating a more diverse and resilient local economy.</p>
-            </div>
-          </div>
-        </div>
+      <div>
+        <div class="benefit-icon"><span style="font-size:1.75rem">🛣️</span></div>
+        <h4 class="font-bold text-lg mb-3">Infrastructure</h4>
+        <p class="lead">Direct contributions to road work; stormwater systems designed to current standards; sidewalks and safer access.</p>
       </div>
-
-      <!-- Additional Images -->
-      <div class="mt-20 fade-up">
-        <div class="image-grid">
-          <img src="community-1.jpg" alt="Community benefit">
-          <img src="community-2.jpg" alt="Community partnership">
-        </div>
+      <div>
+        <div class="benefit-icon"><span style="font-size:1.75rem">💼</span></div>
+        <h4 class="font-bold text-lg mb-3">Careers</h4>
+        <p class="lead">Apprenticeships and technical roles — many require certifications, not four-year degrees.</p>
+      </div>
+      <div>
+        <div class="benefit-icon"><span style="font-size:1.75rem">🏪</span></div>
+        <h4 class="font-bold text-lg mb-3">Local Business</h4>
+        <p class="lead">Workers and vendors spend close to site — restaurants, shops, services feel it first.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About Sabey -->
-  <section id="about-sabey">
-    <div class="container">
-      <div class="fade-up">
-        <h2 class="text-4xl font-bold headline">About Sabey Data Centers</h2>
-        <p class="lead mt-4 text-lg">For over 25 years, Sabey Data Centers has designed, built, and operated highly efficient data center facilities across the United States. With six active campuses and more than 3.5 million square feet of operational space delivered, Sabey has established a reputation for reliability, environmental stewardship, and genuine long-term community partnerships.</p>
-        <p class="lead mt-4">Every Sabey project begins the same way: with transparency, meaningful collaboration with local leaders and residents, and a design philosophy that prioritizes minimizing neighborhood impacts while maximizing local economic opportunity.</p>
+<!-- About Sabey (intro) -->
+<section id="about-sabey">
+  <div class="container">
+    <div class="fade-up">
+      <h2 class="text-4xl font-bold headline">About Sabey Data Centers</h2>
+      <p class="lead mt-4 text-lg">
+        For 25+ years we’ve designed and operated efficient, quiet facilities in U.S. communities. Our approach is simple:
+        listen first, put commitments in writing, and build to minimize neighborhood impact.
+      </p>
+      <p class="lead mt-4">
+        If you’ve got a tough question, ask it. If we don’t know, we’ll say so — and post the answer when we do.
+      </p>
+    </div>
+
+    <!-- Video -->
+    <div class="mt-12 fade-up">
+      <h3 class="text-2xl font-bold headline text-center mb-6">How We Build & Operate</h3>
+      <p class="lead text-center mb-8 max-w-3xl mx-auto">
+        A quick look at typical Sabey facilities and what day-to-day operations actually look like.
+      </p>
+      <div class="video-wrapper" style="max-width:1200px;margin:0 auto">
+        <iframe 
+          src="https://www.youtube.com/embed/tnvA3Ajc3qc?autoplay=0&mute=1&loop=1&playlist=tnvA3Ajc3qc" 
+          title="Sabey Data Centers" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
       </div>
+    </div>
 
-      <!-- Sabey Video -->
-      <div class="mt-12 fade-up">
-        <h3 class="text-2xl font-bold headline text-center mb-6">See Sabey Data Centers in Action</h3>
-        <p class="lead text-center mb-8 max-w-3xl mx-auto">Watch how Sabey builds and operates world-class data center facilities with a focus on community partnership and environmental responsibility.</p>
-        
-        <div class="video-wrapper" style="max-width:1200px;margin:0 auto">
-          <iframe 
-            src="https://www.youtube.com/embed/tnvA3Ajc3qc?autoplay=1&mute=1&loop=1&playlist=tnvA3Ajc3qc" 
-            title="Sabey Data Centers" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        </div>
+    <!-- Image -->
+    <div class="mt-12 fade-up">
+      <div class="image-section">
+        <img src="Center-1.jpg" alt="Inside a Sabey data center">
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Sabey Images -->
-      <div class="mt-12 fade-up">
-        <div class="image-section">
-          <img src="Center-1.jpg" alt="Inside a Sabey data center">
-        </div>
+<!-- Community Partnership -->
+<section id="community">
+  <div class="container fade-up">
+    <h2 class="text-4xl font-bold headline mb-6 text-center">Community Partnership</h2>
+    <p class="lead text-center max-w-3xl mx-auto mb-10">
+      Development should make a place stronger, not just larger. We’re committed to working with residents, schools,
+      and local organizations to ensure lasting value for Decatur Township.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="pro-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-800">Education & Training</h3>
+        <p class="lead">Partnering with local schools for career awareness programs in IT, construction, and engineering.</p>
       </div>
+      <div class="pro-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-800">Local Vendors</h3>
+        <p class="lead">Prioritizing Indiana-based contractors and small businesses for materials, food services, and maintenance work.</p>
+      </div>
+      <div class="pro-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-800">Transparency</h3>
+        <p class="lead">Regular open houses, published Q&As, and community reporting on milestones and commitments.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Success Stories -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-3xl font-bold headline mb-8">Proven Track Record in Communities</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Seattle Region</h4>
-            <p class="lead">Sabey's Intergate campus facilities have operated successfully for over 20 years, becoming integral parts of their communities. The campuses provide consistent high-quality employment, substantial tax contributions, and workforce development partnerships while maintaining minimal neighborhood impacts.</p>
-            <a href="https://sabeydatacenters.com/locations/seattle-data-center" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: Sabey Data Centers</a>
-          </div>
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Northern Virginia</h4>
-            <p class="lead">Data center development has fundamentally transformed Loudoun County's economy. Computer equipment tax revenue surged 170% in just two years while creating thousands of high-paying technology jobs. This growth attracted complementary businesses that further strengthened the local economy.</p>
-            <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: Federal Reserve Bank of Richmond</a>
-          </div>
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Ohio Markets</h4>
-            <p class="lead">Data center development across Ohio has generated thousands of construction and permanent operations jobs. These facilities have contributed billions of dollars to the state's GDP and funded comprehensive workforce development programs. These programs create clear pathways from local schools to technology careers.</p>
-            <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="text-xs underline mt-2 inline-block" style="color:#065f46">Source: U.S. Chamber of Commerce Research</a>
-          </div>
-          <div class="pro-card p-7">
-  <h4 class="font-bold text-xl mb-3">The Wall Street Journal</h4>
-  <p class="lead">
-    An in-depth look at how data center investment transformed small-town America — boosting local tax bases,
-    housing demand, and construction jobs, while reshaping rural economies.
+<!-- Union Partnership -->
+<section id="union-partnership">
+  <div class="container fade-up">
+    <h2 class="text-4xl font-bold headline mb-6 text-center">Union Partnership</h2>
+    <p class="lead text-center max-w-3xl mx-auto mb-10">
+      This project depends on skilled trades. We’re collaborating with local unions to create safe, high-quality jobs
+      during construction and operation.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="pro-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-800">Local Hiring</h3>
+        <p class="lead">Sabey works with established Indiana labor organizations to hire electricians, plumbers, steelworkers,
+          and others from within the community.</p>
+      </div>
+      <div class="pro-card p-6">
+        <h3 class="font-bold text-xl mb-2 text-green-800">Safety Standards</h3>
+        <p class="lead">We follow strict safety protocols — every trade partner must meet or exceed OSHA and state training requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Documents -->
+<section id="docs" class="container fade-up">
+  <h2 class="text-4xl font-bold headline mb-6 text-center">Project Documents</h2>
+  <p class="lead text-center mb-10 max-w-3xl mx-auto">
+    These are the same documents submitted to local and state officials — nothing hidden.
   </p>
-  <a href="https://www.wsj.com/us-news/what-happened-when-small-town-america-became-data-center-u-s-a-410f25e9?st=iCfG2z&reflink=article_email_share" 
-     target="_blank" 
-     class="text-xs underline mt-2 inline-block" 
-     style="color:#065f46">
-     Source: The Wall Street Journal
-  </a>
-</div>
-        </div>
-      </div>
+  <div class="grid md:grid-cols-3 gap-6 text-center">
+    <a href="Meet Sabey Data Centers.pdf" target="_blank" class="pro-card p-6">
+      <h3 class="font-bold text-lg mb-1">Meet Sabey Data Centers</h3>
+      <p class="text-sm text-gray-500">Company overview and project summary.</p>
+    </a>
+    <a href="FAQ's for zoning.pdf" target="_blank" class="pro-card p-6">
+      <h3 class="font-bold text-lg mb-1">Zoning FAQs</h3>
+      <p class="text-sm text-gray-500">Key answers from local code and approvals.</p>
+    </a>
+    <a href="Tripgenupdate.pdf" target="_blank" class="pro-card p-6">
+      <h3 class="font-bold text-lg mb-1">Traffic Study</h3>
+      <p class="text-sm text-gray-500">Independent analysis by American Structurepoint.</p>
+    </a>
+  </div>
+</section>
 
-      <!-- What is a Data Center -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-3xl font-bold headline mb-6">What is a Data Center?</h3>
-        <p class="lead mb-8 text-lg">Think of it as essential infrastructure, like a power plant or water treatment facility, that keeps hospitals, schools, local businesses, government agencies, and everyday cloud services operating reliably. There are no retail storefronts, no stadium-level crowds, no constant truck traffic. Just secure, climate-controlled spaces with computer equipment, advanced cooling systems, and clean power delivery.</p>
-        
-        <div class="pro-card p-8">
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="font-bold text-lg mb-3">Server Infrastructure</h4>
-              <p class="lead">Rows of servers and networking equipment processing the cloud computing workloads that modern life depends on. This includes business applications, healthcare systems, and online education.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg mb-3">Advanced Cooling Systems</h4>
-              <p class="lead">State-of-the-art closed-loop cooling systems designed to minimize water usage. After a one-time initial system load, annual water usage is comparable to a typical office building—far more efficient than traditional industrial facilities.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg mb-3">Backup Power Systems</h4>
-              <p class="lead">Generators that ensure uninterrupted operations during utility outages. These are regulated and run briefly for mandatory testing and during rare power disruptions, averaging approximately 20 hours per year total across all units.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg mb-3">Security & Monitoring</h4>
-              <p class="lead">24/7/365 professional security and sophisticated monitoring systems ensuring continuous, reliable operations with minimal staffing requirements and vehicle traffic.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- FAQ Section -->
+<section id="faq" class="container">
+  <h2 class="text-4xl font-bold headline text-center mb-10">Frequently Asked Questions</h2>
+
+  <!-- Utility Bills -->
+  <div class="faq-item" id="faq-bills">
+    <div class="faq-q">Will my electric or water utility bills increase because of this project?<span class="ml-2">+</span></div>
+    <div class="faq-a lead">
+      No. Utility rates are determined by AES Indiana and the Indiana Utility Regulatory Commission. Sabey pays for
+      its own infrastructure and riders, and the additional power demand spreads fixed costs over a larger customer base,
+      which helps stabilize rates rather than increase them.
+    </div>
+  </div>
+
+  <!-- Water Usage -->
+  <div class="faq-item" id="faq-water">
+    <div class="faq-q">How much water will the data center actually use?<span class="ml-2">+</span></div>
+    <div class="faq-a lead">
+      The system uses closed-loop cooling, which recycles water. After an initial fill of 1,000,000 gallons (phased across both
+      buildings), annual use is comparable to an office building — roughly 200,000 to 300,000 gallons per year.
+    </div>
+  </div>
+
+  <!-- Jobs -->
+  <div class="faq-item" id="faq-jobs">
+    <div class="faq-q">How many jobs will this project actually create for our community?<span class="ml-2">+</span></div>
+    <div class="faq-a lead">
+      Hundreds of union construction jobs during building, plus 50–75 high-skill permanent positions averaging $80K/year.
+      Each role supports additional local jobs in trades, maintenance, food, and services — a 6–8× multiplier.
+    </div>
+  </div>
+
+  <!-- Noise & Traffic -->
+  <div class="faq-item" id="faq-noise-traffic">
+    <div class="faq-q">Will this increase traffic congestion or create noise?<span class="ml-2">+</span></div>
+    <div class="faq-a lead">
+      No. Peak-hour traffic is 80% lower than the previously approved warehouse plan, and acoustic enclosures limit sound
+      during testing to meet local codes.
+    </div>
+  </div>
+
+  <!-- AI Fear -->
+  <div class="faq-item" id="faq-ai">
+    <div class="faq-q">Is “AI” itself the risk here?<span class="ml-2">+</span></div>
+    <div class="faq-a lead">
+      Data centers don’t “run” AI robots — they store and process data for hospitals, schools, businesses, and first responders.
+      The question isn’t whether data centers exist, it’s how responsibly they’re built. Ours is designed with strict environmental
+      limits and transparency.
+    </div>
+  </div>
+
+  <!-- Trust / Process -->
+  <div class="faq-item" id="faq-trust">
+    <div class="faq-q">Why no vote? Why wasn’t this announced sooner?<span class="ml-2">+</span></div>
+    <div class="faq-a lead">
+      The site is already zoned industrial, allowing development by right. What’s different here is we’re opening the
+      process early — hosting public meetings, publishing all documents, and committing to ongoing transparency.
+    </div>
+  </div>
+</section>
+
+<!-- Concerns We’re Tracking -->
+<section id="concern-log" class="container">
+  <div class="pro-card p-8 fade-up">
+    <h2 class="text-3xl font-bold headline">Concerns We’re Tracking</h2>
+    <p class="lead mt-2">A running list of questions we’ve received and our current answers. Updated regularly.</p>
+    <ul class="mt-6 space-y-4 text-sm leading-6 text-gray-700">
+      <li>• “Bills will go up” → see <a href="#faq-bills" class="underline font-semibold">our utility answer</a>.</li>
+      <li>• “Water will be drained” → see <a href="#faq-water" class="underline font-semibold">our water answer</a>.</li>
+      <li>• “Only 10–12 jobs” → see <a href="#faq-jobs" class="underline font-semibold">jobs & multiplier</a>.</li>
+      <li>• “Noise/traffic like warehouses” → see <a href="#faq-noise-traffic" class="underline font-semibold">noise & traffic</a>.</li>
+      <li>• “AI apocalypse / values” → see <a href="#faq-ai" class="underline font-semibold">role of data centers</a>.</li>
+      <li>• “Process / no vote” → see <a href="#faq-trust" class="underline font-semibold">process & transparency</a>.</li>
+    </ul>
+    <p class="text-xs text-gray-500 mt-4">Have a new concern? <a href="#contact" class="underline">Send it to us</a> — we’ll add it here within 5 business days.</p>
+  </div>
+</section>
+
 <!-- Project Renderings -->
 <section id="renderings" class="py-14 bg-gray-50">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-extrabold headline mb-4">Project Renderings</h2>
     <p class="lead max-w-3xl mx-auto mb-10">
-      Conceptual renderings of the Sabey Data Centers Indiana Campus buildings.
-      Final design subject to local approvals.
+      Conceptual visuals of the Decatur Technology Park. Final design will reflect ongoing public input and local approvals.
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -805,16 +906,14 @@
             loading="lazy"
           />
         </a>
-        <h3 class="font-semibold mt-4 mb-2 text-lg">Building A – Bird’s Eye View</h3>
-        <p class="text-sm text-gray-600 mb-4">
-          Click the image to view the full rendering.
-        </p>
+        <h3 class="font-semibold mt-4 mb-2 text-lg">Building A — Bird’s Eye View</h3>
+        <p class="text-sm text-gray-600 mb-4">Closest to residential edge with 200’ landscape buffer.</p>
         <a
           href="BuildingARender.jpg"
           target="_blank"
           class="inline-block bg-emerald-700 text-white font-semibold py-2.5 px-5 rounded-lg hover:bg-emerald-800 transition"
         >
-          Open Full Rendering (PDF)
+          Open Full Image
         </a>
       </div>
 
@@ -828,635 +927,228 @@
             loading="lazy"
           />
         </a>
-        <h3 class="font-semibold mt-4 mb-2 text-lg">Building B – Bird’s Eye View</h3>
-        <p class="text-sm text-gray-600 mb-4">
-          Click the image to view the full rendering.
-        </p>
+        <h3 class="font-semibold mt-4 mb-2 text-lg">Building B — Bird’s Eye View</h3>
+        <p class="text-sm text-gray-600 mb-4">Closest to Kentucky Avenue with enhanced streetscape.</p>
         <a
           href="BuildingBRender.jpg"
           target="_blank"
           class="inline-block bg-emerald-700 text-white font-semibold py-2.5 px-5 rounded-lg hover:bg-emerald-800 transition"
         >
-          Open Full Rendering (PDF)
+          Open Full Image
         </a>
       </div>
     </div>
   </div>
 </section>
-      <!-- Project Details -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-3xl font-bold headline mb-8">Decatur Technology Park Project Details</h3>
-        <div class="pro-card p-10">
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="font-bold text-lg mb-3">Campus Layout</h4>
-              <p class="lead">Building A (closest to residential homes): One-story data center of approximately 572,500 SF footprint with a height of 30 feet. Building B (closest to Kentucky Avenue): Two-story data center of approximately 490,000 SF footprint with a height of 50 feet. A 10-acre electrical substation site, campus security entry on SR-67, and designated emergency/construction access points.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg mb-3">Neighborhood Buffers</h4>
-              <p class="lead">200-foot buffer zones at residential property lines with extensive landscaping and mature tree preservation. Multiple retention ponds for engineered stormwater management protecting local waterways.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg mb-3">Infrastructure Improvements</h4>
-              <p class="lead">Sabey Data Centers has committed over $5 million toward improving and repaving roads in the Decatur Township area surrounding the project site. These investments are part of a broader Community Inclusivity and Infrastructure Plan, developed in coordination with local leaders and the Indiana Economic Development Initiative (IEDI), to ensure that neighborhood improvements directly benefit nearby residents and businesses. Additionally, sidewalk and trail connections along SR-67 and Camby Road frontages, with coordinated intersection improvements including right-in/right-out and full-access configurations for safe traffic flow.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg mb-3">Timeline</h4>
-              <p class="lead">Permitting and site preparation beginning 2026, with phased construction over 2-3 years. AES Indiana anticipates initial utility infrastructure upgrades by Q4 2027, with operational capacity ramping to 250 MW over a 5-year period.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Design Features -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-3xl font-bold headline mb-8">Thoughtful Design for Decatur Township</h3>
-        <div class="image-section mb-8">
-          <img src="Data center render.png" alt="Site plan showing buffers and landscaping">
-        </div>
-        <p class="lead mb-6 text-lg">Our plan for Decatur Technology Park emphasizes minimizing environmental and neighborhood impacts:</p>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="pro-card p-6">
-            <h4 class="font-bold text-lg mb-2">Efficient Cooling System</h4>
-            <p class="lead">Closed-loop cooling designed to minimize water usage. After a one-time initial system load, annual water usage is comparable to a typical office building, protecting community water resources.</p>
-          </div>
-          <div class="pro-card p-6">
-            <h4 class="font-bold text-lg mb-2">Shielded Lighting</h4>
-            <p class="lead">All exterior lighting professionally designed and shielded to minimize light pollution, eliminate glare affecting neighbors, and comply with dark-sky principles.</p>
-          </div>
-          <div class="pro-card p-6">
-            <h4 class="font-bold text-lg mb-2">Landscaped Buffers</h4>
-            <p class="lead">Extensive 200-foot green buffers at residential property lines with mature tree preservation, native plantings, and visual screening providing natural aesthetics and habitat.</p>
-          </div>
-          <div class="pro-card p-6">
-            <h4 class="font-bold text-lg mb-2">Stormwater Management</h4>
-            <p class="lead">Multiple engineered retention ponds and drainage systems protecting local waterways, reducing runoff compared to typical industrial development, and maintaining water quality.</p>
-          </div>
-        </div>
+<!-- Project Details -->
+<section class="container fade-up" id="project-details">
+  <h3 class="text-3xl font-bold headline mb-8">Project Details at a Glance</h3>
+  <div class="pro-card p-10">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h4 class="font-bold text-lg mb-3">Campus Layout</h4>
+        <p class="lead">
+          Building A: one story (~572,500 SF, ~30’ tall).<br/>
+          Building B: two stories (~490,000 SF, ~50’ tall).<br/>
+          Dedicated AES substation (~10 acres). Controlled access on SR-67; emergency/construction routes separated.
+        </p>
       </div>
-
-      <!-- Aerial Views -->
-      <div class="mt-16 fade-up">
-        <div class="image-grid">
-          <img src="aerial-1.jpg" alt="Aerial view of site and surroundings">
-          <img src="aerial-2.jpg" alt="Aerial perspective showing context">
-        </div>
+      <div>
+        <h4 class="font-bold text-lg mb-3">Neighborhood Buffers</h4>
+        <p class="lead">
+          200’ landscaped buffer at residential edges, preserved mature trees where possible, and visual screening berms with fencing
+          to reduce sightlines and light spill.
+        </p>
       </div>
-
-      <!-- Why Indiana -->
-      <div class="mt-16 fade-up">
-        <h3 class="text-3xl font-bold headline mb-6">Why Indiana? Why Decatur Township?</h3>
-        <p class="lead mb-8 text-lg">Indiana's stable business climate, strong utility infrastructure, skilled workforce, and pro-growth policies make it an ideal location for technology infrastructure investment. Decatur Township specifically offers excellent logistics access, supportive community leadership, and the land area needed to create a thoughtfully designed, well-buffered campus that respects its surroundings.</p>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Strategic Central Location</h4>
-            <p class="lead">Central United States positioning provides optimal network connectivity and low latency to major population centers. Excellent highway and logistics infrastructure enables efficient construction and operations.</p>
-          </div>
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Skilled Workforce</h4>
-            <p class="lead">Indiana's strong technical education programs, experienced construction trades, and growing technology sector provide the skilled workforce necessary for data center development, construction, and long-term operations.</p>
-          </div>
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Business-Friendly Environment</h4>
-            <p class="lead">Competitive tax structure, supportive regulatory framework, and streamlined permitting processes enable substantial long-term investment and sustainable economic growth benefiting local communities.</p>
-          </div>
-          <div class="pro-card p-7">
-            <h4 class="font-bold text-xl mb-3">Reliable Energy Infrastructure</h4>
-            <p class="lead">Dependable power supply and strong utility partnerships ensure 24/7/365 operations. Data centers also accelerate the transition to cleaner energy by becoming major purchasers of renewable power.</p>
-          </div>
-        </div>
+      <div>
+        <h4 class="font-bold text-lg mb-3">Infrastructure Improvements</h4>
+        <p class="lead">
+          >$5M targeted road work and safety upgrades near the site; coordinated intersection improvements; sidewalk and trail links.
+          These commitments are in writing and tracked publicly.
+        </p>
       </div>
-
-      <!-- Closeup Image -->
-      <div class="mt-16 fade-up">
-        <div class="image-section">
-          <img src="closeup-1.jpg" alt="Data center infrastructure detail">
-        </div>
+      <div>
+        <h4 class="font-bold text-lg mb-3">Timeline (subject to utility/IURC scheduling)</h4>
+        <p class="lead">
+          Permits & site prep begin 2026; phased build 2–3 years. AES anticipates initial upgrades by Q4 2027 with capacity ramping over ~5 years.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Community Partnership -->
-  <section id="community">
-    <div class="container">
-      <div class="fade-up">
-        <h2 class="text-4xl font-bold headline">Our Partnership with Decatur Township</h2>
-        <p class="lead mt-4 text-lg">Sabey Data Centers is committed to being a responsible, transparent, and genuinely engaged community partner. This commitment extends not just during the construction phase, but throughout the entire life of this facility and beyond.</p>
-        
-        <div class="grid md:grid-cols-2 gap-8 mt-12">
-          <div class="pro-card p-8">
-            <h4 class="font-bold text-xl mb-4">Community Meetings & Open Communication</h4>
-            <p class="lead">Regular public meetings, transparent project updates, and responsive two-way communication ensuring neighbors and local stakeholders have meaningful input into how we design, build, and operate this facility.</p>
-          </div>
-          
-          <div class="pro-card p-8">
-            <h4 class="font-bold text-xl mb-4">Infrastructure Investment</h4>
-            <p class="lead">Direct financial contributions to road improvements throughout Decatur Township. Commitment to hiring local trades, contractors, and vendors wherever possible during both construction and ongoing operations, keeping economic benefits in the community.</p>
-          </div>
-          
-          <div class="pro-card p-8">
-            <h4 class="font-bold text-xl mb-4">Workforce Development Programs</h4>
-            <p class="lead">Partnerships with Decatur Township schools, community colleges, and vocational programs creating clear pathways into high-skill, high-wage technology careers. This includes internships, apprenticeships, and training programs, many not requiring four-year college degrees.</p>
-          </div>
-          
-          <div class="pro-card p-8">
-            <h4 class="font-bold text-xl mb-4">Transparency & Accountability</h4>
-            <p class="lead">All key project documents publicly available for review. Dedicated community liaison committed to responding to every inquiry within five business days. Ongoing progress updates and accessibility to project leadership.</p>
-          </div>
-        </div>
-      </div>
+<!-- Design Features -->
+<section class="container fade-up" id="design">
+  <h3 class="text-3xl font-bold headline mb-8">Design Choices to Minimize Impact</h3>
+  <div class="image-section mb-8">
+    <img src="Data center render.png" alt="Site plan showing buffers, landscaping, and stormwater features">
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="pro-card p-6">
+      <h4 class="font-bold text-lg mb-2">Closed-Loop Cooling</h4>
+      <p class="lead">One-time initial fill, then office-like annual water use. No evaporative towers pulling millions of gallons.</p>
     </div>
-  </section>
-
-  <!-- Union Partnership Section -->
-  <section id="union-partnership">
-    <div class="container">
-      <div class="fade-up text-center max-w-4xl mx-auto mb-12">
-        <h2 class="text-4xl font-bold headline">Built Union. Built Right. Built for Decatur Township.</h2>
-        <p class="lead mt-4 text-lg">Sabey Data Centers has a longstanding commitment to union labor and is backed by union pension fund investment. This means good-paying union construction jobs for Decatur Township and Indiana workers, with a proven track record of quality craftsmanship.</p>
-      </div>
-
-      <!-- Union Investment Partnership -->
-      <div class="fade-up mb-16">
-        <div class="pro-card p-10 bg-blue-50">
-          <div class="flex items-start gap-6 mb-8">
-            <div class="flex-shrink-0">
-              <div style="width:100px;height:100px;background:#1e40af;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:2.5rem;font-weight:800">IBEW</div>
-            </div>
-            <div>
-              <h3 class="text-3xl font-bold mb-3">National Electrical Benefit Fund Partnership</h3>
-              <p class="lead">Sabey Data Centers is jointly owned by Sabey Corporation and National Real Estate Advisors, which manages investments for the National Electrical Benefit Fund (NEBF). The NEBF is the pension fund for IBEW (International Brotherhood of Electrical Workers) members.</p>
-            </div>
-          </div>
-
-          <div class="bg-white p-8 rounded-xl border-2 border-blue-200">
-            <h4 class="font-bold text-2xl mb-4" style="color:#1e40af">A Virtuous Cycle for Union Workers</h4>
-            <p class="lead mb-6">The NEBF invested $100 million in Sabey Data Centers to create a powerful double benefit: investment returns for the electricians' pension fund AND high-quality union jobs for IBEW members. This alignment ensures that union electricians benefit both from the construction work and from their retirement fund's investment success.</p>
-            <div class="grid md:grid-cols-2 gap-6 mt-8">
-              <div class="bg-green-50 p-6 rounded-xl border border-green-200">
-                <h5 class="font-bold text-lg mb-3" style="color:#065f46">✓ Investment Returns</h5>
-                <p class="lead">NEBF pension fund earns profitable returns from Sabey's successful data center operations, strengthening retirement security for IBEW electricians nationwide.</p>
-              </div>
-              <div class="bg-green-50 p-6 rounded-xl border border-green-200">
-                <h5 class="font-bold text-lg mb-3" style="color:#065f46">✓ Union Jobs Created</h5>
-                <p class="lead">Every Sabey project creates hundreds of high-skill union construction jobs for IBEW electricians and skilled tradespeople earning family-sustaining wages.</p>
-              </div>
-            </div>
-            <p class="text-center mt-6">
-              <a href="https://www.datacenterknowledge.com/investing/why-union-pension-funds-are-investing-in-data-centers" target="_blank" class="text-sm font-semibold underline" style="color:#1e40af">Source: Data Center Knowledge</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Union Construction Commitment -->
-      <div class="fade-up mb-16">
-        <h3 class="text-3xl font-bold headline text-center mb-8">Union-Built Excellence: Quotes from Sabey Leadership</h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="pro-card p-8">
-            <div class="mb-4">
-              <span style="font-size:3rem;color:#1e40af">"</span>
-            </div>
-            <p class="lead mb-6 font-semibold">"We rely on our union labor that we have, the electricians that do the work. This is a very complex design, and as you can see it's just a symphony of steel conduits. It's a very, very complex arrangement."</p>
-            <p class="text-sm font-bold" style="color:#065f46">— John Ford, VP, Sabey Data Centers</p>
-            <a href="http://electrictv.net/videos/data-centers-built-by-necaibew-team/" target="_blank" class="text-xs underline mt-2 inline-block">Source: ElectricTV / NECA-IBEW</a>
-          </div>
-
-          <div class="pro-card p-8">
-            <div class="mb-4">
-              <span style="font-size:3rem;color:#1e40af">"</span>
-            </div>
-            <p class="lead mb-6 font-semibold">"The relationship that we have with the union electrical shops dates back a very long time. The goal is that if you have someone who is experienced and knows what they're doing, you should be able to do that task maybe slightly faster than otherwise, which time equates to money. There's a lot of man hours that go into it, there's a lot of complexity, and it ends up being a pretty beautiful job at the end of the day when you take a step back and look at it."</p>
-            <p class="text-sm font-bold" style="color:#065f46">— John Sabey, President, Sabey Data Centers</p>
-            <a href="http://electrictv.net/videos/data-centers-built-by-necaibew-team/" target="_blank" class="text-xs underline mt-2 inline-block">Source: ElectricTV / NECA-IBEW</a>
-          </div>
-
-          <div class="pro-card p-8">
-            <div class="mb-4">
-              <span style="font-size:3rem;color:#1e40af">"</span>
-            </div>
-            <p class="lead mb-6 font-semibold">"When an installation is done and complete, we're not having to go back and redo it because there was a mistake or there was something that wasn't done properly."</p>
-            <p class="text-sm font-bold" style="color:#065f46">— Michael J. Bosco, Director of Operations, Sabey Data Centers</p>
-            <a href="http://electrictv.net/videos/data-centers-built-by-necaibew-team/" target="_blank" class="text-xs underline mt-2 inline-block">Source: ElectricTV / NECA-IBEW</a>
-          </div>
-
-          <div class="pro-card p-8">
-            <div class="mb-4">
-              <span style="font-size:3rem;color:#1e40af">"</span>
-            </div>
-            <p class="lead mb-6 font-semibold">"Nearly all data center construction work is done by IBEW signatory contractors. In northern Virginia alone, the union market share on data center projects is about 97%. And between 45% and 70% of data center construction costs go to the electrical subcontractor."</p>
-            <p class="text-sm font-bold" style="color:#065f46">— Industry Analysis</p>
-            <a href="https://ucommblog.com/section/build-union/data-centers-21st-century-goldrush" target="_blank" class="text-xs underline mt-2 inline-block">Source: IBEW Communications</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- What This Means for Decatur Township -->
-      <div class="fade-up">
-        <h3 class="text-3xl font-bold headline text-center mb-8">What Union Construction Means for Decatur Township</h3>
-        <div class="pro-card p-10">
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="benefit-icon mx-auto" style="background:#dbeafe;width:64px;height:64px;font-size:2rem">👥</div>
-              <h4 class="font-bold text-xl mb-3">Local Union Jobs</h4>
-              <p class="lead">Hundreds of construction jobs for Indiana IBEW electricians, pipefitters, HVAC technicians, and skilled tradespeople. Union wages mean family-sustaining income with excellent benefits, not low-wage temporary work.</p>
-            </div>
-            <div class="text-center">
-              <div class="benefit-icon mx-auto" style="background:#dbeafe;width:64px;height:64px;font-size:2rem">✓</div>
-              <h4 class="font-bold text-xl mb-3">Proven Quality</h4>
-              <p class="lead">Union electricians undergo rigorous apprenticeship training through the IBEW Joint Apprenticeship Training Committee. This ensures the highest standards of safety, craftsmanship, and technical expertise, which is critical for mission-critical data center infrastructure.</p>
-            </div>
-            <div class="text-center">
-              <div class="benefit-icon mx-auto" style="background:#dbeafe;width:64px;height:64px;font-size:2rem">↑</div>
-              <h4 class="font-bold text-xl mb-3">Shared Prosperity</h4>
-              <p class="lead">When union workers earn good wages on this project, they spend locally at restaurants, shops, gas stations, and service businesses throughout Decatur Township. Union labor creates a multiplier effect that strengthens the entire local economy.</p>
-            </div>
-          </div>
-
-          <div class="mt-10 p-8 bg-blue-50 rounded-xl border border-blue-200">
-            <h4 class="font-bold text-2xl mb-4 text-center">Union Construction: A Win-Win-Win</h4>
-            <div class="grid md:grid-cols-3 gap-6 mt-6">
-              <div class="text-center">
-                <p class="font-bold text-lg mb-2" style="color:#1e40af">For Workers</p>
-                <p class="lead">Family-sustaining wages, excellent benefits, retirement security, and career advancement through skilled training</p>
-              </div>
-              <div class="text-center">
-                <p class="font-bold text-lg mb-2" style="color:#1e40af">For Sabey</p>
-                <p class="lead">Highest-quality craftsmanship, zero rework, on-time completion, and proven reliability for mission-critical infrastructure</p>
-              </div>
-              <div class="text-center">
-                <p class="font-bold text-lg mb-2" style="color:#1e40af">For Community</p>
-                <p class="lead">Good local jobs, strengthened local economy, professional construction standards, and workforce development pathways</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Union Apprenticeship Pathways -->
-      <div class="fade-up mt-16">
-        <div class="pro-card p-10 bg-green-50">
-          <h3 class="text-2xl font-bold headline mb-6">Creating Pathways to Union Careers for Decatur Township Residents</h3>
-          <p class="lead mb-8">Sabey's commitment to union labor creates direct pathways for local residents to access high-paying union careers through IBEW apprenticeship programs. These "earn while you learn" programs provide paid on-the-job training combined with classroom instruction—launching careers without requiring four-year college degrees or massive student debt.</p>
-          
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-xl">
-              <h4 class="font-bold text-lg mb-3">IBEW Electrician Apprenticeship</h4>
-              <ul class="space-y-2 lead">
-                <li>• 5-year paid apprenticeship program</li>
-                <li>• Start earning immediately while training</li>
-                <li>• 8,000+ hours hands-on experience</li>
-                <li>• Journey-level wages: $70,000-$100,000+/year</li>
-                <li>• Excellent benefits including pension</li>
-              </ul>
-            </div>
-            <div class="bg-white p-6 rounded-xl">
-              <h4 class="font-bold text-lg mb-3">Career Advancement</h4>
-              <ul class="space-y-2 lead">
-                <li>• Clear progression from apprentice to journeyman</li>
-                <li>• Opportunities for specialized certifications</li>
-                <li>• Leadership roles: foreman, superintendent</li>
-                <li>• Lifelong career with retirement security</li>
-                <li>• Union benefits and representation</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="pro-card p-6">
+      <h4 class="font-bold text-lg mb-2">Shielded Lighting</h4>
+      <p class="lead">Dark-sky friendly fixtures, zero uplight, and cut-off shields to protect neighboring homes.</p>
     </div>
-  </section>
-
-  <!-- Documents -->
-  <section id="docs" class="container">
-    <div class="fade-up">
-      <h2 class="text-4xl font-bold headline">Project Documents</h2>
-      <p class="lead mt-4 text-lg">We don't ask you to simply take our word for it. All key project documents, technical studies, and official correspondence are available here for your review. These documents provide detailed information about every aspect of the project.</p>
-
-      <div class="grid md:grid-cols-2 gap-6 mt-12">
-        <a href="decatursiteplanupdate.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">Updated Site Plan</h3>
-          <p class="lead">The updated site plan features Building A (one-story, ~572,500 SF, 30 feet high, closest to homes) and Building B (two-story, ~490,000 SF, 50 feet high, closest to Kentucky Avenue), along with a 10-acre substation, buffers, green spaces, lighting design, access points, and landscaping. Updates include a clearly defined 200-foot transitional yard, a wood fence on the berm for added privacy, and enhanced visibility of homes across from Camby.
-
-These refinements reflect community input and ensure a balanced, well-integrated design.</p>
-          <p class="doc-meta">Conceptual Site Plan • Updated November 2025</p>
-        </a>
-
-        <a href="AESWILLSERVE.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">AES Will Serve Letter</h3>
-          <p class="lead">Official utility commitment letter detailing phased power delivery up to 250 MW over 5 years, cost responsibility structure, and confirmation that residential customer bills will not increase because of this project. Initial upgrades anticipated by Q4 2027.</p>
-          <p class="doc-meta">Official utility correspondence</p>
-        </a>
-
-        <a href="Will Serve Letter_Sabey.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">Citizens Water Will Serve Letter</h3>
-          <p class="lead">Official water utility letter confirming service availability and water usage for the efficient closed-loop cooling system design.</p>
-          <p class="doc-meta">Official utility correspondence</p>
-        </a>
-
-        <a href="Tripgenupdate.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">Independent Traffic Study</h3>
-          <p class="lead">Third-party traffic analysis by American Structurepoint for Sabey Data Centers demonstrating approximately 80% fewer peak-hour vehicle trips (AM: 558→111, PM: 554→106) compared to the previously approved industrial development plan for this site.</p>
-          <p class="doc-meta">American Structurepoint for Sabey Data Centers • November 2025 • ITE 12th Edition methodology</p>
-        </a>
-
-        <a href="faq.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">Comprehensive Development FAQ</h3>
-          <p class="lead">Detailed answers addressing zoning, utilities, environmental considerations, visual design, construction timeline, operational characteristics, generator use (~20 hours/year typical), energy efficiency targets, and community benefits.</p>
-          <p class="doc-meta">Updated November 2025</p>
-        </a>
-
-        <a href="zoning-faq.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">Zoning Information FAQ</h3>
-          <p class="lead">Land use classifications, zoning requirements, and planning approach explained in plain language. Includes specifics on traffic routing (no facility traffic allowed off Camby Road) and rate impact explanation.</p>
-          <p class="doc-meta">Concise reference guide</p>
-        </a>
-
-        <a href="air-cooled-chiller.pdf" target="_blank" class="pro-card p-6 block hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-2">Cooling Technology Reference</h3>
-          <p class="lead">Technical documentation explaining how closed-loop cooling systems work for water efficiency with minimal consumption during normal operations.</p>
-          <p class="doc-meta">Preliminary • September 2025 • Technical diagram included</p>
-        </a>
-      </div>
+    <div class="pro-card p-6">
+      <h4 class="font-bold text-lg mb-2">Landscape & Berms</h4>
+      <p class="lead">Native plantings, tree preservation, and berms to soften views and provide seasonal color.</p>
     </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <h2 class="text-4xl font-bold headline">Frequently Asked Questions</h2>
-      <p class="lead mt-4 text-lg">These questions come directly from Decatur Township residents, neighbors, and local partners. If you don't see your question answered here, please email us and we'll add it.</p>
-
-      <div class="mt-10">
-        <!-- Utility Bills -->
-        <div class="faq-item">
-          <div class="faq-q">Will my electric or water utility bills increase because of this project?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            No. Sabey pays 100% of all customer-specific infrastructure, dedicated facilities, and applicable utility riders required for this project. Sabey also pays CIAC (Contributions in Aid of Construction) for any upstream reinforcements attributable to this load. New electrical load actually adds utility revenue that helps spread fixed infrastructure costs across a larger customer base, which can help stabilize rates for all customers. Any broader grid programs would go through IURC (Indiana Utility Regulatory Commission) review for public oversight. The closed-loop cooling system is designed for water efficiency. See the official <a class="underline font-semibold" href="AESWILLSERVE.pdf" target="_blank">AES Will Serve Letter</a> and <a class="underline font-semibold" href="Will Serve Letter_Sabey.pdf" target="_blank">Citizens Water Will Serve Letter</a> for details.
-          </div>
-        </div>
-
-        <!-- Water Usage -->
-        <div class="faq-item">
-          <div class="faq-q">How much water will the data center actually use?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            The Sabey Data Center uses a closed-loop cooling system designed for water efficiency. The system requires a one-time initial water load of 1,000,000 gallons total—500,000 gallons for Building A (2028) and 500,000 gallons for Building B (2030).
-            <br><br>
-            After the initial system load, projected annual water usage is similar to a typical office building, covering restrooms, breakroom/kitchen use, showers, janitorial needs, landscaping irrigation, and humidity control. We estimate 100,000 to 150,000 gallons per year per building, for a total of 200,000 to 300,000 gallons annually for the two-building campus.
-            <br><br>
-            For context, this land was previously zoned for a Decatur Tech Park that would have required significantly more water. Our efficient design minimizes water usage while maintaining optimal cooling performance. Reference: <a class="underline font-semibold" href="air-cooled-chiller.pdf" target="_blank">Cooling System Technical Documentation</a> and <a class="underline font-semibold" href="Will Serve Letter_Sabey.pdf" target="_blank">Citizens Water Will Serve Letter</a>.
-          </div>
-        </div>
-
-        <!-- Noise -->
-        <div class="faq-item">
-          <div class="faq-q">What about noise from cooling equipment and backup generators?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            All mechanical equipment is fully enclosed within buildings and acoustically treated to minimize sound transmission. Exterior lighting is professionally shielded to eliminate glare and light pollution. Backup generators are tested during daytime hours only, with approximately 20 total hours of testing per year across all units. Actual outage usage is rare—typically less than once per year. Testing is scheduled during reasonable hours with advance notice to neighbors. Normal daily operations are designed to be significantly quieter than typical industrial or manufacturing facilities.
-          </div>
-        </div>
-
-        <!-- Traffic -->
-        <div class="faq-item">
-          <div class="faq-q">Will this increase traffic congestion in our neighborhood?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            No. Data center daily operations are inherently low-traffic compared to other industrial uses. The facility will employ 50-75 people working in shifts, meaning 15-25 employees arriving and departing at any given time. Deliveries use designated truck routes during off-peak hours, with no facility traffic allowed off Camby Road. An independent professional traffic study by American Structurepoint demonstrates approximately 80% fewer peak-hour vehicle trips (AM: 558→111 trips; PM: 554→106 trips) than the previously approved industrial development plan for this same site. See the complete <a class="underline font-semibold" href="Tripgenupdate.pdf" target="_blank">Independent Traffic Study</a>.
-          </div>
-        </div>
-
-        <!-- Construction Timeline -->
-        <div class="faq-item">
-          <div class="faq-q">When will construction start and how long will it take?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            Following completion of permitting processes, site preparation and initial construction activities are anticipated to begin in 2026. Construction will be phased over approximately 2-3 years. AES Indiana's will serve letter indicates initial utility infrastructure upgrades are anticipated by Q4 2027, with electrical capacity ramping to 250 MW over a 5-year period. We will provide advance notice to neighbors before major construction activities begin, with designated construction access routes and traffic management plans to minimize disruption.
-          </div>
-        </div>
-
-        <!-- Jobs Created -->
-        <div class="faq-item">
-          <div class="faq-q">How many jobs will this project actually create for our community?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            <strong>Construction Phase:</strong> Hundreds of jobs over 2-3 years for local electricians, HVAC specialists, general contractors, equipment installers, and other skilled trades. Priority hiring for local contractors and workers.
-            <br><br>
-            <strong>Permanent Operations:</strong> 50-75 direct high-wage jobs including data center technicians, network engineers, facilities managers, and security personnel—all paying approximately 150% of county average wages with comprehensive benefits.
-            <br><br>
-            <strong>Indirect Jobs:</strong> Research shows each direct data center job creates 7.4 additional jobs in the local economy—approximately 350-550 indirect jobs in telecommunications, software development, equipment maintenance, security services, restaurants, retail, professional services, and other businesses supported by data center operations and employee spending.
-            <br><br>
-            All positions emphasize hiring from the local community and region wherever possible.
-          </div>
-        </div>
-
-        <!-- School Funding -->
-        <div class="faq-item">
-          <div class="faq-q">What's the actual economic benefit to Decatur Township schools?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            Data centers generate substantial property tax and personal property tax revenue that flows directly to school district funding. Based on the $4+ billion capital investment planned for this project, annual tax revenue could fund millions in school improvements, teacher salaries, educational programs, facility maintenance, and technology upgrades—all without increasing residential property tax rates.
-            <br><br>
-            In comparable communities, computer equipment and server purchases for data centers have increased local tax revenue by 170% or more (<a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="underline font-semibold">Federal Reserve Bank of Richmond</a>). This provides stable, long-term funding that strengthens educational quality, reduces class sizes, attracts quality teachers, and supports student success—benefits that extend to all families in the district whether or not they have school-age children, as better schools increase overall property values and community desirability.
-          </div>
-        </div>
-
-        <!-- Property Values -->
-        <div class="faq-item">
-          <div class="faq-q">Will this project affect nearby property values?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            Data centers typically have neutral to positive effects on nearby residential property values. Key factors:
-            <br><br>
-            <strong>Minimal Traffic Impact:</strong> 80% fewer daily vehicle trips than typical industrial uses means no congestion, noise, or safety concerns from constant truck traffic.
-            <br><br>
-            <strong>No Retail Crowds:</strong> No public access, no customer traffic, no parking lot congestion—just controlled employee and maintenance vehicle access.
-            <br><br>
-            <strong>Professional Design:</strong> 200-foot residential buffers, extensive landscaping, green spaces, shielded lighting, and architectural standards that minimize visual impact and maintain neighborhood character.
-            <br><br>
-            <strong>Infrastructure Improvements:</strong> Project brings upgraded roads, utilities, sidewalks, trails, and stormwater management benefiting the broader area.
-            <br><br>
-            <strong>Economic Halo Effect:</strong> Attracts complementary quality businesses and technology companies, strengthening the local economy and increasing area desirability.
-            <br><br>
-            <strong>Stronger Tax Base:</strong> Improved school funding and public services without raising residential taxes supports property values throughout the community.
-          </div>
-        </div>
-
-        <!-- Comparison to Other Industrial -->
-        <div class="faq-item">
-          <div class="faq-q">How does this compare to other types of industrial development?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            Data centers offer significant advantages over typical industrial, manufacturing, or warehouse operations:
-            <br><br>
-            <strong>Much Lower Traffic:</strong> Approximately 80% fewer daily vehicle trips. No constant freight truck traffic, no shift change congestion, no customer or delivery vehicles creating neighborhood disruption.
-            <br><br>
-            <strong>Far Higher Economic Value:</strong> $4+ billion capital investment versus typical $10-50 million for comparable industrial facilities. Generates substantially higher property and personal property tax revenue per acre.
-            <br><br>
-            <strong>Cleaner Operations:</strong> No manufacturing emissions, no water pollution, no hazardous waste, no outdoor storage, efficient water usage design, no air quality impacts. Significantly lower environmental footprint.
-            <br><br>
-            <strong>Better Jobs:</strong> High-wage technology positions paying 150% of county average with excellent benefits, versus typical warehouse or manufacturing wages.
-            <br><br>
-            <strong>Stable Long-Term:</strong> 20+ year operational commitment with recession-resistant tax base, unlike manufacturing facilities that may relocate or close during economic downturns.
-            <br><br>
-            <strong>Minimal Service Burden:</strong> Small employee count means minimal impact on roads, schools, emergency services, and other public infrastructure compared to employment-intensive industries.
-          </div>
-        </div>
-
-        <!-- Workforce Training -->
-        <div class="faq-item">
-          <div class="faq-q">What workforce training and career opportunities will be available for local residents?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            Sabey Data Centers is committed to partnering with Decatur Township schools, community colleges, and trade programs to create clear career pathways:
-            <br><br>
-            <strong>Student Programs:</strong> Paid internships and apprenticeships for local high school and college students interested in technology infrastructure careers. Opportunities to gain real-world experience while still in school.
-            <br><br>
-            <strong>STEAM Education:</strong> Employee engagement programs where data center professionals visit schools to introduce students to technology careers, demonstrate equipment, and provide mentorship.
-            <br><br>
-            <strong>Technical Certification Programs:</strong> Partnerships with community colleges to develop data center technician certification programs. Many positions require technical training and certifications rather than four-year degrees.
-            <br><br>
-            <strong>Trade Partnerships:</strong> Ongoing relationships with electrician, HVAC, and facilities maintenance trade programs creating pathways from vocational training to well-paying careers.
-            <br><br>
-            <strong>Career Advancement:</strong> Data center positions offer excellent opportunities for skill development, professional growth, and advancement into supervisory and management roles over time. Sabey facilities consistently target high energy efficiency performance, including ENERGY STAR recognition.
-            <br><br>
-            Priority consideration for local candidates throughout hiring processes for both construction and permanent positions.
-          </div>
-        </div>
-
-        <!-- Long-term Commitment -->
-        <div class="faq-item">
-          <div class="faq-q">Is this genuinely sustainable for 20+ years, or will you eventually close or relocate?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            Data centers represent permanent infrastructure investments, not temporary operations. Multiple factors ensure long-term commitment:
-            <br><br>
-            <strong>Massive Fixed Investment:</strong> $4+ billion in buildings, cooling systems, backup power, and technology infrastructure physically anchored to this specific site. Data centers cannot simply relocate—they represent multi-decade commitments to their communities.
-            <br><br>
-            <strong>Continuous Reinvestment:</strong> Technology equipment is regularly upgraded and refreshed every 3-5 years, generating ongoing construction activity, equipment purchases, and associated tax revenue in perpetuity.
-            <br><br>
-            <strong>Growing Demand:</strong> Cloud computing, artificial intelligence, online services, remote work, telemedicine, and digital education continue expanding rapidly. Data centers are essential infrastructure—like power plants or telecommunications networks—that modern society depends on.
-            <br><br>
-            <strong>Sabey's Track Record:</strong> Sabey Data Centers' facilities in the Seattle region have operated successfully for over 20 years, demonstrating consistent community partnership, reliable tax contributions, stable employment, and positive economic impacts decade after decade.
-            <br><br>
-            This is infrastructure built for generational sustainability, not short-term profit.
-          </div>
-        </div>
-
-        <!-- Community Benefit Summary -->
-        <div class="faq-item">
-          <div class="faq-q">How does this project specifically benefit Decatur Township residents?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            <strong>Stronger Schools:</strong> Millions in annual tax revenue supporting better teachers, programs, facilities, and technology without raising residential property taxes.
-            <br><br>
-            <strong>Improved Infrastructure:</strong> Direct funding for road improvements plus upgraded utilities benefiting all residents and businesses.
-            <br><br>
-            <strong>Local Jobs:</strong> 50-75 high-wage permanent positions plus 350-550 indirect jobs in the broader economy, with priority hiring for community residents.
-            <br><br>
-            <strong>Economic Stability:</strong> $4+ billion recession-resistant investment providing stable tax base for schools, emergency services, and public infrastructure for decades.
-            <br><br>
-            <strong>Career Pathways:</strong> Workforce development partnerships creating opportunities for students and residents to access high-paying technology careers.
-            <br><br>
-            <strong>Business Growth:</strong> Local spending by construction workers and data center employees supports restaurants, retail, services. "Halo effect" attracts complementary businesses.
-            <br><br>
-            <strong>Minimal Impact:</strong> Unlike typical industrial development—80% less traffic, no pollution, no noise disruption, efficient water usage design, professional landscaping and design with 200-foot residential buffers.
-          </div>
-        </div>
-
-        <!-- Contact Question -->
-        <div class="faq-item">
-          <div class="faq-q">Who can I contact if I have additional questions or concerns?<span class="ml-2">+</span></div>
-          <div class="faq-a lead">
-            We genuinely welcome every question, concern, and suggestion. Please use the <a class="underline font-semibold" href="#contact">contact form</a> to reach our dedicated community liaison. We are committed to responding to every inquiry within five business days. Your input matters, and we want to ensure you have all the information you need.
-          </div>
-        </div>
-      </div>
+    <div class="pro-card p-6">
+      <h4 class="font-bold text-lg mb-2">Engineered Stormwater</h4>
+      <p class="lead">Multiple basins sized to modern standards — slowing, filtering, and protecting local waterways.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="pro-card p-10 fade-up">
-        <h2 class="text-4xl font-bold headline">We Want to Hear from You</h2>
-        <p class="lead mt-4 text-lg">Questions, ideas, concerns, or suggestions—we genuinely want to hear them all. This project will be part of Decatur Township for decades to come, and we're committed to getting it right together with the community.</p>
-        
-        <div class="max-w-2xl mx-auto mt-10">
-          <!-- Contact Form -->
-          <div>
-            <h3 class="text-2xl font-bold mb-4 text-center">Send Us a Message</h3>
-            <p class="lead mb-6 text-center">We respond to every inquiry within five business days.</p>
-            <form class="contact-form" action="https://formspree.io/f/mnngenvr" method="POST">
-              <div class="form-group">
-                <label class="form-label" for="name">Name</label>
-                <input class="form-input" type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input class="form-input" type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="message">Message</label>
-                <textarea class="form-input form-textarea" id="message" name="message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-black">Send Message</button>
-            </form>
-            <p class="text-sm text-gray-600 mt-4 text-center"></p>
-            <div class="mt-8 text-center">
-              <a href="#docs" class="btn btn-ghost">Review Project Documents</a>
-            </div>
-          </div>
+<!-- Aerials -->
+<section class="container fade-up" id="aerials">
+  <div class="image-grid">
+    <img src="aerial-1.jpg" alt="Aerial view of site context: buffers and green space">
+    <img src="aerial-2.jpg" alt="Aerial perspective showing roadway access and separation from residences">
+  </div>
+</section>
+
+<!-- Why Here -->
+<section class="container fade-up" id="why-indiana">
+  <h3 class="text-3xl font-bold headline mb-6">Why Decatur Township</h3>
+  <p class="lead mb-8 text-lg">
+    Existing industrial zoning, room for meaningful buffers, strong utility partners, and access to skilled trades make this site suitable —
+    if we do it carefully and transparently.
+  </p>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="pro-card p-7">
+      <h4 class="font-bold text-xl mb-3">Skilled Local Workforce</h4>
+      <p class="lead">Partnerships with area unions and schools create pathways into high-wage technical roles.</p>
+    </div>
+    <div class="pro-card p-7">
+      <h4 class="font-bold text-xl mb-3">Responsible Build-Out</h4>
+      <p class="lead">Lower daily traffic and no manufacturing emissions compared to typical industrial alternatives.</p>
+    </div>
+    <div class="pro-card p-7">
+      <h4 class="font-bold text-xl mb-3">Stronger Tax Base</h4>
+      <p class="lead">Property and equipment taxes flow to schools, safety, and infrastructure over decades.</p>
+    </div>
+    <div class="pro-card p-7">
+      <h4 class="font-bold text-xl mb-3">Dedicated Power Plan</h4>
+      <p class="lead">New AES substation and lines sized for the project — not drawing from neighborhood circuits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="pro-card p-10 fade-up">
+      <h2 class="text-4xl font-bold headline mb-6 text-center">Contact Us</h2>
+      <p class="lead text-center mb-10 max-w-2xl mx-auto">
+        Have a question, comment, or concern? We’ll read every message and respond or post the answer publicly so others can see it too.
+      </p>
+
+      <form class="contact-form mx-auto">
+        <div class="form-group">
+          <label class="form-label" for="name">Name</label>
+          <input id="name" type="text" class="form-input" placeholder="Your full name">
         </div>
-      </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input id="email" type="email" class="form-input" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea id="message" class="form-input form-textarea" placeholder="Share your thoughts or questions..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-black w-full md:w-auto">Send Message</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container text-sm">
-      <div class="font-semibold">Sabey Data Centers</div>
-      <div class="mt-1">Decatur Technology Park</div>
-      <div class="mt-3">© <span id="year"></span> Sabey Data Centers. All rights reserved.</div>
-      <div class="mt-1">Last updated: <span id="updated">November 2025</span></div>
-      <div class="mt-6 text-xs opacity-75" style="max-width:800px;line-height:1.6">
-        Economic impact data sourced from independent third-party research: CBRE, PwC, U.S. Chamber of Commerce, Federal Reserve Bank of Richmond, AWS Economic Impact Study, and Data Center Coalition. All claims are based on peer-reviewed studies and government data.
-      </div>
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <p class="text-lg font-semibold mb-4">Sabey Data Centers • Decatur Technology Park</p>
+    <p class="text-sm text-gray-300 mb-6">
+      Building a responsible future for digital infrastructure — together with the communities who host it.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 text-sm">
+      <a href="#voices">What We’ve Heard</a>
+      <a href="#concerns">Questions</a>
+      <a href="#aes-commitment">AES Partnership</a>
+      <a href="#economic-impact">Economic Impact</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
+    <p class="text-xs text-gray-500 mt-8">&copy; 2025 Sabey Data Centers. All rights reserved.</p>
+  </div>
+</footer>
 
-  <!-- Back to Top -->
-  <button id="backToTop" title="Back to Top">↑</button>
-  
-  <!-- Scripts -->
-  <script>
-    // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
+<!-- Back to top button -->
+<button id="backToTop" title="Back to top">↑</button>
+
+<!-- Scripts -->
+<script>
+  // Header scroll shadow
+  const header = document.getElementById('topbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      item.classList.toggle('open');
+      const expanded = item.classList.contains('open');
+      q.setAttribute('aria-expanded', expanded);
     });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileNav.classList.remove('open');
-      });
+  });
+
+  // Fade-up reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
     });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Header shadow + back-to-top visibility
-    const topbar = document.getElementById('topbar');
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) topbar.classList.add('scrolled'); else topbar.classList.remove('scrolled');
-      if (window.scrollY > 500) backToTopBtn.classList.add('show'); else backToTopBtn.classList.remove('show');
+  // Smooth scroll + open FAQ if targeted
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      if (target.classList.contains('faq-item')) {
+        target.classList.add('open');
+        const q = target.querySelector('.faq-q');
+        if (q) q.setAttribute('aria-expanded', 'true');
+      }
+      target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      history.replaceState(null, '', '#' + id);
     });
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  });
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); }), {threshold:0.1});
-    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+  // Back to top visibility
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+</script>
 
-    // FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(q=>{
-      q.addEventListener('click',()=>{ 
-        const item = q.parentElement;
-        item.classList.toggle('open');
-      });
-    });
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
