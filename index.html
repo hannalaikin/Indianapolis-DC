@@ -265,7 +265,22 @@
     <img src="aerial-1.jpg" alt="Sabey Data Center rendering for Decatur Township">
     <div class="hero__content">
       <div class="content-inner">
-        <div class="hero-glass fade-up">
+       <!-- HERO glass — REPLACED -->
+<div class="hero-glass fade-up">
+  <div class="text-gray-700 text-xs uppercase tracking-wider font-semibold">A conversation, not a pitch</div>
+  <h1 class="text-4xl md:text-5xl font-extrabold headline mt-1">
+    We’ve heard your concerns. Let’s talk through them, plainly.
+  </h1>
+  <p class="lead mt-3">
+    You’ve told us you’re worried about bills, water, jobs, and losing the small-town feel. Those are valid concerns.
+    This page organizes what we’ve heard — and exactly what we’re proposing — so you can decide for yourself.
+  </p>
+  <div class="mt-6 flex flex-wrap gap-3">
+    <a href="#voices" class="btn btn-black">What We’ve Heard</a>
+    <a href="#concerns" class="btn btn-ghost">Direct Answers</a>
+  </div>
+</div>
+
           <div class="text-gray-700 text-xs uppercase tracking-wider font-semibold">Community Information</div>
           <h1 class="text-4xl md:text-5xl font-extrabold headline mt-1">Reliable technology. Responsible growth. Real benefits for Decatur Township.</h1>
           <p class="lead mt-3">Existing customer rates are not expected to be negatively impacted per AES's plan and IURC-reviewed process. Our efficient closed-loop cooling system is designed to minimize water usage. Daily traffic and noise are far below typical industrial uses by design.</p>
@@ -277,6 +292,77 @@
       </div>
     </div>
   </section>
+<!-- Voices Section (empathy-first) -->
+<section id="voices" class="container">
+  <h2 class="text-4xl font-bold headline text-center">What We’ve Heard From Neighbors</h2>
+  <p class="lead mt-3 text-center max-w-3xl mx-auto">
+    Real comments from Decatur Township & Greensburg residents. Click any card to jump to our answer.
+  </p>
+
+  <div class="mt-8 grid md:grid-cols-3 gap-4" aria-live="polite">
+    <a href="#faq-bills" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about bills">
+      <p class="font-semibold">“My utilities are drowning me as it is — don’t pile more on our shoulders.”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Utilities · 2 weeks ago</span>
+    </a>
+
+    <a href="#faq-water" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about water">
+      <p class="font-semibold">“You cannot eat or drink money. Will this drain our water?”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Water · 2 months ago</span>
+    </a>
+
+    <a href="#faq-jobs" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about jobs">
+      <p class="font-semibold">“Only 10–12 long-term jobs? People need work for dignity and mental health.”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Jobs · 3 weeks ago</span>
+    </a>
+
+    <a href="#faq-ai" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about AI & community">
+      <p class="font-semibold">“AI data centers will turn this into a future wasteland.”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Quality of life · 1 month ago</span>
+    </a>
+
+    <a href="#faq-trust" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about trust & process">
+      <p class="font-semibold">“This was sprung on us. Why no vote? Why should we trust you?”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Process · 1 month ago</span>
+    </a>
+
+    <a href="#faq-noise-traffic" class="pro-card p-5 block hover:shadow-xl transition" title="Jump to answer about noise & traffic">
+      <p class="font-semibold">“Noise, trucks, brown water — who wants to live near a data center?”</p>
+      <span class="text-xs text-gray-500 mt-2 block">Impacts · 2 months ago</span>
+    </a>
+  </div>
+
+  <div class="mt-6 text-center text-sm text-gray-500">
+    Don’t see your concern? <a href="#contact" class="underline font-semibold">Tell us — we’ll add it and answer publicly.</a>
+  </div>
+</section>
+<!-- Trust & Commitments -->
+<section id="commitments">
+  <div class="container">
+    <div class="pro-card p-8 fade-up">
+      <h2 class="text-3xl font-bold headline mb-4">Why Should You Trust Sabey?</h2>
+      <p class="lead">Short answer: You don’t have to — we’ll earn it. Here are the parts that are on us, in writing:</p>
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">No neighbor cross-subsidy</h3>
+          <p class="lead">We pay 100% of customer-specific infrastructure and required riders. Our power is from a new, dedicated AES substation.</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">Tight water design</h3>
+          <p class="lead">Closed-loop cooling with a one-time initial fill; thereafter usage roughly comparable to an office building.</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">Low daily traffic</h3>
+          <p class="lead">Fewer trips than the already-approved warehouse plan — ~80% lower in peak hour.</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+          <h3 class="font-bold mb-2">Show up & listen</h3>
+          <p class="lead">Open meetings before final decisions, publish docs, and answer every question publicly on this page.</p>
+        </div>
+      </div>
+      <div class="mt-6 text-sm text-gray-600">If we can’t meet these commitments, we don’t deserve to build here.</div>
+    </div>
+  </div>
+</section>
 
   <!-- Common Questions -->
   <section id="concerns" class="container">
@@ -1189,7 +1275,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
 
       <div class="mt-10">
         <!-- Utility Bills -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">Will my electric or water utility bills increase because of this project?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             No. Sabey pays 100% of all customer-specific infrastructure, dedicated facilities, and applicable utility riders required for this project. Sabey also pays CIAC (Contributions in Aid of Construction) for any upstream reinforcements attributable to this load. New electrical load actually adds utility revenue that helps spread fixed infrastructure costs across a larger customer base, which can help stabilize rates for all customers. Any broader grid programs would go through IURC (Indiana Utility Regulatory Commission) review for public oversight. The closed-loop cooling system is designed for water efficiency. See the official <a class="underline font-semibold" href="AESWILLSERVE.pdf" target="_blank">AES Will Serve Letter</a> and <a class="underline font-semibold" href="Will Serve Letter_Sabey.pdf" target="_blank">Citizens Water Will Serve Letter</a> for details.
@@ -1197,7 +1283,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Water Usage -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">How much water will the data center actually use?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             The Sabey Data Center uses a closed-loop cooling system designed for water efficiency. The system requires a one-time initial water load of 1,000,000 gallons total—500,000 gallons for Building A (2028) and 500,000 gallons for Building B (2030).
@@ -1209,7 +1295,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Noise -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">What about noise from cooling equipment and backup generators?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             All mechanical equipment is fully enclosed within buildings and acoustically treated to minimize sound transmission. Exterior lighting is professionally shielded to eliminate glare and light pollution. Backup generators are tested during daytime hours only, with approximately 20 total hours of testing per year across all units. Actual outage usage is rare—typically less than once per year. Testing is scheduled during reasonable hours with advance notice to neighbors. Normal daily operations are designed to be significantly quieter than typical industrial or manufacturing facilities.
@@ -1217,7 +1303,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Traffic -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">Will this increase traffic congestion in our neighborhood?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             No. Data center daily operations are inherently low-traffic compared to other industrial uses. The facility will employ 50-75 people working in shifts, meaning 15-25 employees arriving and departing at any given time. Deliveries use designated truck routes during off-peak hours, with no facility traffic allowed off Camby Road. An independent professional traffic study by American Structurepoint demonstrates approximately 80% fewer peak-hour vehicle trips (AM: 558→111 trips; PM: 554→106 trips) than the previously approved industrial development plan for this same site. See the complete <a class="underline font-semibold" href="Tripgenupdate.pdf" target="_blank">Independent Traffic Study</a>.
@@ -1225,7 +1311,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Construction Timeline -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">When will construction start and how long will it take?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             Following completion of permitting processes, site preparation and initial construction activities are anticipated to begin in 2026. Construction will be phased over approximately 2-3 years. AES Indiana's will serve letter indicates initial utility infrastructure upgrades are anticipated by Q4 2027, with electrical capacity ramping to 250 MW over a 5-year period. We will provide advance notice to neighbors before major construction activities begin, with designated construction access routes and traffic management plans to minimize disruption.
@@ -1233,7 +1319,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Jobs Created -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">How many jobs will this project actually create for our community?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             <strong>Construction Phase:</strong> Hundreds of jobs over 2-3 years for local electricians, HVAC specialists, general contractors, equipment installers, and other skilled trades. Priority hiring for local contractors and workers.
@@ -1247,7 +1333,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- School Funding -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">What's the actual economic benefit to Decatur Township schools?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             Data centers generate substantial property tax and personal property tax revenue that flows directly to school district funding. Based on the $4+ billion capital investment planned for this project, annual tax revenue could fund millions in school improvements, teacher salaries, educational programs, facility maintenance, and technology upgrades—all without increasing residential property tax rates.
@@ -1257,7 +1343,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Property Values -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">Will this project affect nearby property values?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             Data centers typically have neutral to positive effects on nearby residential property values. Key factors:
@@ -1277,7 +1363,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Comparison to Other Industrial -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">How does this compare to other types of industrial development?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             Data centers offer significant advantages over typical industrial, manufacturing, or warehouse operations:
@@ -1297,7 +1383,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Workforce Training -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">What workforce training and career opportunities will be available for local residents?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             Sabey Data Centers is committed to partnering with Decatur Township schools, community colleges, and trade programs to create clear career pathways:
@@ -1317,7 +1403,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Long-term Commitment -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">Is this genuinely sustainable for 20+ years, or will you eventually close or relocate?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             Data centers represent permanent infrastructure investments, not temporary operations. Multiple factors ensure long-term commitment:
@@ -1335,7 +1421,7 @@ These refinements reflect community input and ensure a balanced, well-integrated
         </div>
 
         <!-- Community Benefit Summary -->
-        <div class="faq-item">
+        <div class="faq-item">id="faq-bills">
           <div class="faq-q">How does this project specifically benefit Decatur Township residents?<span class="ml-2">+</span></div>
           <div class="faq-a lead">
             <strong>Stronger Schools:</strong> Millions in annual tax revenue supporting better teachers, programs, facilities, and technology without raising residential property taxes.
