@@ -44,7 +44,14 @@
 @media (max-width:768px){ 
   .hero img{height:500px}
 }
-
+.hero__content{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center}
+.content-inner{width:100%;padding-bottom:5rem;display:flex;justify-content:center}
+@media (max-width:768px){ 
+  .content-inner{padding-bottom:2.5rem;padding-left:1rem;padding-right:1rem}
+  .hero__content{position:static}
+}
+.hero-glass{background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(12px);border-radius:var(--radius);padding:2.5rem 2.8rem;max-width:820px;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+@media (max-width:768px){ .hero-glass{padding:1.75rem} }
     /* Image sections */
     .image-section{margin:3rem 0;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.1)}
     .image-section img{width:100%;height:auto;display:block}
