@@ -148,8 +148,55 @@
     /* Document metadata */
     .doc-meta{font-size:0.8125rem;color:var(--muted);margin-top:0.5rem}
   </style>
+  /* Community Petition Banner */
+.petition-banner {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #065f46;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+.petition-banner a {
+  background: #ffffff;
+  color: #065f46;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.petition-banner a:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .petition-banner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
 </head>
 <body>
+
+  <div class="petition-banner">
+  <span>
+    We live here too. If you support responsible growth in Decatur Township, we invite you to add your name.
+  </span>
+  <a href="https://form.jotform.com/253627219565868" target="_blank" rel="noopener">
+    Add Your Name
+  </a>
+</div>
+
   <!-- Header -->
   <header id="topbar">
     <div class="container flex items-center gap-4 py-4">
