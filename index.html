@@ -11,7 +11,15 @@
     :root{ --container:1240px; --radius:20px;
       --bg:#ffffff; --text:#111111; --accent:#0a0a0a; --card-bg:#ffffff; --muted:#4b5563;
       --green:#065f46; --green-light:#d1fae5; --blue:#1e40af; --blue-light:#dbeafe;
-    }
+  .menu-item:hover .submenu {
+  display:block;
+}
+
+.menu-item .submenu li a:hover {
+  background:#f5f8fc;
+}
+
+         }
 
     html,body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth;}
     .container{max-width:var(--container);margin:0 auto;padding:0 1.25rem;}
@@ -180,7 +188,9 @@
       .petition-banner {
         flex-direction: column;
         gap: 8px;
+    
         text-align: center;
+    
       }
     }
   </style>
