@@ -154,37 +154,54 @@
 
 </head>
 <body>
-<!-- PUBLIC NOTICE + ENDORSEMENT BANNER -->
-<div style="
-  position: sticky;
-  top: 0;
-  z-index: 70;
-  background: #0A2342;
-  color: #ffffff;
-  padding: 14px 20px;
-  text-align: center;
-  font-family: Inter, Helvetica Neue, Arial, sans-serif;
-">
-  <div style="max-width:1240px;margin:0 auto;">
-    <div style="font-size:18px;font-weight:700;margin-bottom:4px;">
-      Public Notice and Third-Party Support
-    </div>
-    <div style="font-size:15px;font-weight:500;">
-      New hearing date: <strong>February 26, 2026</strong> • Indianapolis Chamber of Commerce endorsement
-    </div>
-    <div style="margin-top:6px;font-size:14px;">
-      <a href="/Legal Notice.pdf" target="_blank"
-         style="color:#9EC9FF;text-decoration:underline;">
-        Read legal notice
-      </a>
-      <span style="margin:0 8px;color:#6EA8FF;">|</span>
-      <a href="IndyChamber.pdf" target="_blank"
-         style="color:#9EC9FF;text-decoration:underline;">
-        View Indianapolis Chamber of Commerce endorsement (PDF)
-      </a>
-    </div>
+<!-- CLEAN PUBLIC NOTICE BAR -->
+<div id="public-notice">
+  <div class="notice-inner">
+    <strong>Public notice:</strong>
+    New hearing date <strong>February 26, 2026</strong>.
+    <a href="/Legal Notice.pdf" target="_blank">Read legal notice</a>
+    <span>•</span>
+    <a href="IndyChamber.pdf" target="_blank">
+      Indianapolis Chamber of Commerce endorsement
+    </a>
   </div>
 </div>
+
+<style>
+  #public-notice {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-family: Inter, Helvetica Neue, Arial, sans-serif;
+  }
+
+  #public-notice .notice-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #111111;
+    text-align: center;
+  }
+
+  #public-notice a {
+    color: #1e40af;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  #public-notice span {
+    margin: 0 6px;
+    color: #6b7280;
+  }
+
+  /* Push main header down correctly */
+  header {
+    top: 44px;
+  }
+</style>
 
  
       <!-- Desktop Nav -->
