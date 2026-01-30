@@ -8,6 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* Restore header identity */
+header::before {
+  content: "Sabey Data Centers · Decatur Technology Park";
+  display: block;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #111111;
+  padding: 10px 0 6px 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  header::before {
+    font-size: 0.875rem;
+  }
+}
+
     :root{ --container:1240px; --radius:20px;
       --bg:#ffffff; --text:#111111; --accent:#0a0a0a; --card-bg:#ffffff; --muted:#4b5563;
       --green:#065f46; --green-light:#d1fae5; --blue:#1e40af; --blue-light:#dbeafe;
