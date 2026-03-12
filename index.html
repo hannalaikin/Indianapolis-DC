@@ -287,14 +287,28 @@ header::before {
   }
 }
 
-/* Push main header down correctly */
-header{
-  top:44px;
+<style>
+
+/* Sticky header */
+#topbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
 }
+
+/* Optional: subtle shadow when scrolling */
+#topbar.scrolled{
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
 </style>
 
-    <header id="topbar">
+
+<header id="topbar">
   <div class="container flex items-center gap-4 py-4">
+
     <div class="flex flex-col">
       <div class="text-xl font-bold">Sabey Data Centers</div>
       <div class="text-sm text-gray-600">Decatur Technology Park</div>
@@ -309,6 +323,7 @@ header{
       <a href="#community">Community Partnership</a>
       <a href="#union-partnership">Union Partnership</a>
       <a href="#docs">Documents</a>
+      <a href="#support-letters">Support Letters</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="https://form.jotform.com/253627219565868"
@@ -324,22 +339,27 @@ header{
       <span></span>
       <span></span>
     </div>
+
   </div>
 </header>
 
-  <!-- Mobile Nav Menu -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#concerns">Top Questions</a>
-    <a href="#aes-commitment">AES Commitment</a>
-    <a href="#economic-impact">Economic Impact</a>
-    <a href="#about-sabey">About Sabey</a>
-    <a href="#community">Community Partnership</a>
-    <a href="#union-partnership">Union Partnership</a>
-    <a href="#docs">Documents</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="https://form.jotform.com/253627219565868" target="_blank">Sign the Petition</a>
-  </div>
+
+<!-- Mobile Nav Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#concerns">Top Questions</a>
+  <a href="#aes-commitment">AES Commitment</a>
+  <a href="#economic-impact">Economic Impact</a>
+  <a href="#about-sabey">About Sabey</a>
+  <a href="#community">Community Partnership</a>
+  <a href="#union-partnership">Union Partnership</a>
+  <a href="#docs">Documents</a>
+  <a href="#support-letters">Support Letters</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="https://form.jotform.com/253627219565868" target="_blank">
+    Sign the Petition
+  </a>
+</div>
   <!-- HERO -->
   <section class="hero">
     <img src="aerial-1.jpg" alt="Sabey Data Center rendering for Decatur Township">
@@ -1542,7 +1562,8 @@ header{
   </section>
 
   <!-- WORKFORCE & COMMUNITY SUPPORT -->
-  <section id="workforce-support" class="py-16 bg-white">
+  <section id="support-letters">
+  <h2>Workforce, Industry, and Community Support</h2>
     <div class="container">
 
       <div class="text-center mb-10">
