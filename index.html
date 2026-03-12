@@ -163,56 +163,95 @@ header::before {
 
 </head>
 <body>
-<!-- PUBLIC NOTICE BAR -->
+<!-- CLEAN PUBLIC NOTICE BAR -->
 <div id="public-notice">
   <div class="notice-inner">
-    <strong>Upcoming Public Hearing:</strong>
-    Metropolitan Development Commission review of the Sabey Decatur Technology Park proposal
-    on <strong>March 18, 2026 • 1:00 PM</strong>.
-    <a href="/Legal Notice.pdf" target="_blank">Read the official legal notice</a>
-    <span>•</span>
-    <a href="IndyChamber.pdf" target="_blank">
-      Indianapolis Chamber of Commerce endorsement
-    </a>
+
+    <!-- LEFT: IU Kelley Study -->
+    <div class="notice-left">
+      <strong>Independent Economic Impact Analysis:</strong>
+      <a href="SDC Economic Impact.pdf" target="_blank">
+        Indiana University Kelley School of Business
+      </a>
+    </div>
+
+    <!-- RIGHT: Hearing + Chamber -->
+    <div class="notice-right">
+      <strong>MDC Hearing:</strong>
+      March 18, 2026 • 1:00 PM
+      <span class="divider">•</span>
+
+      <a href="IndyChamber.pdf" target="_blank">
+        Indy Chamber endorsement
+      </a>
+    </div>
+
   </div>
 </div>
 
 <style>
-  #public-notice {
-    position: sticky;
-    top: 0;
-    z-index: 60;
-    background: #f9fafb;
-    border-bottom: 1px solid #e5e7eb;
-    font-family: Inter, Helvetica Neue, Arial, sans-serif;
+#public-notice{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:#f9fafb;
+  border-bottom:1px solid #e5e7eb;
+  font-family:Inter, Helvetica Neue, Arial, sans-serif;
+}
+
+#public-notice .notice-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:10px 16px;
+  font-size:14px;
+  color:#111111;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+#public-notice a{
+  color:#1e40af;
+  font-weight:600;
+  text-decoration:underline;
+}
+
+#public-notice .divider{
+  margin:0 6px;
+  color:#6b7280;
+}
+
+.notice-left,
+.notice-right{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+/* Mobile behavior */
+@media (max-width:768px){
+  #public-notice .notice-inner{
+    justify-content:center;
+    text-align:center;
   }
 
-  #public-notice .notice-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 10px 16px;
-    font-size: 14px;
-    color: #111111;
-    text-align: center;
+  .notice-left,
+  .notice-right{
+    justify-content:center;
   }
+}
 
-  #public-notice a {
-    color: #1e40af;
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  #public-notice span {
-    margin: 0 6px;
-    color: #6b7280;
-  }
-
-  /* Push main header down correctly */
-  header {
-    top: 44px;
-  }
+/* Push main header down correctly */
+header{
+  top:44px;
+}
 </style>
-   <header id="topbar">
+
+    <header id="topbar">
   <div class="container flex items-center gap-4 py-4">
     <div class="flex flex-col">
       <div class="text-xl font-bold">Sabey Data Centers</div>
@@ -257,7 +296,7 @@ header::before {
     <a href="#docs">Documents</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    
+    <a href="https://form.jotform.com/253627219565868" target="_blank">Sign the Petition</a>
   </div>
   <!-- HERO -->
   <section class="hero">
