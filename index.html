@@ -193,49 +193,109 @@ header::before {
 
 </head>
 <body>
-<!-- CLEAN PUBLIC NOTICE BAR -->
-<div id="public-notice">
-  <div class="notice-inner">
+<!-- STICKY TOP WRAP -->
+<div id="sticky-shell">
 
- <!-- LEFT: IU Kelley + George Mason -->
-<div class="notice-left">
-  <strong>Independent studies:</strong>
+  <!-- CLEAN PUBLIC NOTICE BAR -->
+  <div id="public-notice">
+    <div class="notice-inner">
 
-  <a href="SDC Economic Impact.pdf" target="_blank">
-    Indiana University Kelley School of Business
-  </a>
+      <div class="notice-left">
+        <strong>Independent studies:</strong>
 
-  <span class="divider">•</span>
+        <a href="SDC Economic Impact.pdf" target="_blank">
+          Indiana University Kelley School of Business
+        </a>
 
-  <a href="George Mason University Report.pdf" target="_blank">
-    George Mason University housing study
-  </a>
-  <span class="divider">•</span>
+        <span class="divider">•</span>
 
-<a href="IRR Residential Report.pdf" target="_blank">
-  Indiana residential appraisal analysis
-</a>
+        <a href="George Mason University Report.pdf" target="_blank">
+          George Mason University housing study
+        </a>
+
+        <span class="divider">•</span>
+
+        <a href="IRR Residential Report.pdf" target="_blank">
+          Indiana residential appraisal analysis
+        </a>
+      </div>
+
+      <div class="notice-right">
+        <strong>MDC Hearing:</strong>
+        March 18, 2026 • 1:00 PM
+        <span class="divider">•</span>
+
+        <a href="IndyChamber.pdf" target="_blank">
+          Indy Chamber endorsement
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <header id="topbar">
+    <div class="container flex items-center gap-4 py-4">
+
+      <div class="flex flex-col">
+        <div class="text-xl font-bold">Sabey Data Centers</div>
+        <div class="text-sm text-gray-600">Decatur Technology Park</div>
+      </div>
+
+      <nav class="hidden md:flex gap-5 text-sm ml-auto">
+        <a href="#concerns">Top Questions</a>
+        <a href="#aes-commitment">AES Commitment</a>
+        <a href="#economic-impact">Economic Impact</a>
+        <a href="#about-sabey">About Sabey</a>
+        <a href="#community">Community Partnership</a>
+        <a href="#union-partnership">Union Partnership</a>
+        <a href="#docs">Documents</a>
+        <a href="#support-letters">Support Letters</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="https://form.jotform.com/253627219565868"
+           target="_blank"
+           style="font-weight:600; color:#0A2342;">
+           Sign the Petition
+        </a>
+      </nav>
+
+      <div class="hamburger md:hidden ml-auto" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+
 </div>
 
-    <!-- RIGHT: Hearing + Chamber -->
-    <div class="notice-right">
-      <strong>MDC Hearing:</strong>
-      March 18, 2026 • 1:00 PM
-      <span class="divider">•</span>
-
-      <a href="IndyChamber.pdf" target="_blank">
-        Indy Chamber endorsement
-      </a>
-    </div>
-
-  </div>
+<!-- Mobile Nav Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#concerns">Top Questions</a>
+  <a href="#aes-commitment">AES Commitment</a>
+  <a href="#economic-impact">Economic Impact</a>
+  <a href="#about-sabey">About Sabey</a>
+  <a href="#community">Community Partnership</a>
+  <a href="#union-partnership">Union Partnership</a>
+  <a href="#docs">Documents</a>
+  <a href="#support-letters">Support Letters</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="https://form.jotform.com/253627219565868" target="_blank">
+    Sign the Petition
+  </a>
 </div>
 
 <style>
-#public-notice{
+#sticky-shell{
   position:sticky;
   top:0;
-  z-index:60;
+  z-index:80;
+  background:#ffffff;
+}
+
+#public-notice{
   background:#f9fafb;
   border-bottom:1px solid #e5e7eb;
   font-family:Inter, Helvetica Neue, Arial, sans-serif;
@@ -247,7 +307,6 @@ header::before {
   padding:10px 16px;
   font-size:14px;
   color:#111111;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -274,7 +333,19 @@ header::before {
   gap:6px;
 }
 
-/* Mobile behavior */
+#topbar{
+  position:relative;
+  top:auto;
+  z-index:79;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+#topbar.scrolled{
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
 @media (max-width:768px){
   #public-notice .notice-inner{
     justify-content:center;
@@ -286,80 +357,7 @@ header::before {
     justify-content:center;
   }
 }
-
-<style>
-
-/* Sticky header */
-#topbar{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-/* Optional: subtle shadow when scrolling */
-#topbar.scrolled{
-  box-shadow: 0 4px 12px rgba(0,0,0,.06);
-}
-
 </style>
-
-
-<header id="topbar">
-  <div class="container flex items-center gap-4 py-4">
-
-    <div class="flex flex-col">
-      <div class="text-xl font-bold">Sabey Data Centers</div>
-      <div class="text-sm text-gray-600">Decatur Technology Park</div>
-    </div>
-
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-5 text-sm ml-auto">
-      <a href="#concerns">Top Questions</a>
-      <a href="#aes-commitment">AES Commitment</a>
-      <a href="#economic-impact">Economic Impact</a>
-      <a href="#about-sabey">About Sabey</a>
-      <a href="#community">Community Partnership</a>
-      <a href="#union-partnership">Union Partnership</a>
-      <a href="#docs">Documents</a>
-      <a href="#support-letters">Support Letters</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="https://form.jotform.com/253627219565868"
-         target="_blank"
-         style="font-weight:600; color:#0A2342;">
-         Sign the Petition
-      </a>
-    </nav>
-
-    <!-- Mobile Hamburger -->
-    <div class="hamburger md:hidden ml-auto" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </div>
-</header>
-
-
-<!-- Mobile Nav Menu -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#concerns">Top Questions</a>
-  <a href="#aes-commitment">AES Commitment</a>
-  <a href="#economic-impact">Economic Impact</a>
-  <a href="#about-sabey">About Sabey</a>
-  <a href="#community">Community Partnership</a>
-  <a href="#union-partnership">Union Partnership</a>
-  <a href="#docs">Documents</a>
-  <a href="#support-letters">Support Letters</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
-  <a href="https://form.jotform.com/253627219565868" target="_blank">
-    Sign the Petition
-  </a>
-</div>
   <!-- HERO -->
   <section class="hero">
     <img src="aerial-1.jpg" alt="Sabey Data Center rendering for Decatur Township">
