@@ -156,7 +156,37 @@ header::before {
     .benefit-icon{width:48px;height:48px;background:var(--green-light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.5rem}
     /* Document metadata */
     .doc-meta{font-size:0.8125rem;color:var(--muted);margin-top:0.5rem}
- 
+ /* Fact popup windows */
+.fact-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:200;
+}
+
+.fact-popup.hidden{
+  display:none;
+}
+
+.fact-inner{
+  background:#ffffff;
+  max-width:760px;
+  width:100%;
+  border-radius:20px;
+  padding:2rem;
+  box-shadow:0 20px 50px rgba(0,0,0,.2);
+  border:1px solid #e5e7eb;
+}
+
+@media (max-width:768px){
+  .fact-inner{
+    padding:1.5rem;
+  }
+}
   </style>
  
 
@@ -353,6 +383,48 @@ header{
     </div>
 
   </div>
+</section>
+  <!-- KEY PROJECT FACTS -->
+<section class="py-12 bg-gray-50 border-y border-gray-200">
+<div class="container">
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<!-- TRAFFIC -->
+<div class="pro-card p-6 cursor-pointer" onclick="openFact('traffic')">
+<h3 class="text-xl font-bold mb-2">
+92% Fewer Truck Trips Than the Previously Approved Industrial Development
+</h3>
+
+<p class="text-sm text-gray-600">
+Click to view details
+</p>
+</div>
+
+<!-- HOME VALUES -->
+<div class="pro-card p-6 cursor-pointer" onclick="openFact('housing')">
+<h3 class="text-xl font-bold mb-2">
+Independent Studies Show Data Centers Do Not Reduce Nearby Home Values
+</h3>
+
+<p class="text-sm text-gray-600">
+Click to view supporting research
+</p>
+</div>
+
+<!-- UNION JOBS -->
+<div class="pro-card p-6 cursor-pointer" onclick="openFact('union')">
+<h3 class="text-xl font-bold mb-2">
+Built by Indiana Union Workers
+</h3>
+
+<p class="text-sm text-gray-600">
+Click to view workforce information
+</p>
+</div>
+
+</div>
+</div>
 </section>
   <!-- WE'RE LISTENING -->
 <section id="listening" class="py-16 bg-white">
@@ -2127,7 +2199,80 @@ header{
       </div>
     </div>
   </footer>
+<!-- FACT POPUPS -->
 
+<div id="fact-traffic" class="fact-popup hidden">
+  <div class="fact-inner">
+    <h3 class="text-2xl font-bold mb-4">
+      92% Fewer Truck Trips Than the Previously Approved Industrial Development
+    </h3>
+
+    <p class="lead mb-4">
+      The prior zoning allowed over 523 heavy truck trips per day.
+    </p>
+
+    <p class="lead mb-6">
+      The Sabey data center is expected to generate only <strong>43 trucks per day</strong>, dramatically reducing traffic, emissions, and neighborhood impact.
+    </p>
+
+    <div class="flex flex-wrap gap-3">
+      <a href="2025-CMP-856 _Plan of Operation (3.11.26) updated.pdf" target="_blank" class="btn btn-black">
+        View Supporting Report
+      </a>
+      <button onclick="closeFacts()" class="btn btn-ghost">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="fact-housing" class="fact-popup hidden">
+  <div class="fact-inner">
+    <h3 class="text-2xl font-bold mb-4">
+      Independent Studies Show Data Centers Do Not Reduce Nearby Home Values
+    </h3>
+
+    <p class="lead mb-6">
+      Research from George Mason University and an Indiana appraisal analysis by Integra Realty Resources both conclude that data centers do not cause substantial adverse impacts on surrounding residential property values.
+    </p>
+
+    <div class="flex flex-wrap gap-3">
+      <a href="George Mason University Report.pdf" target="_blank" class="btn btn-black">
+        View George Mason Study
+      </a>
+      <a href="IRR Residential Report.pdf" target="_blank" class="btn btn-ghost">
+        View Indiana Appraisal Analysis
+      </a>
+      <button onclick="closeFacts()" class="btn btn-ghost">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="fact-union" class="fact-popup hidden">
+  <div class="fact-inner">
+    <h3 class="text-2xl font-bold mb-4">
+      Built by Indiana Union Workers
+    </h3>
+
+    <p class="lead mb-6">
+      The Sabey project will support hundreds of high-paying union construction jobs, strengthening the local workforce and creating long-term economic opportunity for Indianapolis.
+    </p>
+
+    <div class="flex flex-wrap gap-3">
+      <a href="Jon Hooker - Building Trades Letter of Support.pdf" target="_blank" class="btn btn-black">
+        View Union Letter
+      </a>
+      <a href="Carpenters - Support Letter.pdf" target="_blank" class="btn btn-ghost">
+        View Carpenters Letter
+      </a>
+      <button onclick="closeFacts()" class="btn btn-ghost">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
   <!-- Back to Top -->
   <button id="backToTop" title="Back to Top">↑</button>
   
