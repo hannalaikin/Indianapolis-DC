@@ -40,13 +40,17 @@ header::before {
     nav a:hover::after{width:100%}
 
    /* Section spacing */
-    .hero { margin-top:0; padding-top:0 !important; }
+    .hero { margin-top:0; padding-top:0 !important; padding-bottom:0 !important; overflow:hidden; }
     section{padding-top:6rem;padding-bottom:6rem}
     @media (max-width:768px){ section{padding-top:4.5rem;padding-bottom:4.5rem} }
 
    /* HERO */
 .hero{position:relative;margin-bottom:0}
 .hero img{width:100%;height:650px;object-fit:cover;filter:brightness(.82)}
+@media (min-width:1600px){
+  .hero img{height:min(650px, calc(100vh - 150px));min-height:560px;object-position:center 48%}
+  .hero-glass{max-width:760px}
+}
 @media (max-width:768px){ 
   .hero img{height:500px}
 }
