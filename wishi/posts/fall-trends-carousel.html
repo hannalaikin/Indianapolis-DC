@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fall Trends Carousel</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efedea;--card:#fff;--ink:#111;--mut:#737373;--line:#dbdbdb;--paper:#FDFCFB;--char:#131110}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0b;--card:#000;--ink:#f5f5f5;--mut:#a8a8a8;--line:#262626}}
+body{margin:0;background:var(--bg);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);display:flex;justify-content:center;padding:24px 16px}
+.card{width:100%;max-width:470px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.hd{display:flex;align-items:center;gap:10px;padding:10px 12px} .av{width:32px;height:32px;border-radius:50%;background:var(--paper);color:var(--char);border:1px solid #ddd;display:grid;place-items:center;font:700 9px Figtree,sans-serif;letter-spacing:-.02em}
+.hd b{font-weight:600} .hd small{display:block;color:var(--mut);font-size:12px} .d3{margin-left:auto;font-weight:700}
+.car{position:relative} .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none} .track::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;aspect-ratio:4/5;position:relative;scroll-snap-align:start;overflow:hidden;background:var(--paper);font-family:Figtree,"Avenir Next",sans-serif;color:var(--char)}
+.full{width:100%;height:100%;object-fit:cover;display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;width:100%;height:100%;background:var(--paper)} .grid img{width:100%;height:100%;object-fit:cover;display:block}
+.lbl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76%;background:var(--paper);border-radius:12px;padding:16px 18px 15px;text-align:center;box-shadow:0 6px 24px rgba(19,17,16,.18)}
+.cov .lbl{top:auto;bottom:18px;transform:translateX(-50%)}
+.n{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a837d}
+.lbl h3{margin:6px 0 6px;font-size:27px;font-weight:600;letter-spacing:-.02em;line-height:1.05} .cov h3{font-size:30px}
+.lbl p{margin:0;font-size:13.5px;line-height:1.35} .rule{margin-top:9px!important;padding-top:9px;border-top:1px solid #e8e3dd;color:#4a433e;font-size:12.5px!important} .rule b{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--char);margin-bottom:2px}
+.end{display:grid;place-items:center;text-align:center} .sk{position:absolute;inset:auto 0 0 0;width:100%;opacity:.5} .endin{position:relative;padding:30px 34px}
+.end h3{font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.05;margin:10px 0 12px} .end p{font-size:15px;margin:0 0 18px}
+.btn{display:inline-block;background:var(--char);color:var(--paper);font-weight:600;font-size:14px;padding:12px 20px;border-radius:999px} .end .sm{font-size:12px;color:#8a837d;margin-top:12px}
+.arw{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:#111;font-size:16px;cursor:pointer} .l{left:8px} .r{right:8px}
+.ct{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:3px 9px;border-radius:999px}
+.pg{display:flex;justify-content:center;gap:4px;padding:10px 0 0} .pg i{width:6px;height:6px;border-radius:50%;background:var(--line)} .pg i.on{background:#0095f6}
+.ac{display:flex;gap:14px;padding:6px 12px 4px} .ac svg{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.8} .ac .s{margin-left:auto}
+.lk{padding:0 12px;font-weight:600} .cp{padding:6px 12px 4px} .tm{padding:6px 12px 14px;color:var(--mut);font-size:11px;text-transform:uppercase}
+.s6 .full{position:absolute;inset:0}
+.s6h{position:absolute;top:22px;left:0;right:0;text-align:center;color:#fff;font-size:27px;font-weight:600;letter-spacing:-.02em;text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.ph{position:absolute;left:50%;top:15%;transform:translateX(-50%);width:50%;height:71%;background:var(--paper);border-radius:22px;box-shadow:0 14px 40px rgba(19,17,16,.35);padding:10px 12px;box-sizing:border-box;overflow:hidden}
+.sb{display:flex;justify-content:space-between;font-size:8px;font-weight:600;padding:0 4px 6px}
+.pbar{height:2px;background:#ece7e1;border-radius:2px}.pbar i{display:block;width:16.6%;height:100%;background:var(--char)}
+.pt{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#8a837d;margin:7px 0 10px}.wm2{font-weight:700;color:var(--char);font-size:10px;letter-spacing:-.02em}
+.pq .n{font-size:6.5px;letter-spacing:.12em}.pq h4{font-size:15px;font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:5px 0 4px}.pd{font-size:8.5px;color:#4a433e;margin:0 0 8px}
+.op{font-size:8.5px;border:1px solid #e3ddd6;border-radius:999px;padding:6px 9px;margin-bottom:5px}.op.on{background:var(--char);color:var(--paper);border-color:var(--char)}
+.ft{font-size:7.5px;color:#8a837d;margin:8px 0 0;font-style:italic}
+.s6f{position:absolute;bottom:16px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:5px}.sm2{padding:8px 16px!important;font-size:12px!important}.s6t{font-size:11px;color:#fff;font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.btn{display:inline-block;background:var(--char);color:var(--paper);font-weight:600;border-radius:999px}
+.sty{display:flex;gap:8px;align-items:center;background:#f4f0eb;border-radius:12px;padding:7px}.sty img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#ddd}.sty b{display:block;font-size:11px}.sty span{font-size:7.5px;color:#6b635d}
+.pd2{font-size:8.5px;line-height:1.35;color:#4a433e;margin:8px 0 0}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:5px}.slots span{font-size:8.5px;text-align:center;border:1px solid #e3ddd6;border-radius:999px;padding:6px 0}.slots .on{background:var(--char);color:var(--paper);border-color:var(--char)}
+.bk{margin-top:10px;background:var(--char);color:var(--paper);text-align:center;font-size:10px;font-weight:600;border-radius:999px;padding:8px 0}
+</style></head><body><div class="card">
+<div class="hd"><div class="av">in the<br>bag</div><div><b>inthebag</b><small>your personal stylist</small></div><div class="d3">···</div></div>
+<div class="car"><div class="track" id="t"><div class="sl cov"><img class="full" src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F522e0c06-4bb0-40e5-b880-f1be32f84730_1024.webp" alt=""><div class="lbl"><div class="n">in the bag · fall</div><h3>fall trends, with a stylist.</h3><p>Which ones work on you? Your stylist will tell you in 15 minutes.</p></div></div>
+<div class="sl"><div class="grid"><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F3654bc03-205b-4e5b-9fff-3b9e1a4bfbec_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F299d2700-dad7-43ff-923c-46ade869ef61_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2Fd0048caf-4355-4bb1-b146-662023c37934_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2Fe8df0398-241b-4da5-89a6-6c388f834aba_1024.webp" alt=""></div><div class="lbl"><div class="n">01 / 04</div><h3>velvet accents</h3><p>One velvet piece, everything else matte.</p><p class="rule"><b>ask your stylist</b> Warm undertones: rust and mustard. Cool: chocolate and wine.</p></div></div>
+<div class="sl"><div class="grid"><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2Fdcc23580-508f-40ac-b7fe-ae9f04cde7ef_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F611a7ab2-1145-4a05-941f-ac3923b085c1_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F41ba337b-cc19-4dde-8293-3058dd662887_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F956d144b-e00b-4f04-8881-f83daac90c9f_1024.webp" alt=""></div><div class="lbl"><div class="n">02 / 04</div><h3>cummerbunds as belts</h3><p>Worn low on the hips, over a shirt you already own.</p><p class="rule"><b>ask your stylist</b> Long-waisted? Go wide. Short-waisted? Keep it narrow.</p></div></div>
+<div class="sl"><div class="grid"><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2Fc8cbe08e-2bb2-4bd8-83f0-2156f3a7ef3b_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2Ffb7f8498-0a0f-40f4-8a48-e6d0a2c16b97_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F3c7f1714-22f8-4ecb-94f1-6faab0607663_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F78bbc109-021b-477e-a658-614df62c6dea_1024.webp" alt=""></div><div class="lbl"><div class="n">03 / 04</div><h3>rich fall tones</h3><p>Taupe and camel are out. Jewel tones are in.</p><p class="rule"><b>ask your stylist</b> Your colouring picks the shade, not the trend report.</p></div></div>
+<div class="sl"><div class="grid"><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F269850c6-d92b-446a-be78-bef9ff25f422_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2Fa08a0ac7-0d38-4c86-b5cb-39445bc7fa36_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F26e010a4-e36d-455f-9291-748708587f65_1024.webp" alt=""><img src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F651cd3b8-6215-4917-a57c-f5e28b07565e_1024.webp" alt=""></div><div class="lbl"><div class="n">04 / 04</div><h3>leather outerwear</h3><p>The one buy that makes the rest of your closet look finished.</p><p class="rule"><b>ask your stylist</b> Petite? Choose a cropped length that hits at the hip.</p></div></div>
+<div class="sl s6"><img class="full" src="https://assets.kive.ai/image-generations%2FNbedghwjvWPRaQYvvkJT%2FtqwbGdlXlZYsranYu5Kf0RDw98v2%2F471da766-8681-4ea8-8c1e-0d55b62a8189_1024.webp" alt=""><div class="s6h">book 15 minutes with <i>your</i> stylist</div>
+<div class="ph"><div class="sb"><span>9:41</span><span>●●● ▮</span></div>
+<div class="pt"><span class="wm2">in the bag</span><span>your stylist</span></div>
+<div class="sty"><img src="https://intheb.ag/api/photos/8f2441af-275b-4791-b8d3-624047348b77" alt="Hanna"><div><b>Hanna</b><span>Polished looks on a budget · 12 yrs</span></div></div>
+<p class="pd2">Pick a time. She calls you, opens your four rules, and builds a whole look from your closet.</p>
+<div class="n" style="margin:8px 0 5px">This week · 15 min · free</div>
+<div class="slots"><span>Tue 12:30</span><span class="on">Tue 6:00</span><span>Wed 8:15</span><span>Thu 7:30</span><span>Sat 10:00</span><span>Sun 4:45</span></div>
+<div class="bk">Book with Hanna</div><p class="ft">Near your closet if you can.</p></div>
+<div class="s6f"><span class="btn sm2">Comment BOOK for her calendar</span><span class="s6t">free · she calls you · no card</span></div></div></div><div class="ct" id="ct"></div><button class="arw l" onclick="go(-1)" aria-label="Previous">‹</button><button class="arw r" onclick="go(1)" aria-label="Next">›</button></div>
+<div class="pg" id="pg"></div>
+<div class="ac"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.3C1 7.9 3.4 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.6 0 6 3.4 4.5 7.2C19.5 16.4 12 21 12 21z"/></svg><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><svg viewBox="0 0 24 24"><path d="M22 3 11 14M22 3l-7 19-4-8-8-4 19-7z"/></svg><svg class="s" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"/></svg></div>
+<div class="lk">0 likes</div><div class="cp"><b>inthebag</b> Every fall trend list tells you what's in. We'd rather tell you what works on you. 🤍<br><br>Velvet: one piece, everything else matte.<br>Cummerbunds: low on the hips. Wide if you're long-waisted, narrow if you're not.<br>Rich tones: your colouring picks the shade, not the trend report.<br>Leather outerwear: the one buy that makes the rest of your closet look finished.<br><br>Not sure which ones are yours? Book 15 minutes with Hanna. She calls you, tells you which trends fit your colouring and shape, and builds a look from what you already own.<br><br>Comment BOOK and we'll send you her calendar. Free. No card, no box, no subscription. 🤍</div><div class="tm">Preview · not posted · swipe →</div></div>
+<script>
+const t=document.getElementById('t'),n=t.children.length,pg=document.getElementById('pg'),ct=document.getElementById('ct');
+for(let i=0;i<n;i++)pg.appendChild(document.createElement('i'));
+function cur(){return Math.round(t.scrollLeft/t.clientWidth)}
+function upd(){const c=cur();[...pg.children].forEach((d,i)=>d.className=i===c?'on':'');ct.textContent=(c+1)+'/'+n}
+function go(d){t.scrollTo({left:(cur()+d)*t.clientWidth,behavior:'smooth'})}
+t.addEventListener('scroll',upd);upd();
+</script></body></html>
